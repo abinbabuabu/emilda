@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:app="http://schemas.android.com/apk/res-auto"
+              android:orientation="vertical"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent">
+    <com.google.android.material.appbar.AppBarLayout
+            android:layout_width="match_parent"
+            android:backgroundTint="@color/white"
+            android:background="@color/white"
+            android:layout_height="wrap_content">
+        <androidx.appcompat.widget.Toolbar
+                android:layout_width="match_parent"
+                app:title="@string/feedback"
+                android:id="@+id/feedback_toolbar"
+                app:navigationIcon="@drawable/ic_arrow_back"
+                android:layout_height="?actionBarSize"/>
+    </com.google.android.material.appbar.AppBarLayout>
+    <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+        <LinearLayout android:layout_width="match_parent"
+                      android:orientation="vertical"
+                      android:layout_height="match_parent">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                    android:layout_width="match_parent"
+                    android:layout_marginStart="@dimen/feedback_margin"
+                    android:layout_marginEnd="@dimen/feedback_margin"
+                    app:srcCompat="@drawable/ic_feedback"
+                    android:layout_height="@dimen/feedback_img_height"/>
+            <TextView android:layout_width="match_parent"
+                      style="@style/bigHeading"
+                      android:layout_marginStart="28dp"
+                      android:layout_marginEnd="28dp"
+                      android:layout_gravity="center"
+                      android:textAlignment="center"
+                      android:padding="8dp"
+                      android:text="@string/feedback_quote"
+                      android:layout_height="wrap_content"/>
+            <com.google.android.material.textfield.TextInputLayout
+                    android:layout_margin="24dp"
+                    android:layout_marginTop="8dp"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+                    android:layout_width="match_parent"
+                    android:layout_height="150dp">
+                <com.google.android.material.textfield.TextInputEditText
+                        android:gravity="top"
+                        android:hint="Feedback"
+                        android:id="@+id/feeback_comments"
+                        android:layout_width="match_parent"
+                        android:inputType="textMultiLine"
+                        android:layout_height="match_parent"/>
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.button.MaterialButton
+                    android:layout_width="@dimen/feedback_button_width"
+                    android:text="@string/feedback_send"
+                    style="@style/button_text.big"
+                    app:cornerRadius="0dp"
+                    android:layout_marginStart="@dimen/feedback_margin"
+                    android:layout_marginEnd="@dimen/feedback_margin"
+                    android:layout_height="@dimen/feedback_button_height"/>
+        </LinearLayout>
+    </ScrollView>
+
+
+</LinearLayout>

@@ -1,0 +1,45 @@
+<resources>
+    <string name="app_name">Emilda</string>
+    <string name="feedback">Feedback</string>
+
+
+
+
+    <string name="title_activity_details">DetailsActivity</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="nav_header_title">Abin Babu</string>
+    <string name="nav_header_subtitle">abinbabuabk@gmail.com</string>
+    <string name="nav_header_desc">Navigation header</string>
+    <string name="action_settings">Settings</string>
+
+    <string name="menu_accounts">Accounts</string>
+    <string name="menu_orders">Orders</string>
+    <string name="menu_requests">Requests</string>
+    <string name="menu_invoices">Invoices</string>
+
+
+    <!--Details Activity-->
+    <string name="services">Services</string>
+    <string name="portfolio">Portfolio</string>
+    <string name="all_button">All</string>
+    <string name="design_butn">Design</string>
+    <string name="dev_butn">Development</string>
+
+    <string name="lorem_ipsum">It is a long established fact that a reader will be distracted by the
+        readable content of a page when looking at its layout.
+        The point of using Lorem Ipsum is that it has
+        a more-or-less normal distribution of letters,
+    </string>
+
+    <!--Card Expanded-->
+    <string name="ce_start_button">Start a Project</string>
+    <string name="Nav_logout">Logout</string>
+
+
+    <!--Feedback Page-->
+    <string name="feedback_quote">“We all need people who will give us feedback. That’s how we improve.”</string>
+    <string name="feedback_send">Send</string>
+
+
+</resources>

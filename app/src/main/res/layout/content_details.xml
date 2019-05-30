@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginBottom="70dp"
+            android:layout_marginTop="60dp"
+            xmlns:android="http://schemas.android.com/apk/res/android">
+<RelativeLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior"
+        tools:showIn="@layout/app_bar_details"
+        tools:context=".DetailsActivity">
+    <TextView android:layout_width="wrap_content"
+              style="@style/subtitle"
+              android:layout_marginTop="@dimen/subtitle_margin_t"
+              android:layout_marginBottom="@dimen/subtitle_marg_b"
+              android:layout_marginStart="@dimen/subtitle_margin_l"
+              android:id="@+id/services_tv"
+              android:layout_alignParentTop="true"
+              android:text="@string/services"
+              android:layout_height="wrap_content"
+              android:layout_marginLeft="@dimen/subtitle_margin_l"/>
+
+    <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/card_recycle_view"
+            android:layout_below="@+id/services_tv"
+            android:layout_marginLeft="@dimen/recycle_margin_lr"
+            android:layout_marginRight="@dimen/recycle_margin_lr"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+    <TextView android:layout_width="match_parent"
+              android:text="@string/portfolio"
+              android:layout_marginStart="@dimen/subtitle_margin_l"
+              android:layout_marginBottom="@dimen/subtitle_marg_b"
+              android:id="@+id/portfolio_tv"
+              style="@style/subtitle"
+              android:layout_below="@+id/card_recycle_view"
+              android:layout_height="wrap_content" android:layout_marginLeft="@dimen/subtitle_margin_l"/>
+
+    <com.google.android.material.button.MaterialButton
+            android:id="@+id/all_button"
+            style="@style/button_text"
+            android:text="@string/all_button"
+            android:layout_marginStart="@dimen/recycle_margin_lr"
+            android:layout_below="@+id/portfolio_tv"
+            android:layout_width="@dimen/button_width"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/recycle_margin_lr"/>
+    <com.google.android.material.button.MaterialButton
+            android:id="@+id/design_button"
+            style="@style/button_text"
+            android:text="@string/design_butn"
+            android:layout_below="@+id/portfolio_tv"
+            android:layout_marginStart="8dp"
+            android:layout_toRightOf="@+id/all_button"
+            android:layout_width="@dimen/button_width"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="8dp" android:hapticFeedbackEnabled="true"/>
+    <com.google.android.material.button.MaterialButton
+            android:id="@+id/dev_button"
+            style="@style/button_text"
+            android:text="@string/dev_butn"
+            android:layout_marginStart="8dp"
+            android:layout_toRightOf="@+id/design_button"
+            android:layout_width="@dimen/button_width"
+            android:layout_below="@+id/portfolio_tv"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="8dp"/>
+
+</RelativeLayout>
+</ScrollView>
