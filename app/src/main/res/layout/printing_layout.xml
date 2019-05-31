@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" xmlns:app="http://schemas.android.com/apk/res-auto"
+                android:layout_margin="26dp">
+
+    <TextView android:layout_width="match_parent"
+              android:text="@string/lorem_ipsum"
+              style="@style/small_text"
+              android:id="@+id/print_desc_tv"
+              android:layout_alignParentStart="true"
+              android:layout_height="wrap_content"
+              android:layout_alignParentLeft="true"/>
+    <com.google.android.material.button.MaterialButton
+            android:layout_width="wrap_content"
+            android:id="@+id/file_upload_btn"
+            android:text="Upload File"
+            android:layout_marginTop="16dp"
+            android:layout_below="@id/print_desc_tv"
+            style="@style/button_text"
+            android:layout_centerHorizontal="true"
+            android:layout_height="wrap_content"/>
+    <TextView android:layout_width="match_parent"
+              android:text="Copies"
+              android:id="@+id/copies_tv"
+              android:layout_alignParentStart="true"
+              android:layout_marginTop="16dp"
+              android:layout_below="@id/file_upload_btn"
+              style="@style/small_text.black"
+              android:layout_height="wrap_content"
+              android:layout_alignParentLeft="true"/>
+    <include android:layout_below="@+id/copies_tv"
+             android:id="@+id/copies_add_btn"
+             android:layout_marginTop="2dp"
+             layout="@layout/plus_minus_button"
+             android:layout_height="40dp"
+             android:layout_width="500dp"/>
+    <TextView android:layout_width="match_parent"
+              android:text="Paper Size"
+              android:id="@+id/paper_size_tv"
+              android:layout_alignParentStart="true"
+              android:layout_marginTop="16dp"
+              android:layout_below="@id/copies_add_btn"
+              style="@style/small_text.black"
+              android:layout_height="wrap_content"
+              android:layout_alignParentLeft="true"/>
+
+    <com.google.android.material.textfield.TextInputLayout
+            android:layout_below="@id/paper_size_tv"
+            android:layout_marginEnd="50dp"
+            android:layout_marginTop="8dp"
+            style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox.ExposedDropdownMenu"
+            android:layout_width="match_parent"
+            android:layout_height="36dp"
+            android:id="@+id/paperSize_drop"
+            android:hint="Select"
+            android:layout_marginRight="50dp">
+        <AutoCompleteTextView
+                android:editable="false"
+                android:id="@+id/dropdown_paper_size"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <TextView android:layout_width="match_parent"
+              android:text="Paper type"
+              android:id="@+id/paper_type_tv"
+              android:layout_alignParentStart="true"
+              android:layout_marginTop="16dp"
+              android:layout_below="@id/paperSize_drop"
+              style="@style/small_text.black"
+              android:layout_height="wrap_content"
+              android:layout_alignParentLeft="true"/>
+
+    <com.google.android.material.textfield.TextInputLayout
+            android:layout_below="@id/paper_type_tv"
+            android:layout_marginEnd="50dp"
+            android:layout_marginTop="8dp"
+            style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox.ExposedDropdownMenu"
+            android:layout_width="match_parent"
+            android:layout_height="36dp"
+            android:id="@+id/papertype_drop"
+            android:hint="Select"
+            android:layout_marginRight="50dp">
+        <AutoCompleteTextView
+                android:editable="false"
+                android:id="@+id/dropdown_type_size"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <TextView android:layout_width="match_parent"
+              android:text="Color"
+              android:id="@+id/color_tv"
+              android:layout_alignParentStart="true"
+              android:layout_marginTop="16dp"
+              android:layout_below="@id/papertype_drop"
+              style="@style/small_text.black"
+              android:layout_height="wrap_content"
+              android:layout_alignParentLeft="true"/>
+    <com.google.android.material.textfield.TextInputLayout
+            android:layout_below="@id/color_tv"
+            android:layout_marginEnd="50dp"
+            android:layout_marginTop="8dp"
+            style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox.ExposedDropdownMenu"
+            android:layout_width="match_parent"
+            android:layout_height="36dp"
+            android:id="@+id/color_drop"
+            android:hint="Select"
+            android:layout_marginRight="50dp">
+    <AutoCompleteTextView
+            android:editable="false"
+            android:id="@+id/color_type"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+    </com.google.android.material.textfield.TextInputLayout>
+    <TextView android:layout_width="match_parent"
+              android:text="Orientation"
+              android:id="@+id/orient_tv"
+              android:layout_alignParentStart="true"
+              android:layout_marginTop="16dp"
+              android:layout_below="@id/color_drop"
+              style="@style/small_text.black"
+              android:layout_height="wrap_content"
+              android:layout_alignParentLeft="true"/>
+
+    <com.google.android.material.textfield.TextInputLayout
+            android:layout_below="@id/orient_tv"
+            android:layout_marginEnd="50dp"
+            android:layout_marginTop="8dp"
+            style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox.ExposedDropdownMenu"
+            android:layout_width="match_parent"
+            android:layout_height="36dp"
+            android:id="@+id/orient_drop"
+            android:hint="Select"
+            android:layout_marginRight="50dp">
+        <AutoCompleteTextView
+                android:editable="false"
+                android:id="@+id/orient_type"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+    </com.google.android.material.textfield.TextInputLayout>
+</RelativeLayout>

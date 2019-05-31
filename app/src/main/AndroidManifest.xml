@@ -11,6 +11,10 @@
             android:supportsRtl="true"
             android:theme="@style/AppTheme"
             tools:ignore="GoogleAppIndexingWarning">
+        <activity android:name=".PrintingActivity">
+        </activity>
+        <activity android:name=".SupportActivity">
+        </activity>
         <activity android:name=".FeedbackActivity">
         </activity>
         <activity android:name=".ExpandedCard">
@@ -18,13 +22,11 @@
         <activity
                 android:name=".DetailsActivity"
                 android:theme="@style/AppTheme.NoActionBar">
-
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
 
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
-
         </activity>
         <activity android:name=".MainActivity">
         </activity>

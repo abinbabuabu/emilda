@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:app="http://schemas.android.com/apk/res-auto"
+              android:orientation="vertical"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent">
+    <com.google.android.material.appbar.AppBarLayout
+            android:layout_width="match_parent"
+            android:backgroundTint="@color/white"
+            android:background="@color/white"
+            android:layout_height="wrap_content">
+        <androidx.appcompat.widget.Toolbar
+                android:layout_width="match_parent"
+                app:title="@string/support"
+                android:id="@+id/support_toolbar"
+                app:navigationIcon="@drawable/ic_arrow_back"
+                android:layout_height="?actionBarSize"/>
+    </com.google.android.material.appbar.AppBarLayout>
+    <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+        <RelativeLayout android:layout_width="match_parent"
+                        android:orientation="vertical"
+                        android:layout_marginStart="24dp"
+                        android:layout_marginEnd="24dp"
+                        android:layout_height="wrap_content">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                    android:layout_width="match_parent"
+                    android:layout_marginTop="18dp"
+                    android:layout_marginStart="@dimen/feedback_margin"
+                    android:layout_marginEnd="@dimen/feedback_margin"
+                    android:layout_alignParentTop="true"
+                    android:id="@+id/support_svg"
+                    app:srcCompat="@drawable/support_svg"
+                    android:layout_height="@dimen/feedback_img_height"/>
+
+            <TextView android:layout_width="wrap_content"
+                      android:layout_height="wrap_content"
+                      android:text="+91 |"
+                      android:paddingStart="10dp"
+                      android:layout_alignBaseline="@+id/text_layout"
+                      android:layout_below="@+id/support_svg"
+                      android:id="@+id/phone_code"
+                      android:textSize="18sp"
+                      android:layout_alignParentStart="true"
+                      android:layout_alignParentLeft="true"
+                      android:paddingLeft="10dp"/>
+
+            <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/text_layout"
+                    android:layout_marginTop="30dp"
+                    android:layout_below="@+id/support_svg"
+                    app:boxCornerRadiusBottomEnd="0dp"
+                    app:boxCornerRadiusTopEnd="6dp"
+                    app:boxCornerRadiusBottomStart="6dp"
+                    app:boxCornerRadiusTopStart="6dp"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+                    android:layout_width="match_parent"
+                    android:layout_height="150dp">
+                <com.google.android.material.textfield.TextInputEditText
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:inputType="phone"
+                        android:textSize="18sp"
+                        android:id="@+id/phone_et"
+                        android:paddingStart="60dp"
+                        android:layout_toRightOf="@+id/phone_code"
+                        android:maxLines="1" android:maxLength="10"
+                        android:layout_toEndOf="@+id/phone_code"
+                        android:paddingLeft="60dp"/>
+            </com.google.android.material.textfield.TextInputLayout>
+            <com.google.android.material.button.MaterialButton
+                    android:layout_width="wrap_content"
+                    android:backgroundTint="@color/colorAccent"
+                    app:cornerRadius="0dp"
+                    android:id="@+id/call_me_btn"
+                    style="@style/button_text.big"
+                    android:layout_alignParentStart="true"
+                    android:layout_below="@+id/phone_code"
+                    android:layout_marginTop="18dp"
+                    android:text="@string/support_call"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"/>
+            <androidx.appcompat.widget.AppCompatImageView
+                    android:layout_width="24dp"
+                    android:layout_marginTop="44dp"
+                    android:id="@+id/phone_logo"
+                    android:layout_below="@id/call_me_btn"
+                    android:layout_alignParentStart="true"
+                    app:srcCompat="@drawable/ic_outline_phone"
+                    android:layout_height="24dp"
+                    android:layout_alignParentLeft="true"/>
+            <androidx.appcompat.widget.AppCompatImageView
+                    android:layout_width="24dp"
+                    android:layout_marginTop="18dp"
+                    android:id="@+id/location_logo"
+                    android:layout_below="@id/phone_logo"
+                    android:layout_alignParentStart="true"
+                    app:srcCompat="@drawable/ic_outline_location"
+                    android:layout_height="24dp"
+                    android:layout_alignParentLeft="true"/>
+            <TextView android:layout_width="match_parent"
+                      android:padding="4dp"
+                      style="@style/mediumText"
+                      android:layout_toRightOf="@+id/phone_logo"
+                      android:layout_below="@+id/call_me_btn"
+                      android:layout_marginTop="44dp"
+                      android:layout_marginStart="16dp"
+                      android:layout_alignBaseline="@id/phone_logo"
+                      android:text="@string/phone_emilda"
+                      android:layout_height="wrap_content"
+                      android:layout_marginLeft="16dp"/>
+            <TextView android:layout_width="match_parent"
+                      android:text="@string/address_emilda"
+                      android:padding="4dp"
+                      style="@style/mediumText"
+                      android:id="@+id/address_tv"
+                      android:layout_marginStart="16dp"
+                      android:layout_marginTop="6dp"
+                      android:layout_alignBaseline="@id/location_logo"
+                      android:layout_toRightOf="@+id/location_logo"
+                      android:layout_below="@id/phone_logo"
+                      android:layout_height="wrap_content"
+                      android:layout_marginLeft="16dp"/>
+            <TextView android:layout_width="match_parent"
+                      android:padding="4dp"
+                      android:text="@string/web_emilda"
+                      style="@style/mediumText"
+                      android:layout_marginStart="16dp"
+                      android:layout_toRightOf="@id/location_logo"
+                      android:layout_below="@+id/address_tv"
+                      android:layout_height="wrap_content"
+                      android:layout_marginLeft="16dp"/>
+        </RelativeLayout>
+    </ScrollView>
+</LinearLayout>

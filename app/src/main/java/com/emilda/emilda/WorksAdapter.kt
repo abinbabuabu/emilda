@@ -35,23 +35,23 @@ class WorksAdapter(val height: Int) : RecyclerView.Adapter<WorksAdapter.mViewHol
                     holder.cardImage.setImageDrawable(context.getDrawable(R.drawable.ic_web_design))
                     holder.cardtext.text = "Web Development"
                 }
-                1 ->{
+                1 -> {
                     holder.cardImage.setImageDrawable(context.getDrawable(R.drawable.ic_app))
                     holder.cardtext.text = "App Development"
                 }
-                2 ->{
+                2 -> {
                     holder.cardImage.setImageDrawable(context.getDrawable(R.drawable.ic_computer))
                     holder.cardtext.text = "Graphic Design"
                 }
-                3 ->{
+                3 -> {
                     holder.cardImage.setImageDrawable(context.getDrawable(R.drawable.ic_printer))
                     holder.cardtext.text = "Printing"
                 }
-                4 ->{
+                4 -> {
                     holder.cardImage.setImageDrawable(context.getDrawable(R.drawable.ic_email))
                     holder.cardtext.text = "Digital Marketing"
                 }
-                5 ->{
+                5 -> {
                     holder.cardImage.setImageDrawable(context.getDrawable(R.drawable.ic_tools))
                     holder.cardtext.text = "Desktop Support"
                 }
@@ -85,7 +85,7 @@ class WorksAdapter(val height: Int) : RecyclerView.Adapter<WorksAdapter.mViewHol
             }
         }
 
-        holder.mOnBind()
+        holder.mOnBind(position)
         val height = height
         holder.cardImage.layoutParams.height = height / 8
 
@@ -97,11 +97,22 @@ class WorksAdapter(val height: Int) : RecyclerView.Adapter<WorksAdapter.mViewHol
         val cardtext: TextView = v.findViewById(R.id.card_text)
 
 
-        fun mOnBind() {
-            card.setOnClickListener {
-                val intent = Intent(context, ExpandedCard::class.java)
-                startActivity(context, intent, null)
+        fun mOnBind(position: Int) {
+            when(position){
+                3 ->{
+                    card.setOnClickListener {
+                        val intent = Intent(context,PrintingActivity::class.java)
+                        startActivity(context, intent, null)
+                    }
+                }
+                else ->{
+                    card.setOnClickListener {
+                        val intent = Intent(context, ExpandedCard::class.java)
+                        startActivity(context, intent, null)
+                    }
+                }
             }
+
         }
 
     }

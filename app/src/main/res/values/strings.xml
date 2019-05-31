@@ -1,8 +1,9 @@
 <resources>
     <string name="app_name">Emilda</string>
     <string name="feedback">Feedback</string>
-
-
+    <string name="support">Support</string>
+    <string name="help">Help</string>
+    <string name="web">Website</string>
 
 
     <string name="title_activity_details">DetailsActivity</string>
@@ -41,5 +42,10 @@
     <string name="feedback_quote">“We all need people who will give us feedback. That’s how we improve.”</string>
     <string name="feedback_send">Send</string>
 
+    <!--Support Page-->
+    <string name="support_call">Call me back</string>
+    <string name="phone_emilda">9442449431</string>
+    <string name="address_emilda">B4 701 , Bda, Kanmaniki, Kumbalgodu Bangalore 540074, Karnataka, India</string>
+    <string name="web_emilda">www.emilda.in</string>
 
 </resources>
