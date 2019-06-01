@@ -105,6 +105,12 @@ class WorksAdapter(val height: Int) : RecyclerView.Adapter<WorksAdapter.mViewHol
                         startActivity(context, intent, null)
                     }
                 }
+                5 ->{
+                    card.setOnClickListener {
+                        val intent = Intent(context,DesktopSupport::class.java)
+                        startActivity(context, intent, null)
+                    }
+                }
                 else ->{
                     card.setOnClickListener {
                         val intent = Intent(context, ExpandedCard::class.java)

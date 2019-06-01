@@ -27,17 +27,35 @@
             android:id="@+id/bottom_bar"
             android:layout_width="match_parent"
             android:layout_gravity="bottom"
-            style="@style/bottom_app_bar"
-            android:layout_height="?actionBarSize"/>
+            android:layout_height="?actionBarSize">
+        <RelativeLayout android:layout_width="match_parent"
+                        android:layout_marginStart="24dp"
+                        android:layout_marginEnd="24dp"
+                        android:layout_height="match_parent">
+            <ImageView android:layout_width="28dp"
+                       android:layout_alignParentStart="true"
+                       app:srcCompat="@drawable/ic_home"
+                       android:layout_centerVertical="true"
+                       android:layout_height="28dp"
+                       android:layout_alignParentLeft="true"/>
+            <ImageView android:layout_width="28dp"
+                       android:layout_alignParentEnd="true"
+                       app:srcCompat="@drawable/ic_message"
+                       android:layout_marginEnd="4dp"
+                       android:padding="2dp"
+                       android:layout_centerVertical="true"
+                       android:layout_height="28dp"
+                       android:layout_alignParentRight="true"
+                       android:layout_marginRight="4dp"/>
+        </RelativeLayout>
+    </com.google.android.material.bottomappbar.BottomAppBar>
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
             android:layout_width="wrap_content"
-            app:shapeAppearance="@style/cutShape"
             app:elevation="15dp"
-            android:layout_marginBottom="16dp"
             app:layout_anchor="@id/bottom_bar"
             app:backgroundTint="@color/colorAccent"
-            android:layout_gravity="bottom|center"
+            app:shapeAppearance="@style/ShapeAppearanceOverlay.MaterialComponents.FloatingActionButton"
             android:layout_height="wrap_content"/>
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

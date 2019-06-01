@@ -11,6 +11,8 @@
             android:supportsRtl="true"
             android:theme="@style/AppTheme"
             tools:ignore="GoogleAppIndexingWarning">
+        <activity android:name=".DesktopSupport">
+        </activity>
         <activity android:name=".PrintingActivity">
         </activity>
         <activity android:name=".SupportActivity">

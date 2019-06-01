@@ -48,25 +48,37 @@
         <item name="android:textSize">21sp</item>
     </style>
 
+    <style name="AppBarTitle" parent="bigHeading">
+        <item name="android:textSize">18sp</item>
+    </style>
 
 
     <!--Fab & Bottom Bar-->
-    <style name="cutShape" parent="ShapeAppearance.MaterialComponents.SmallComponent">
+    <style name="ShapeAppearanceOverlay.MaterialComponents.FloatingActionButton" parent="" >
         <item name="cornerFamily">cut</item>
-        <item name="cornerSize">4dp</item>
-    </style>
-    <style name="bottom_app_bar" parent="Widget.MaterialComponents.BottomAppBar">
+        <item name="cornerSize">@null</item>
 
     </style>
-
+    <!--<style name="bottom_app_bar" parent="Widget.MaterialComponents.BottomAppBar">-->
+        <!--<item name="fabCradleVerticalOffset">0dp</item>-->
+        <!--<item name="fabCradleRoundedCornerRadius">40dp</item>-->
+        <!--<item name="fabCradleMargin">12dp</item>-->
+    <!--</style>-->
 
     <!--Navigation Drawer-->
-  <style name="ThemeOverlay.AppCompat.NavTheme">
-      <item name="colorControlHighlight">@color/colorAccent</item>
-  </style>
+    <style name="ThemeOverlay.AppCompat.NavTheme">
+        <item name="colorControlHighlight">@color/colorAccent</item>
+    </style>
 
+    <!--Chat Card-->
+    <style name="Card" parent="ShapeAppearance.MaterialComponents.MediumComponent">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">24dp</item>
+        <item name="android:topLeftRadius">0dp</item>
+    </style>
+    <style name="ShapeAppearanceOverlay.DifferentCornerSize.Card">
 
-
+    </style>
 
 
 </resources>
