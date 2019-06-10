@@ -1,12 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ScrollView android:layout_width="match_parent" android:layout_height="match_parent"
             xmlns:android="http://schemas.android.com/apk/res/android">
-<RelativeLayout xmlns:app="http://schemas.android.com/apk/res-auto"
-                xmlns:android="http://schemas.android.com/apk/res/android"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent">
+    <LinearLayout xmlns:app="http://schemas.android.com/apk/res-auto"
+                  xmlns:android="http://schemas.android.com/apk/res/android"
+                  android:layout_width="match_parent"
+                  android:orientation="vertical"
+                  android:layout_height="match_parent">
         <RelativeLayout xmlns:app="http://schemas.android.com/apk/res-auto"
                         android:layout_width="wrap_content"
+                        android:layout_weight="0.9"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="32dp"
                         android:id="@+id/relative_layout"
@@ -96,7 +98,6 @@
                 android:layout_width="match_parent"
                 app:srcCompat="@drawable/login"
                 android:id="@+id/login_image"
-                android:layout_below="@+id/relative_layout"
                 android:layout_marginTop="40dp"
                 android:layout_marginBottom="32dp"
                 android:layout_height="wrap_content"/>
@@ -104,13 +105,12 @@
         <com.google.android.material.button.MaterialButton
                 android:layout_width="match_parent"
                 android:text="Next"
-                android:layout_alignParentBottom="true"
-                android:layout_below="@+id/login_image"
+                android:layout_gravity="end"
                 android:layout_marginStart="18dp"
                 android:layout_marginEnd="18dp"
                 android:id="@+id/next_btn_login"
                 android:insetBottom="4dp"
-                android:layout_marginBottom="0dp"
+                android:layout_marginBottom="16dp"
                 android:layout_height="56dp"/>
-    </RelativeLayout>
+    </LinearLayout>
 </ScrollView>

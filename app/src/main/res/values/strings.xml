@@ -49,8 +49,16 @@
     <string name="web_emilda">www.emilda.in</string>
 
     <!--Login Page-->
-    <string name="welcome">Welcome to </string>
+    <string name="welcome">Welcome to</string>
     <string name="emilda">Emilda</string>
-    <string name="hint"><font size="20">Phone Number</font></string>
+    <string name="hint">
+        <font size="20">Phone Number</font>
+    </string>
+
+    <!--OTP Screen-->
+    <string name="verifying">Verifying</string>
+    <string name="OTP">OTP</string>
+    <string name="sentto">The OTP has been sent to</string>
+    <string name="enterYour">Enter Your OTP</string>
 
 </resources>
