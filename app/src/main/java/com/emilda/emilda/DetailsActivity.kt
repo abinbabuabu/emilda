@@ -1,27 +1,30 @@
 package com.emilda.emilda
 
-import android.app.ActionBar
+import android.annotation.TargetApi
 import android.content.Intent
 import android.graphics.Point
+import android.net.Uri
+import android.os.Build
 import android.os.Bundle
-import com.google.android.material.floatingactionbutton.FloatingActionButton
-import com.google.android.material.snackbar.Snackbar
-import androidx.core.view.GravityCompat
-import androidx.appcompat.app.ActionBarDrawerToggle
+import android.transition.Explode
+import android.view.Menu
 import android.view.MenuItem
-import androidx.drawerlayout.widget.DrawerLayout
-import com.google.android.material.navigation.NavigationView
+import androidx.annotation.RequiresApi
+import androidx.appcompat.app.ActionBarDrawerToggle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
-import android.view.Menu
-import android.view.MenuInflater
-import android.widget.RelativeLayout
-import androidx.appcompat.view.menu.MenuBuilder
+import androidx.core.view.GravityCompat
+import androidx.drawerlayout.widget.DrawerLayout
 import androidx.recyclerview.widget.GridLayoutManager
-import kotlinx.android.synthetic.main.card_row.*
+import com.google.android.material.navigation.NavigationView
+import kotlinx.android.synthetic.main.app_bar_details.*
 import kotlinx.android.synthetic.main.content_details.*
+import setUpBottomAppBarShapeAppearance
+import java.net.URLEncoder
+
 
 class DetailsActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelectedListener {
+
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -29,8 +32,7 @@ class DetailsActivity : AppCompatActivity(), NavigationView.OnNavigationItemSele
         setContentView(R.layout.activity_details)
         val toolbar: Toolbar = findViewById(R.id.toolbar)
         setSupportActionBar(toolbar)
-
-
+        exitEnterAnim()
         val drawerLayout: DrawerLayout = findViewById(R.id.drawer_layout)
         val navView: NavigationView = findViewById(R.id.nav_view)
         val toggle = ActionBarDrawerToggle(
@@ -44,7 +46,12 @@ class DetailsActivity : AppCompatActivity(), NavigationView.OnNavigationItemSele
         val size = windowManager.defaultDisplay.getSize(point)
         card_recycle_view.layoutManager = GridLayoutManager(this, 2)
         card_recycle_view.adapter = WorksAdapter(point.y)
+        setUpBottomAppBarShapeAppearance(fab_details, bottom_bar)
 
+
+        bottom_msg.setOnClickListener {
+            whatsApp()
+        }
 
     }
 
@@ -68,13 +75,13 @@ class DetailsActivity : AppCompatActivity(), NavigationView.OnNavigationItemSele
         // automatically handle clicks on the Home/Up button, so long
         // as you specify a parent activity in AndroidManifest.xml.
         return when (item.itemId) {
-            R.id.action_feedback ->{
-                val intent = Intent(this,FeedbackActivity::class.java)
+            R.id.action_feedback -> {
+                val intent = Intent(this, FeedbackActivity::class.java)
                 startActivity(intent)
                 return true
             }
-            R.id.action_support ->{
-                val intent = Intent(this,SupportActivity::class.java)
+            R.id.action_support -> {
+                val intent = Intent(this, SupportActivity::class.java)
                 startActivity(intent)
                 return true
             }
@@ -89,5 +96,36 @@ class DetailsActivity : AppCompatActivity(), NavigationView.OnNavigationItemSele
         val drawerLayout: DrawerLayout = findViewById(R.id.drawer_layout)
         drawerLayout.closeDrawer(GravityCompat.START)
         return true
+    }
+
+    fun whatsApp() {
+        val packageManager = this.packageManager
+        val i = Intent(Intent.ACTION_VIEW)
+
+        try {
+            val url = "https://api.whatsapp.com/send?phone=" + "919008517230" + "&text=" + URLEncoder.encode(
+                "Hello from Emilda",
+                "UTF-8"
+            )
+            i.setPackage("com.whatsapp")
+            i.data = Uri.parse(url)
+            if (i.resolveActivity(packageManager) != null) {
+                startActivity(i)
+            }
+        } catch (e: Exception) {
+            e.printStackTrace()
+        }
+
+    }
+
+
+
+    fun exitEnterAnim(){
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+            val explode = Explode()
+            explode.duration = 3000
+            window.reenterTransition = explode
+
+        }
     }
 }

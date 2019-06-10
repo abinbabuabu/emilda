@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "734929797603",
+    "firebase_url": "https://emilda-app.firebaseio.com",
+    "project_id": "emilda-app",
+    "storage_bucket": "emilda-app.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:734929797603:android:4d155338c3374357",
+        "android_client_info": {
+          "package_name": "com.emilda.emilda"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "734929797603-us2mb6ug0beoivhf1tdjm5a2kagtagid.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.emilda.emilda",
+            "certificate_hash": "0a81f1ad34e21ecc3cc854321a29d547f92b7885"
+          }
+        },
+        {
+          "client_id": "734929797603-bkrc840c5l5vpvkdd3misc91ohqid0n0.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA1-zdAAwzwUIwqcnVkBWYTLjBqJ0QtafM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "734929797603-bkrc840c5l5vpvkdd3misc91ohqid0n0.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

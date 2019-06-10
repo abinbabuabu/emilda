@@ -1,16 +1,13 @@
 package com.emilda.emilda
 
-import android.app.Activity
+import ResolvePosition
 import android.content.Context
 import android.content.Intent
-import android.graphics.Point
-import android.graphics.drawable.Drawable
 import android.os.Build
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
-import android.widget.RelativeLayout
 import android.widget.TextView
 import androidx.cardview.widget.CardView
 import androidx.core.content.ContextCompat.startActivity
@@ -33,54 +30,54 @@ class WorksAdapter(val height: Int) : RecyclerView.Adapter<WorksAdapter.mViewHol
             when (position) {
                 0 -> {
                     holder.cardImage.setImageDrawable(context.getDrawable(R.drawable.ic_web_design))
-                    holder.cardtext.text = "Web Development"
+                    holder.cardtext.text = ResolvePosition(position)
                 }
                 1 -> {
                     holder.cardImage.setImageDrawable(context.getDrawable(R.drawable.ic_app))
-                    holder.cardtext.text = "App Development"
+                    holder.cardtext.text = ResolvePosition(position)
                 }
                 2 -> {
                     holder.cardImage.setImageDrawable(context.getDrawable(R.drawable.ic_computer))
-                    holder.cardtext.text = "Graphic Design"
+                    holder.cardtext.text = ResolvePosition(position)
                 }
                 3 -> {
                     holder.cardImage.setImageDrawable(context.getDrawable(R.drawable.ic_printer))
-                    holder.cardtext.text = "Printing"
+                    holder.cardtext.text = ResolvePosition(position)
                 }
                 4 -> {
                     holder.cardImage.setImageDrawable(context.getDrawable(R.drawable.ic_email))
-                    holder.cardtext.text = "Digital Marketing"
+                    holder.cardtext.text = ResolvePosition(position)
                 }
                 5 -> {
                     holder.cardImage.setImageDrawable(context.getDrawable(R.drawable.ic_tools))
-                    holder.cardtext.text = "Desktop Support"
+                    holder.cardtext.text = ResolvePosition(position)
                 }
             }
         } else {
             when (position) {
                 0 -> {
                     holder.cardImage.background = context.resources.getDrawable(R.drawable.ic_web_design)
-                    holder.cardtext.text = "Web Development"
+                    holder.cardtext.text = ResolvePosition(position)
                 }
                 1 -> {
                     holder.cardImage.background = context.resources.getDrawable(R.drawable.ic_app)
-                    holder.cardtext.text = "App Development"
+                    holder.cardtext.text = ResolvePosition(position)
                 }
                 2 -> {
                     holder.cardImage.background = context.resources.getDrawable(R.drawable.ic_computer)
-                    holder.cardtext.text = "Graphic Design"
+                    holder.cardtext.text = ResolvePosition(position)
                 }
                 3 -> {
                     holder.cardImage.background = context.resources.getDrawable(R.drawable.ic_printer)
-                    holder.cardtext.text = "Printing"
+                    holder.cardtext.text = ResolvePosition(position)
                 }
                 4 -> {
                     holder.cardImage.background = context.resources.getDrawable(R.drawable.ic_email)
-                    holder.cardtext.text = "Digital Marketing"
+                    holder.cardtext.text = ResolvePosition(position)
                 }
                 5 -> {
                     holder.cardImage.background = context.resources.getDrawable(R.drawable.ic_tools)
-                    holder.cardtext.text = "Desktop Support"
+                    holder.cardtext.text = ResolvePosition(position)
                 }
             }
         }
@@ -114,6 +111,7 @@ class WorksAdapter(val height: Int) : RecyclerView.Adapter<WorksAdapter.mViewHol
                 else ->{
                     card.setOnClickListener {
                         val intent = Intent(context, ExpandedCard::class.java)
+                        intent.putExtra("position",position)
                         startActivity(context, intent, null)
                     }
                 }

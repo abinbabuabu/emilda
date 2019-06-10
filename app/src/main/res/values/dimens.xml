@@ -14,7 +14,7 @@
     <dimen name="recycle_margin_lr">20dp</dimen>
     <dimen name="subtitle_margin_l">28dp</dimen>
     <dimen name="subtitle_margin_t">16dp</dimen>
-    <dimen name="subtitle_marg_b">12dp</dimen>
+    <dimen name="subtitle_marg_b">10dp</dimen>
     <dimen name="button_width">116dp</dimen>
     <dimen name="button_height">28dp</dimen>
 
@@ -32,4 +32,8 @@
     <dimen name="feedback_img_height">200dp</dimen>
     <dimen name="feedback_button_width">172dp</dimen>
     <dimen name="feedback_button_height">48dp</dimen>
+
+    <!--login Page-->
+    <dimen name="large_text_login">50sp</dimen>
+    <dimen name="smalltext_login">14sp</dimen>
 </resources>

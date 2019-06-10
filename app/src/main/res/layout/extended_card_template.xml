@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:layout_width="match_parent" android:layout_height="match_parent"
+                android:layout_margin="26dp">
+
+    <TextView android:layout_width="match_parent"
+              android:text="@string/lorem_ipsum"
+              style="@style/small_text"
+              android:id="@+id/explain_text"
+              android:layout_alignParentStart="true"
+              android:layout_height="wrap_content"
+              android:layout_alignParentLeft="true"/>
+
+    <TextView
+            android:layout_width="wrap_content"
+            android:layout_marginTop="14dp"
+            style="@style/subtitle"
+            android:layout_below="@id/explain_text"
+            android:id="@+id/portfolio_tv_ec"
+            android:layout_height="wrap_content"
+            android:text="@string/portfolio"/>
+    <View
+            android:id="@+id/divider2"
+            android:layout_below="@+id/portfolio_tv_ec"
+            android:layout_width="64dp"
+            android:layout_height="1dp"
+            android:layout_alignParentStart="true"
+            android:layout_marginStart="4dp"
+            android:layout_marginEnd="2dp"
+            android:background="@color/textgrey"
+            android:layout_alignParentLeft="true"
+            android:layout_marginLeft="4dp"
+            android:layout_marginRight="2dp"/>
+
+    <androidx.recyclerview.widget.RecyclerView
+            android:layout_width="match_parent"
+            android:orientation="horizontal"
+            android:id="@+id/portfolio_rv"
+            android:layout_below="@+id/divider2"
+            android:layout_height="wrap_content">
+    </androidx.recyclerview.widget.RecyclerView>
+
+</RelativeLayout>

@@ -48,4 +48,9 @@
     <string name="address_emilda">B4 701 , Bda, Kanmaniki, Kumbalgodu Bangalore 540074, Karnataka, India</string>
     <string name="web_emilda">www.emilda.in</string>
 
+    <!--Login Page-->
+    <string name="welcome">Welcome to </string>
+    <string name="emilda">Emilda</string>
+    <string name="hint"><font size="20">Phone Number</font></string>
+
 </resources>
