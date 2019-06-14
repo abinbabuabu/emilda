@@ -1,20 +1,38 @@
-package com.emilda.emilda
+package com.emilda.emilda.MainActivities
 
-import android.content.Intent
+
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.MenuItem
+
+import android.widget.AutoCompleteTextView
+import android.widget.ArrayAdapter
 import androidx.appcompat.widget.Toolbar
+import com.emilda.emilda.R
 
 
-class FeedbackActivity : AppCompatActivity() {
+class PrintingActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_feedback)
-        val toolbar:Toolbar  = findViewById(R.id.feedback_toolbar)
+        setContentView(R.layout.activity_printing)
+        val toolbar: Toolbar = findViewById(R.id.printing_toolbar)
         setSupportActionBar(toolbar)
-        supportActionBar?.setHomeButtonEnabled(true)
+        setDropDownMenus()
+
+    }
+
+    private fun setDropDownMenus() {
+        // Paper Size
+        val paperSize = arrayOf("Item 1", "Item 2", "Item 3", "Item 4")
+        val adapter = ArrayAdapter(
+            this,
+            R.layout.drop_down_menu_item,
+            paperSize
+        )
+        val paperSizeDropDown = findViewById<AutoCompleteTextView>(R.id.dropdown_paper_size)
+        paperSizeDropDown.setAdapter(adapter)
+
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
@@ -29,5 +47,6 @@ class FeedbackActivity : AppCompatActivity() {
             else -> super.onOptionsItemSelected(item)
         }
     }
-
 }
+
+

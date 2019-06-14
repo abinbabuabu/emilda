@@ -1,6 +1,5 @@
-package com.emilda.emilda
+package com.emilda.emilda.MainActivities
 
-import android.annotation.TargetApi
 import android.content.Intent
 import android.graphics.Point
 import android.net.Uri
@@ -9,13 +8,15 @@ import android.os.Bundle
 import android.transition.Explode
 import android.view.Menu
 import android.view.MenuItem
-import androidx.annotation.RequiresApi
+import android.view.View
 import androidx.appcompat.app.ActionBarDrawerToggle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
 import androidx.core.view.GravityCompat
 import androidx.drawerlayout.widget.DrawerLayout
 import androidx.recyclerview.widget.GridLayoutManager
+import com.emilda.emilda.R
+import com.emilda.emilda.Adapters.WorksAdapter
 import com.google.android.material.navigation.NavigationView
 import kotlinx.android.synthetic.main.app_bar_details.*
 import kotlinx.android.synthetic.main.content_details.*
@@ -36,7 +37,9 @@ class DetailsActivity : AppCompatActivity(), NavigationView.OnNavigationItemSele
         val drawerLayout: DrawerLayout = findViewById(R.id.drawer_layout)
         val navView: NavigationView = findViewById(R.id.nav_view)
         val toggle = ActionBarDrawerToggle(
-            this, drawerLayout, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close
+            this, drawerLayout, toolbar,
+            R.string.navigation_drawer_open,
+            R.string.navigation_drawer_close
         )
         drawerLayout.addDrawerListener(toggle)
         toggle.syncState()
@@ -44,6 +47,7 @@ class DetailsActivity : AppCompatActivity(), NavigationView.OnNavigationItemSele
         navView.setNavigationItemSelectedListener(this)
         val point = Point()
         val size = windowManager.defaultDisplay.getSize(point)
+        card_recycle_view.overScrollMode = View.OVER_SCROLL_NEVER
         card_recycle_view.layoutManager = GridLayoutManager(this, 2)
         card_recycle_view.adapter = WorksAdapter(point.y)
         setUpBottomAppBarShapeAppearance(fab_details, bottom_bar)

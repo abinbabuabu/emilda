@@ -33,9 +33,10 @@
             android:layout_marginRight="2dp"/>
 
     <androidx.recyclerview.widget.RecyclerView
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:orientation="horizontal"
             android:id="@+id/portfolio_rv"
+            android:layout_marginTop="12dp"
             android:layout_below="@+id/divider2"
             android:layout_height="wrap_content">
     </androidx.recyclerview.widget.RecyclerView>

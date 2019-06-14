@@ -1,9 +1,8 @@
-package com.emilda.emilda
+package com.emilda.emilda.MainActivities
 
 import ResolvePosition
 import android.os.Build
 import android.os.Bundle
-import android.transition.Explode
 import android.transition.Slide
 import android.util.Log
 import android.view.MenuItem
@@ -11,25 +10,35 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
-import java.time.LocalDate
+import androidx.recyclerview.widget.LinearLayoutManager
+import com.emilda.emilda.Adapters.PortfolioAdapter
+import com.emilda.emilda.R
+import com.emilda.emilda.Viewmodels.ExpandedCardViewModel
+import kotlinx.android.synthetic.main.extended_card_template.*
 
 class ExpandedCard : AppCompatActivity() {
     lateinit var ActivityTag: String
     lateinit var mViewModel: ExpandedCardViewModel
+    lateinit var adapter: PortfolioAdapter
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_expanded_card)
         val CardPosition = intent?.extras?.get("position") as Int
+
         ActivityTag = ResolvePosition(CardPosition)
         val toolbar: Toolbar = this.findViewById(R.id.printing_toolbar)
         toolbar.title = ActivityTag
         setSupportActionBar(toolbar)
+
+
         mViewModel = ViewModelProviders.of(this).get(ExpandedCardViewModel::class.java)
-        mViewModel?.getPortfolio(CardPosition).observe(this, Observer {
-            Log.d("xyz", it[0])
-        })
+        val options =mViewModel.getPortfolio(CardPosition)
+        portfolio_rv.layoutManager = LinearLayoutManager(this,LinearLayoutManager.HORIZONTAL,true)
+        adapter = PortfolioAdapter(options)
+        portfolio_rv.adapter = adapter
+
 
     }
 
@@ -48,8 +57,14 @@ class ExpandedCard : AppCompatActivity() {
 
     override fun onStart() {
         super.onStart()
-
+        adapter.startListening()
     }
+
+    override fun onStop() {
+        adapter.stopListening()
+        super.onStop()
+    }
+
     fun exitEnterAnim(){
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
             val explode = Slide()
@@ -60,4 +75,6 @@ class ExpandedCard : AppCompatActivity() {
 
         }
     }
+
+
 }

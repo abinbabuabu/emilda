@@ -1,16 +1,18 @@
-package com.emilda.emilda
+package com.emilda.emilda.MainActivities
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.MenuItem
 import androidx.appcompat.widget.Toolbar
+import com.emilda.emilda.R
 
-class DesktopSupport : AppCompatActivity() {
+
+class SupportActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_desktop_support)
-        val toolbar: Toolbar = findViewById(R.id.deskSupport_toolbar)
+        setContentView(R.layout.activity_support)
+         val toolbar:Toolbar = findViewById(R.id.support_toolbar)
         setSupportActionBar(toolbar)
     }
 
@@ -26,4 +28,5 @@ class DesktopSupport : AppCompatActivity() {
             else -> super.onOptionsItemSelected(item)
         }
     }
+
 }

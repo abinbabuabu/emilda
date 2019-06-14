@@ -11,27 +11,29 @@
             android:supportsRtl="true"
             android:theme="@style/AppTheme"
             tools:ignore="GoogleAppIndexingWarning">
-        <activity android:name=".OtpScreen">
-        </activity>
-        <activity android:name=".PhoneLogin">
+        <activity android:name=".LoginActivities.SplashScreen">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
 
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
-        <activity android:name=".DesktopSupport">
+        <activity android:name=".LoginActivities.OtpScreen">
         </activity>
-        <activity android:name=".PrintingActivity">
+        <activity android:name=".LoginActivities.PhoneLogin">
         </activity>
-        <activity android:name=".SupportActivity">
+        <activity android:name=".MainActivities.DesktopSupport">
         </activity>
-        <activity android:name=".FeedbackActivity">
+        <activity android:name=".MainActivities.PrintingActivity">
         </activity>
-        <activity android:name=".ExpandedCard">
+        <activity android:name=".MainActivities.SupportActivity">
+        </activity>
+        <activity android:name=".MainActivities.FeedbackActivity">
+        </activity>
+        <activity android:name=".MainActivities.ExpandedCard">
         </activity>
         <activity
-                android:name=".DetailsActivity"
+                android:name=".MainActivities.DetailsActivity"
                 android:theme="@style/AppTheme.NoActionBar">
         </activity>
         <activity android:name=".MainActivity">

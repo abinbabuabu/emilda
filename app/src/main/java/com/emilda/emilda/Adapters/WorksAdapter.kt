@@ -1,4 +1,4 @@
-package com.emilda.emilda
+package com.emilda.emilda.Adapters
 
 import ResolvePosition
 import android.content.Context
@@ -12,6 +12,10 @@ import android.widget.TextView
 import androidx.cardview.widget.CardView
 import androidx.core.content.ContextCompat.startActivity
 import androidx.recyclerview.widget.RecyclerView
+import com.emilda.emilda.MainActivities.DesktopSupport
+import com.emilda.emilda.MainActivities.ExpandedCard
+import com.emilda.emilda.MainActivities.PrintingActivity
+import com.emilda.emilda.R
 
 class WorksAdapter(val height: Int) : RecyclerView.Adapter<WorksAdapter.mViewHolder>() {
 
@@ -98,13 +102,13 @@ class WorksAdapter(val height: Int) : RecyclerView.Adapter<WorksAdapter.mViewHol
             when(position){
                 3 ->{
                     card.setOnClickListener {
-                        val intent = Intent(context,PrintingActivity::class.java)
+                        val intent = Intent(context, PrintingActivity::class.java)
                         startActivity(context, intent, null)
                     }
                 }
                 5 ->{
                     card.setOnClickListener {
-                        val intent = Intent(context,DesktopSupport::class.java)
+                        val intent = Intent(context, DesktopSupport::class.java)
                         startActivity(context, intent, null)
                     }
                 }

@@ -12,7 +12,7 @@
         android:layout_height="match_parent"
         app:layout_behavior="@string/appbar_scrolling_view_behavior"
         tools:showIn="@layout/app_bar_details"
-        tools:context=".DetailsActivity">
+        tools:context=".MainActivities.DetailsActivity">
     <TextView android:layout_width="wrap_content"
               style="@style/subtitle"
               android:layout_marginTop="@dimen/subtitle_margin_t"
@@ -94,7 +94,6 @@
         <com.google.android.material.button.MaterialButton
                 android:id="@+id/dev_button"
                 style="@style/button_text"
-
                 android:text="@string/dev_butn"
                 android:layout_weight="1"
                 android:layout_width="0dp"
