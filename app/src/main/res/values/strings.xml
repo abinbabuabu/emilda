@@ -61,4 +61,9 @@
     <string name="sentto">The OTP has been sent to</string>
     <string name="enterYour">Enter Your OTP</string>
 
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="requests_made_at">Requests made at</string>
+    <string name="on">on</string>
+
 </resources>

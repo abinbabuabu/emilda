@@ -5,11 +5,10 @@
             android:layout_marginTop="60dp"
             xmlns:android="http://schemas.android.com/apk/res/android">
 <RelativeLayout
-        xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:tools="http://schemas.android.com/tools"
         xmlns:app="http://schemas.android.com/apk/res-auto"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         app:layout_behavior="@string/appbar_scrolling_view_behavior"
         tools:showIn="@layout/app_bar_details"
         tools:context=".MainActivities.DetailsActivity">
@@ -68,8 +67,8 @@
             android:layout_below="@+id/divider3"
             android:layout_width="match_parent"
             android:paddingStart="4dp"
-            android:layout_marginBottom="100dp"
             android:paddingEnd="4dp"
+            android:id="@+id/buttonsLayout"
             android:layout_marginRight="@dimen/recycle_margin_lr"
             android:layout_marginLeft="@dimen/recycle_margin_lr"
             android:layout_height="wrap_content">
@@ -100,7 +99,15 @@
                 android:layout_height="wrap_content"
                 />
     </LinearLayout>
-
+    <fragment
+            android:name="androidx.navigation.fragment.NavHostFragment"
+            android:layout_width="match_parent"
+            android:layout_below="@id/buttonsLayout"
+            android:layout_height="300dp"
+            android:layout_marginTop="8dp"
+            app:navGraph="@navigation/portfolio_nav"
+            app:defaultNavHost="true"
+            android:id="@+id/portfolio_nav_frag"/>
 
 </RelativeLayout>
 </ScrollView>

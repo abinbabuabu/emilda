@@ -11,6 +11,9 @@
             android:supportsRtl="true"
             android:theme="@style/AppTheme"
             tools:ignore="GoogleAppIndexingWarning">
+        <activity android:name=".MainActivities.InvoiceRequests">
+
+        </activity>
         <activity android:name=".LoginActivities.SplashScreen">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
@@ -34,6 +37,7 @@
         </activity>
         <activity
                 android:name=".MainActivities.DetailsActivity"
+                android:launchMode="singleTop"
                 android:theme="@style/AppTheme.NoActionBar">
         </activity>
         <activity android:name=".MainActivity">

@@ -17,7 +17,7 @@
                    android:id="@+id/card_image"
                    android:layout_margin="30dp"
                    android:layout_gravity="center"
-                   android:src="@drawable/ic_web_design"
+                   app:srcCompat="@drawable/ic_web_design"
                    android:layout_height="80dp"/>
         <TextView android:layout_width="match_parent"
                   android:layout_gravity="center"

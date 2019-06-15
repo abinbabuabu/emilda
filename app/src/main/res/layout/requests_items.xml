@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto" android:layout_width="match_parent"
+        android:layout_margin="8dp"
+        app:cardCornerRadius="16dp"
+        android:layout_height="wrap_content">
+    <RelativeLayout
+            android:layout_width="match_parent"
+            android:padding="18dp"
+            android:layout_height="wrap_content">
+
+        <ImageView android:layout_width="58dp"
+                   android:id="@+id/image_req"
+                   android:layout_centerVertical="true"
+                   android:layout_margin="18dp"
+                   android:layout_height="58dp"/>
+
+        <TextView android:layout_width="match_parent"
+                  android:layout_toRightOf="@+id/image_req"
+                  android:id="@+id/title_requests"
+                  android:text="Web development"
+                  android:layout_height="wrap_content"/>
+        <TextView
+                android:layout_width="wrap_content"
+                android:id="@+id/static_text1"
+                android:layout_marginTop="4dp"
+                style="@style/italicText"
+                android:gravity="center"
+                android:layout_toRightOf="@+id/image_req"
+                android:layout_below="@+id/title_requests"
+                android:text="@string/requests_made_at"
+                android:layout_height="wrap_content"/>
+        <TextView
+                android:layout_width="wrap_content"
+                android:id="@+id/time_req"
+                android:layout_marginStart="4dp"
+                android:layout_marginEnd="4dp"
+                android:layout_alignBaseline="@+id/static_text1"
+                android:layout_toRightOf="@+id/static_text1"
+                android:layout_below="@+id/title_requests"
+                android:text="3:27 AM"
+                android:layout_height="wrap_content"/>
+        <TextView
+                android:layout_width="wrap_content"
+                android:id="@+id/static_text2"
+                style="@style/italicText"
+                android:gravity="center"
+                android:layout_marginTop="4dp"
+                android:layout_toRightOf="@+id/time_req"
+                android:layout_below="@+id/title_requests"
+                android:text="@string/on"
+                android:layout_height="wrap_content"/>
+        <TextView
+                android:layout_width="wrap_content"
+                android:layout_marginEnd="4dp"
+                android:layout_alignBaseline="@+id/static_text2"
+                android:layout_marginStart="4dp"
+                android:layout_toRightOf="@+id/static_text2"
+                android:layout_below="@+id/title_requests"
+                android:text="20/12/1998"
+                android:layout_height="wrap_content"/>
+        <TextView
+                android:layout_width="wrap_content"
+                style="@style/requests_small_text"
+
+                android:layout_toRightOf="@+id/image_req"
+                android:layout_below="@+id/static_text1"
+                android:text="@string/lorem_ipsum"
+                android:layout_height="wrap_content"
+        />
+
+    </RelativeLayout>
+</com.google.android.material.card.MaterialCardView>

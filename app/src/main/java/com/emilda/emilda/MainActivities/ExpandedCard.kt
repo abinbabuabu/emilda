@@ -1,11 +1,15 @@
 package com.emilda.emilda.MainActivities
 
 import ResolvePosition
+import android.content.DialogInterface
 import android.os.Build
 import android.os.Bundle
+import android.text.TextUtils
 import android.transition.Slide
 import android.util.Log
+import android.view.LayoutInflater
 import android.view.MenuItem
+import android.view.ViewGroup
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
 import androidx.lifecycle.Observer
@@ -14,6 +18,10 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.emilda.emilda.Adapters.PortfolioAdapter
 import com.emilda.emilda.R
 import com.emilda.emilda.Viewmodels.ExpandedCardViewModel
+import com.google.android.material.dialog.MaterialAlertDialogBuilder
+import com.google.android.material.dialog.MaterialDialogs
+import kotlinx.android.synthetic.main.activity_expanded_card.*
+import kotlinx.android.synthetic.main.description_text_field.*
 import kotlinx.android.synthetic.main.extended_card_template.*
 
 class ExpandedCard : AppCompatActivity() {
@@ -38,6 +46,28 @@ class ExpandedCard : AppCompatActivity() {
         portfolio_rv.layoutManager = LinearLayoutManager(this,LinearLayoutManager.HORIZONTAL,true)
         adapter = PortfolioAdapter(options)
         portfolio_rv.adapter = adapter
+
+
+        start_project.setOnClickListener {
+            val dialog = MaterialAlertDialogBuilder(this)
+            dialog.setTitle("What is your mind ?")
+            dialog.setCancelable(false)
+            val view= LayoutInflater.from(this).inflate(R.layout.description_text_field,null)
+            dialog.setView(view)
+            dialog.setPositiveButton("Submit") { dialogInterface, p1 ->
+                val desc  = project_desc?.text
+                if(TextUtils.isEmpty(desc)){
+                    project_desc.error = "Please fill this !"
+                }
+
+            }
+            dialog.setNegativeButton("Cancel"){dialogInterface, p1 ->
+               dialog.setCancelable(true)
+            }
+
+            dialog.show()
+
+        }
 
 
     }

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:app="http://schemas.android.com/apk/res-auto"
+            xmlns:tools="http://schemas.android.com/tools" android:id="@+id/portfolio_nav"
+            app:startDestination="@id/allPorfolio">
+
+    <fragment android:id="@+id/allPorfolio" android:name="com.emilda.emilda.Fragments.AllPorfolio"
+              android:label="fragment_all_porfolio" tools:layout="@layout/fragment_all_porfolio"/>
+    <fragment android:id="@+id/designFragment" android:name="com.emilda.emilda.Fragments.DesignFragment"
+              android:label="fragment_design" tools:layout="@layout/fragment_design"/>
+    <fragment android:id="@+id/devFragment" android:name="com.emilda.emilda.Fragments.DevFragment"
+              android:label="fragment_dev" tools:layout="@layout/fragment_dev"/>
+</navigation>

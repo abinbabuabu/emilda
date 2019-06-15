@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:app="http://schemas.android.com/apk/res-auto"
+            xmlns:tools="http://schemas.android.com/tools" android:id="@+id/invoice_requests"
+            app:startDestination="@id/invoiceRequests">
+
+    <fragment android:id="@+id/invoiceRequests" android:name="com.emilda.emilda.Fragments.InvoiceRequests"
+              android:label="fragment_invoice_requests" tools:layout="@layout/fragment_invoice_requests"/>
+</navigation>
