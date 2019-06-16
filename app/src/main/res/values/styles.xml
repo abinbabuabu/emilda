@@ -1,4 +1,4 @@
-<resources>
+<resources xmlns:tools="http://schemas.android.com/tools">
 
     <!-- Base application theme. -->
     <style name="AppTheme" parent="Theme.MaterialComponents.Light.NoActionBar">
@@ -81,12 +81,25 @@
 
     <!--Login Screen-->
 
-    <style name="login_small_text" parent="small_text.black">
-        <item name="android:textSize">@dimen/smalltext_login</item>
+    <style name="login_yellowtext" parent="on_big_text.yellow">
+        <item name="android:textSize">22sp</item>
+        <item name="android:fontFamily">@font/muli_bold</item>
     </style>
-    <style name="large_text_login" parent="login_small_text">
-        <item name="android:textSize">@dimen/large_text_login</item>
+    <style name="login_blacktext" parent="on_big_text">
+       <item name="android:textSize">23sp</item>
+        <item name="android:fontFamily">@font/muli</item>
+        <item name="android:textStyle">normal</item>
         <item name="android:textAllCaps">true</item>
+    </style>
+    <style name="moto_text" parent="on_big_text">
+        <item name="android:textSize">14sp</item>
+    </style>
+    
+    <style name="otp_text" parent="login_yellowtext">
+        <item name="android:textSize">20dp</item>
+    </style>
+    <style name="otp_text.black">
+        <item name="android:textColor">@color/colorAccent</item>
     </style>
 
     <!--Requests Screen-->
@@ -96,6 +109,18 @@
     </style>
     <style name="requests_small_text" parent="small_text">
         <item name="android:textSize">8sp</item>
+        <item name="android:textColor">@color/textgrey</item>
+    </style>
+    
+    <!--OnBoarding Screen-->
+    <style name="on_big_text" parent="small_text.black">
+        <item name="android:textSize">20sp</item>
+    </style>
+    <style name="on_big_text.yellow">
+        <item name="android:textColor">@color/yellow</item>
+    </style>
+    <style name="on_smalltext" parent="on_big_text">
+        <item name="android:textSize">12sp</item>
         <item name="android:textColor">@color/textgrey</item>
     </style>
 

@@ -51,19 +51,45 @@
     <!--Login Page-->
     <string name="welcome">Welcome to</string>
     <string name="emilda">Emilda</string>
+    <string name="emilda_moto">Unlock Oppurtunites</string>
     <string name="hint">
-        <font size="20">Phone Number</font>
+        <font size="16">Enter Your Mobile Number</font>
     </string>
 
     <!--OTP Screen-->
-    <string name="verifying">Verifying</string>
+    <string name="verifying">Please wait while we verify your mobile number...</string>
     <string name="OTP">OTP</string>
-    <string name="sentto">The OTP has been sent to</string>
-    <string name="enterYour">Enter Your OTP</string>
 
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="requests_made_at">Requests made at</string>
     <string name="on">on</string>
+
+    <!--OnBoarding Screen-->
+    <string name="screen1_text1">A complete</string>
+    <string name="screen1_text2">IT</string>
+    <string name="screen1_text3">solutions</string>
+    <string name="screen1_text4">package in your pocket</string>
+    <string name="screen1_desc">An IT solutions company is one which offers you range of services, from website and
+        mobile application development to graphic designing and digital marketing. Find all the services you need in
+        your pocket today.
+    </string>
+
+    <string name="screen2_text1">Find the</string>
+    <string name="screen2_text2">Service</string>
+    <string name="screen2_text3">you</string>
+    <string name="screen2_text4">require here.</string>
+    <string name="screen2_desc">There is no more a need to spend days looking for a company that can cater to your
+        specific needs. EMILDA comprises of individuals of experienced and creative people. People that can answer your
+        call today.
+    </string>
+
+    <string name="screen3_text1">Got an</string>
+    <string name="screen3_text2">Idea?</string>
+    <string name="screen3_text3">Make it</string>
+    <string name="screen3_text4">real  </string>
+    <string name="screen3_text5">today.</string>
+
+    <string name="screen3_desc">Ideas do not come around very often. Take a leap with us and allow us to bring your
+        ideas to life. Lets turn dreams into reality.
+    </string>
 
 </resources>

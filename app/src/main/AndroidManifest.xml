@@ -10,9 +10,11 @@
             android:roundIcon="@mipmap/ic_launcher_round"
             android:supportsRtl="true"
             android:theme="@style/AppTheme"
-            tools:ignore="GoogleAppIndexingWarning">
-        <activity android:name=".MainActivities.InvoiceRequests">
+            tools:ignore="GoogleAppIndexingWarning ,InnerclassSeparator">
+        <activity android:name=".LoginActivities.OnBoardingActivity">
 
+        </activity>
+        <activity android:name=".MainActivities.InvoiceRequests">
         </activity>
         <activity android:name=".LoginActivities.SplashScreen">
             <intent-filter>
@@ -24,6 +26,7 @@
         <activity android:name=".LoginActivities.OtpScreen">
         </activity>
         <activity android:name=".LoginActivities.PhoneLogin">
+
         </activity>
         <activity android:name=".MainActivities.DesktopSupport">
         </activity>

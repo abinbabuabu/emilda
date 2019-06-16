@@ -33,7 +33,4 @@
     <dimen name="feedback_button_width">172dp</dimen>
     <dimen name="feedback_button_height">48dp</dimen>
 
-    <!--login Page-->
-    <dimen name="large_text_login">50sp</dimen>
-    <dimen name="smalltext_login">14sp</dimen>
 </resources>

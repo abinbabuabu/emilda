@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                xmlns:app="http://schemas.android.com/apk/res-auto"
+                android:layout_width="match_parent"
+                android:orientation="vertical"
+                android:layout_height="400dp">
+    <ImageView android:layout_width="250dp"
+               android:id="@+id/screen1_img"
+               android:layout_centerHorizontal="true"
+               app:srcCompat="@drawable/screen2_img"
+               android:layout_height="200dp"/>
+    <RelativeLayout android:layout_width="wrap_content"
+                    android:id="@+id/screen1_texts"
+                    android:layout_marginTop="32dp"
+                    android:layout_centerInParent="true"
+                    android:layout_below="@+id/screen1_img"
+                    android:layout_height="wrap_content">
+        <TextView android:layout_width="wrap_content"
+                  android:id="@+id/scrn1_text1"
+                  style="@style/on_big_text"
+                  android:text="@string/screen2_text1"
+                  android:layout_height="wrap_content"
+        />
+        <TextView android:layout_width="wrap_content"
+                  android:id="@+id/scrn1_text2"
+                  style="@style/on_big_text.yellow"
+                  android:layout_marginStart="4dp"
+                  android:layout_marginEnd="4dp"
+                  android:layout_toRightOf="@+id/scrn1_text1"
+                  android:text="@string/screen2_text2"
+                  android:layout_height="wrap_content"/>
+        <TextView android:layout_width="wrap_content"
+                  style="@style/on_big_text"
+                  android:layout_toRightOf="@+id/scrn1_text2"
+                  android:text="@string/screen2_text3"
+                  android:layout_height="wrap_content"/>
+        <TextView android:layout_width="wrap_content"
+                  style="@style/on_big_text"
+                  android:layout_centerInParent="true"
+                  android:text="@string/screen2_text4"
+                  android:layout_below="@+id/scrn1_text1"
+                  android:layout_height="wrap_content"
+        />
+    </RelativeLayout>
+
+    <TextView android:layout_width="wrap_content"
+              android:paddingStart="60dp"
+              android:paddingEnd="60dp"
+              android:gravity="center"
+              android:layout_marginTop="12dp"
+              style="@style/on_smalltext"
+              android:layout_below="@id/screen1_texts"
+              android:layout_centerInParent="true"
+              android:text="@string/screen2_desc"
+              android:layout_height="wrap_content"/>
+
+
+</RelativeLayout>

@@ -6,7 +6,6 @@
         android:orientation="vertical">
 
     <RelativeLayout
-            xmlns:app="http://schemas.android.com/apk/res-auto"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="0.9"
@@ -14,55 +13,40 @@
             android:id="@+id/relative_layout"
             android:layout_marginStart="34dp"
             android:layout_marginLeft="34dp">
-        <TextView android:layout_width="match_parent"
+        <TextView android:layout_width="wrap_content"
                   android:layout_alignParentStart="true"
                   android:layout_alignParentTop="true"
                   android:layout_height="wrap_content"
                   android:text="@string/verifying"
-                  android:paddingStart="4dp"
-                  style="@style/login_small_text"
+                  android:gravity="start"
+                  style="@style/otp_text.black"
                   android:id="@+id/verifying_otp"
                   android:layout_alignParentLeft="true"
-                  android:paddingLeft="4dp"/>
+                 />
         <TextView android:layout_width="wrap_content"
                   android:layout_alignParentStart="true"
-                  android:layout_below="@+id/verifying_otp"
                   android:layout_height="wrap_content"
                   android:text="@string/OTP"
                   android:padding="0dp"
-                  style="@style/large_text_login"
+                  android:layout_marginTop="80dp"
+                  style="@style/otp_text.black"
+                  android:layout_below="@+id/phone_number_otp"
                   android:id="@+id/emilda_tvlogin"
                   android:layout_alignParentLeft="true"/>
-        <View
-                android:id="@+id/divider4"
-                android:layout_width="200dp"
-                android:layout_height="2dp"
-                android:layout_below="@+id/emilda_tvlogin"
-                android:background="@color/textgrey"/>
+
         <TextView android:layout_width="wrap_content"
-                  android:id="@+id/sentTo"
-                  android:layout_below="@id/divider4"
-                  android:layout_marginTop="10dp"
-                  android:text="@string/sentto"
-                  android:layout_height="wrap_content"/>
-        <TextView android:layout_width="wrap_content"
-                  style="@style/mediumText"
+                  style="@style/otp_text"
                   android:id="@+id/phone_number_otp"
-                  android:layout_marginTop="4dp"
-                  android:layout_below="@id/sentTo"
+                  android:letterSpacing="0.3"
+                  android:layout_marginTop="20dp"
+                  android:layout_below="@id/verifying_otp"
                   android:text="+919656795221"
                   android:layout_height="wrap_content"/>
 
-        <TextView android:layout_width="wrap_content"
-                  android:layout_marginTop="66dp"
-                  android:layout_below="@id/phone_number_otp"
-                  android:text="@string/enterYour"
-                  android:id="@+id/enterYour_tv"
-                  android:layout_height="wrap_content"/>
         <me.philio.pinentry.PinEntryView
-                android:layout_below="@id/enterYour_tv"
                 android:layout_width="match_parent"
                 android:id="@+id/otp"
+                android:layout_below="@id/emilda_tvlogin"
                 app:pinInputType="number"
                 app:digitWidth="42dp"
                 app:digitHeight="42dp"
@@ -75,23 +59,20 @@
                 android:layout_height="20dp"
                 android:layout_marginTop="24dp"
         />
+        <com.google.android.material.button.MaterialButton
+                android:layout_width="match_parent"
+                android:text="Next"
+                app:backgroundTint="@color/colorAccent"
+                android:layout_marginTop="40dp"
+                android:layout_below="@+id/otp"
+                android:layout_gravity="center"
+                android:textSize="18sp"
+                app:cornerRadius="6dp"
+                android:layout_marginEnd="34dp"
+                android:id="@+id/next_btn_otp"
+                android:layout_height="56dp"
+                android:layout_marginRight="36dp"/>
     </RelativeLayout>
-    <androidx.appcompat.widget.AppCompatImageView
-            android:layout_width="172dp"
-            app:srcCompat="@drawable/ic_otp"
-            android:id="@+id/login_image"
-            android:layout_gravity="center_horizontal"
-            android:layout_marginTop="40dp"
-            android:layout_marginBottom="32dp"
-            android:layout_height="186dp"/>
-    <com.google.android.material.button.MaterialButton
-            android:layout_width="match_parent"
-            android:text="Next"
-            android:layout_gravity="end"
-            android:layout_marginStart="18dp"
-            android:layout_marginEnd="18dp"
-            android:id="@+id/next_btn_otp"
-            android:insetBottom="4dp"
-            android:layout_marginBottom="16dp"
-            android:layout_height="56dp"/>
+
+
 </LinearLayout>

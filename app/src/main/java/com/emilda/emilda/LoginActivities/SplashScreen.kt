@@ -21,7 +21,7 @@ class SplashScreen : AppCompatActivity() {
             .into(splash_gif)
 
         Handler().postDelayed({
-            startActivity(Intent(this, DetailsActivity::class.java))
+            startActivity(Intent(this, OnBoardingActivity::class.java))
             finish()
         }, 3400)
     }
