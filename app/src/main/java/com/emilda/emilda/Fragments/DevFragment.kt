@@ -7,6 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.StaggeredGridLayoutManager
 import com.emilda.emilda.Adapters.PortfolioAdapter
 import com.emilda.emilda.Dataclass.portfolio
 import com.emilda.emilda.R
@@ -28,8 +29,8 @@ class DevFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        dev_rv.layoutManager = LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, false)
-        val portfolioUrl = FirebaseDatabase.getInstance().reference.child("development")
+        dev_rv.layoutManager = LinearLayoutManager(context,LinearLayoutManager.HORIZONTAL,false)
+        val portfolioUrl = FirebaseDatabase.getInstance().reference.child("portfolio").child("development")
         val options = FirebaseRecyclerOptions.Builder<portfolio>().setQuery(portfolioUrl) { snapshot ->
             snapshot.getValue(portfolio::class.java)!!
         }.build()

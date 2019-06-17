@@ -1,5 +1,6 @@
 package com.emilda.emilda.Adapters
 
+import ResolveDetails
 import ResolvePosition
 import android.content.Context
 import android.content.Intent
@@ -12,6 +13,7 @@ import android.widget.TextView
 import androidx.cardview.widget.CardView
 import androidx.core.content.ContextCompat.startActivity
 import androidx.recyclerview.widget.RecyclerView
+import com.bumptech.glide.Glide
 import com.emilda.emilda.MainActivities.DesktopSupport
 import com.emilda.emilda.MainActivities.ExpandedCard
 import com.emilda.emilda.MainActivities.PrintingActivity
@@ -30,61 +32,17 @@ class WorksAdapter(val height: Int) : RecyclerView.Adapter<WorksAdapter.mViewHol
     }
 
     override fun onBindViewHolder(holder: mViewHolder, position: Int) {
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
-            when (position) {
-                0 -> {
-                    holder.cardImage.setImageDrawable(context.getDrawable(R.drawable.ic_web_design))
-                    holder.cardtext.text = ResolvePosition(position)
-                }
-                1 -> {
-                    holder.cardImage.setImageDrawable(context.getDrawable(R.drawable.ic_app))
-                    holder.cardtext.text = ResolvePosition(position)
-                }
-                2 -> {
-                    holder.cardImage.setImageDrawable(context.getDrawable(R.drawable.ic_computer))
-                    holder.cardtext.text = ResolvePosition(position)
-                }
-                3 -> {
-                    holder.cardImage.setImageDrawable(context.getDrawable(R.drawable.ic_printer))
-                    holder.cardtext.text = ResolvePosition(position)
-                }
-                4 -> {
-                    holder.cardImage.setImageDrawable(context.getDrawable(R.drawable.ic_email))
-                    holder.cardtext.text = ResolvePosition(position)
-                }
-                5 -> {
-                    holder.cardImage.setImageDrawable(context.getDrawable(R.drawable.ic_tools))
-                    holder.cardtext.text = ResolvePosition(position)
-                }
+        when(position){
+            0 ->{Glide.with(context).load(R.drawable.ic_web_dev).into(holder.cardImage)
             }
-        } else {
-            when (position) {
-                0 -> {
-                    holder.cardImage.background = context.resources.getDrawable(R.drawable.ic_web_design)
-                    holder.cardtext.text = ResolvePosition(position)
-                }
-                1 -> {
-                    holder.cardImage.background = context.resources.getDrawable(R.drawable.ic_app)
-                    holder.cardtext.text = ResolvePosition(position)
-                }
-                2 -> {
-                    holder.cardImage.background = context.resources.getDrawable(R.drawable.ic_computer)
-                    holder.cardtext.text = ResolvePosition(position)
-                }
-                3 -> {
-                    holder.cardImage.background = context.resources.getDrawable(R.drawable.ic_printer)
-                    holder.cardtext.text = ResolvePosition(position)
-                }
-                4 -> {
-                    holder.cardImage.background = context.resources.getDrawable(R.drawable.ic_email)
-                    holder.cardtext.text = ResolvePosition(position)
-                }
-                5 -> {
-                    holder.cardImage.background = context.resources.getDrawable(R.drawable.ic_tools)
-                    holder.cardtext.text = ResolvePosition(position)
-                }
-            }
+            1 ->{Glide.with(context).load(R.drawable.ic_app_dev).into(holder.cardImage)}
+            2 ->{Glide.with(context).load(R.drawable.ic_graphic_design).into(holder.cardImage)}
+            3 ->{Glide.with(context).load(R.drawable.ic_printing_service).into(holder.cardImage)}
+            4 ->{Glide.with(context).load(R.drawable.ic_digital_marketing).into(holder.cardImage)}
+            else ->{Glide.with(context).load(R.drawable.ic_desktop_support).into(holder.cardImage)}
         }
+        holder.jobtitle.text = ResolvePosition(position)
+        holder.jobdetails.text = ResolveDetails(position)
 
         holder.mOnBind(position)
         val height = height
@@ -95,8 +53,8 @@ class WorksAdapter(val height: Int) : RecyclerView.Adapter<WorksAdapter.mViewHol
     inner class mViewHolder(v: View) : RecyclerView.ViewHolder(v) {
         val card: CardView = v.findViewById(R.id.services_card)
         val cardImage: ImageView = v.findViewById(R.id.card_image)
-        val cardtext: TextView = v.findViewById(R.id.card_text)
-
+        val jobtitle: TextView = v.findViewById(R.id.job_title)
+        val jobdetails:TextView = v.findViewById(R.id.job_details)
 
         fun mOnBind(position: Int) {
             when(position){

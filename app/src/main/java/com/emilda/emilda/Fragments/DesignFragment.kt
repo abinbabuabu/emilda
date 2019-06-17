@@ -28,7 +28,7 @@ lateinit var adapter:PortfolioAdapter
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         design_rv.layoutManager = LinearLayoutManager(context,LinearLayoutManager.HORIZONTAL,false)
-        val portfolioUrl = FirebaseDatabase.getInstance().reference.child("design")
+        val portfolioUrl = FirebaseDatabase.getInstance().reference.child("portfolio").child("design")
         val options = FirebaseRecyclerOptions.Builder<portfolio>().setQuery(portfolioUrl) {
                 snapshot -> snapshot.getValue(portfolio::class.java)!!
         }.build()

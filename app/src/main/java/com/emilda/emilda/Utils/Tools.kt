@@ -8,16 +8,16 @@ import com.google.android.material.shape.MaterialShapeDrawable
 fun ResolvePosition(position:Int):String{
     return when(position){
         0 ->{
-            "Web Development"
+            "Website Development"
         }
         1 ->{
-            "App Development"
+            "Mobile App Development"
         }
         2 ->{
             "Graphic Design"
         }
         3 ->{
-            "Printing"
+            "Printing Service"
         }
         4 ->{
             "Digital Marketing"
@@ -55,6 +55,31 @@ fun ResolveUrl(position:Int):String{
         }
     }
 }
+fun ResolveDetails(position:Int):String{
+    return when(position){
+        0 ->{
+            "Services Available (11)"
+        }
+        1 ->{
+            "Services Available (12)"
+        }
+        2 ->{
+            "Services Available (21)"
+        }
+        3 ->{
+            "Services Available (6)"
+        }
+        4 ->{
+            "Services Available (6)"
+        }
+        else ->{
+            "Services Available (9)"
+        }
+
+    }
+}
+
+
 
 
 

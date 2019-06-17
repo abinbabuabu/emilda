@@ -30,7 +30,7 @@ class AllPorfolio : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         all_rv.layoutManager = LinearLayoutManager(context,LinearLayoutManager.HORIZONTAL,false)
-        val portfolioUrl = FirebaseDatabase.getInstance().reference.child("all")
+        val portfolioUrl = FirebaseDatabase.getInstance().reference.child("portfolio").child("all")
         val options = FirebaseRecyclerOptions.Builder<portfolio>().setQuery(portfolioUrl) {
                 snapshot -> snapshot.getValue(portfolio::class.java)!!
         }.build()

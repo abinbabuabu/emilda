@@ -21,41 +21,27 @@ import androidx.recyclerview.widget.RecyclerView
 import com.emilda.emilda.R
 import com.emilda.emilda.Adapters.WorksAdapter
 import com.google.android.material.navigation.NavigationView
+import kotlinx.android.synthetic.main.activity_details.*
 import kotlinx.android.synthetic.main.app_bar_details.*
 import kotlinx.android.synthetic.main.content_details.*
 import setUpBottomAppBarShapeAppearance
 import java.net.URLEncoder
 
 
-class DetailsActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelectedListener {
-
-
+class DetailsActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_details)
-        val toolbar: Toolbar = findViewById(R.id.toolbar)
-        setSupportActionBar(toolbar)
         exitEnterAnim()
-        //val drawerLayout: DrawerLayout = findViewById(R.id.drawer_layout)
-        val navView: NavigationView = findViewById(R.id.nav_view)
-//        val toggle = ActionBarDrawerToggle(
-//            this, drawerLayout, toolbar,
-//            R.string.navigation_drawer_open,
-//            R.string.navigation_drawer_close
-//        )
-//        drawerLayout.addDrawerListener(toggle)
-//        toggle.isDrawerIndicatorEnabled = false
-//        toggle.setHomeAsUpIndicator(R.drawable.ic_home_up)
-//        toggle.isDrawerIndicatorEnabled = true
-//        toggle.syncState()
 
-        navView.setNavigationItemSelectedListener(this)
         val point = Point()
         val size = windowManager.defaultDisplay.getSize(point)
         card_recycle_view.overScrollMode = View.OVER_SCROLL_NEVER
         card_recycle_view.layoutManager = GridLayoutManager(this, 2) as RecyclerView.LayoutManager?
         card_recycle_view.adapter = WorksAdapter(point.y)
+
+        black_bg.layoutParams.height = point.y/3
 
         setUpBottomAppBarShapeAppearance(fab_details, bottom_bar)
         bottom_msg.setOnClickListener {
@@ -66,58 +52,6 @@ class DetailsActivity : AppCompatActivity(), NavigationView.OnNavigationItemSele
 
     }
 
-    override fun onBackPressed() {
-        val drawerLayout: DrawerLayout = findViewById(R.id.drawer_layout)
-        if (drawerLayout.isDrawerOpen(GravityCompat.START)) {
-            drawerLayout.closeDrawer(GravityCompat.START)
-        } else {
-            super.onBackPressed()
-        }
-    }
-
-
-
-    override fun onCreateOptionsMenu(menu: Menu): Boolean {
-        // Inflate the menu; this adds items to the action bar if it is present.
-        menuInflater.inflate(R.menu.details, menu)
-        return true
-    }
-
-    override fun onOptionsItemSelected(item: MenuItem): Boolean {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
-        return when (item.itemId) {
-            android.R.id.home ->{
-                val drawerLayout: DrawerLayout = findViewById(R.id.drawer_layout)
-                drawerLayout.openDrawer(GravityCompat.START)
-                return true
-            }
-            R.id.action_feedback -> {
-                val intent = Intent(this, FeedbackActivity::class.java)
-                startActivity(intent)
-                return true
-            }
-            R.id.action_support -> {
-                val intent = Intent(this, SupportActivity::class.java)
-                startActivity(intent)
-                return true
-            }
-            else -> {
-                super.onOptionsItemSelected(item)
-            }
-        }
-    }
-
-    override fun onNavigationItemSelected(item: MenuItem): Boolean {
-        // Handle navigation view item clicks here.
-        when (item.itemId) {
-
-        }
-        val drawerLayout: DrawerLayout = findViewById(R.id.drawer_layout)
-        drawerLayout.closeDrawer(GravityCompat.START)
-        return true
-    }
 
     fun whatsApp() {
         val packageManager = this.packageManager
@@ -140,8 +74,7 @@ class DetailsActivity : AppCompatActivity(), NavigationView.OnNavigationItemSele
     }
 
 
-
-    fun exitEnterAnim(){
+    fun exitEnterAnim() {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
             val explode = Explode()
             explode.duration = 3000
@@ -151,11 +84,11 @@ class DetailsActivity : AppCompatActivity(), NavigationView.OnNavigationItemSele
     }
 
 
-    fun setPortfolioFragment(){
-        val navController = Navigation.findNavController(this,R.id.portfolio_nav_frag)
+    fun setPortfolioFragment() {
+        val navController = Navigation.findNavController(this, R.id.portfolio_nav_frag)
         all_button.setOnClickListener {
             navController.popBackStack()
-          navController.navigate(R.id.allPorfolio)
+            navController.navigate(R.id.allPorfolio)
 
 
         }

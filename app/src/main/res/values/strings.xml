@@ -21,7 +21,9 @@
 
 
     <!--Details Activity-->
-    <string name="services">Services</string>
+    <string name="hi">Hi</string>
+    <string name="welcome_msg">What can we do for you today? </string>
+    <string name="welcome_msg2"></string>
     <string name="portfolio">Portfolio</string>
     <string name="all_button">All</string>
     <string name="design_butn">Design</string>
