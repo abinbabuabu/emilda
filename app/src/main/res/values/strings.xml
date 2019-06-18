@@ -22,8 +22,8 @@
 
     <!--Details Activity-->
     <string name="hi">Hi</string>
-    <string name="welcome_msg">What can we do for you today? </string>
-    <string name="welcome_msg2"></string>
+    <string name="welcome_msg">What can we do for you today?</string>
+    <string name="welcome_msg2"/>
     <string name="portfolio">Portfolio</string>
     <string name="all_button">All</string>
     <string name="design_butn">Design</string>
@@ -87,11 +87,14 @@
     <string name="screen3_text1">Got an</string>
     <string name="screen3_text2">Idea?</string>
     <string name="screen3_text3">Make it</string>
-    <string name="screen3_text4">real  </string>
+    <string name="screen3_text4">real</string>
     <string name="screen3_text5">today.</string>
 
     <string name="screen3_desc">Ideas do not come around very often. Take a leap with us and allow us to bring your
         ideas to life. Lets turn dreams into reality.
     </string>
+
+    <!--Profile Activity-->
+    <string name="profile">Profile</string>
 
 </resources>

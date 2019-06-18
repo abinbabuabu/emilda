@@ -1,0 +1,316 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:app="http://schemas.android.com/apk/res-auto" android:layout_width="match_parent"
+            android:background="@color/yellow"
+            android:layout_height="match_parent">
+
+    <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+        <View android:layout_width="match_parent"
+              android:layout_gravity="top"
+              android:id="@+id/yellow_bg"
+              android:background="@color/white"
+              android:layout_height="500dp"/>
+        <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+            <TextView android:layout_width="wrap_content"
+                      android:text="@string/profile"
+                      style="@style/profile_main"
+                      android:layout_marginStart="35dp"
+                      android:layout_marginTop="22dp"
+                      android:id="@+id/profile_tv"
+                      android:layout_height="wrap_content"
+                      android:layout_marginLeft="35dp"/>
+            <ImageView android:layout_width="114dp"
+                       android:layout_below="@+id/profile_tv"
+                       android:id="@+id/profile_svg"
+                       android:layout_marginStart="35dp"
+                       android:layout_marginTop="18dp"
+                       android:layout_height="82dp"
+                       app:srcCompat="@drawable/ic_profile"
+                       android:layout_marginLeft="35dp"/>
+            <TextView android:layout_width="wrap_content"
+                      style="@style/profile_main"
+                      android:layout_toRightOf="@+id/profile_svg"
+                      android:textSize="17dp"
+                      android:id="@+id/profile_name"
+                      android:layout_marginTop="18dp"
+                      android:layout_marginStart="32dp"
+                      android:text="Abin Babu"
+                      android:layout_below="@+id/profile_tv"
+                      android:layout_height="wrap_content"
+                      android:layout_marginLeft="32dp"/>
+            <TextView android:layout_width="wrap_content"
+                      android:layout_below="@id/profile_name"
+                      android:text="abinbabuabk@gmail.com"
+                      style="@style/profile_small"
+                      android:id="@+id/profile_email"
+                      android:layout_toRightOf="@+id/profile_svg"
+                      android:layout_marginStart="32dp"
+                      android:layout_height="wrap_content"
+                      android:layout_marginLeft="32dp"/>
+            <TextView android:layout_width="wrap_content"
+                      android:layout_below="@id/profile_email"
+                      android:text="+919656795221"
+                      style="@style/profile_small"
+                      android:id="@+id/profile_phone"
+                      android:layout_toRightOf="@+id/profile_svg"
+                      android:layout_marginStart="32dp"
+                      android:layout_height="wrap_content"
+                      android:layout_marginLeft="32dp"/>
+            <LinearLayout android:layout_width="match_parent"
+                          android:layout_marginTop="40dp"
+                          android:gravity="center"
+                          android:id="@+id/small_cards"
+                          android:layout_marginBottom="32dp"
+                          android:layout_below="@+id/profile_svg"
+                          android:layout_height="wrap_content">
+                <com.google.android.material.card.MaterialCardView
+                        android:layout_width="68dp"
+                        android:layout_margin="8dp"
+                        app:cardElevation="8dp"
+                        app:cardCornerRadius="8dp"
+                        android:layout_height="68dp">
+                    <LinearLayout android:layout_width="match_parent"
+                                  android:orientation="vertical"
+                                  android:gravity="center"
+                                  android:layout_height="match_parent">
+                        <TextView android:layout_width="wrap_content"
+                                  android:text="0"
+                                  android:layout_gravity="center"
+                                  android:gravity="center"
+                                  android:textSize="20sp"
+                                  android:layout_height="wrap_content"/>
+                        <View
+                                android:id="@+id/divider4"
+                                android:layout_width="40dp"
+                                android:layout_height="2dp"
+                                android:background="@color/grey_div"
+                        />
+
+                        <TextView android:layout_width="wrap_content"
+                                  android:text="Credit Balance"
+                                  android:layout_gravity="center_horizontal|bottom"
+                                  style="@style/profile_card_small"
+                                  android:layout_height="wrap_content"/>
+                    </LinearLayout>
+
+                </com.google.android.material.card.MaterialCardView>
+
+                <com.google.android.material.card.MaterialCardView
+                        android:layout_width="68dp"
+                        app:cardCornerRadius="8dp"
+                        android:layout_marginTop="8dp"
+                        android:layout_marginBottom="8dp"
+                        app:cardElevation="8dp"
+                        android:layout_marginStart="52dp"
+                        android:layout_marginEnd="52dp"
+                        android:layout_height="68dp">
+                    <LinearLayout android:layout_width="match_parent"
+                                  android:orientation="vertical"
+                                  android:gravity="center"
+                                  android:layout_height="match_parent">
+                        <TextView android:layout_width="wrap_content"
+                                  android:text="0"
+                                  android:layout_gravity="center"
+                                  android:gravity="center"
+                                  android:textSize="20sp"
+                                  android:layout_height="wrap_content"/>
+                        <View
+                                android:id="@+id/divider5"
+                                android:layout_width="40dp"
+                                android:layout_height="2dp"
+                                android:background="@color/grey_div"
+                        />
+                        <TextView android:layout_width="wrap_content"
+                                  android:text="Credit Balance"
+                                  android:layout_gravity="center_horizontal|bottom"
+                                  style="@style/profile_card_small"
+                                  android:layout_height="wrap_content"/>
+                    </LinearLayout>
+
+                </com.google.android.material.card.MaterialCardView>
+
+                <com.google.android.material.card.MaterialCardView
+                        android:layout_width="68dp"
+                        app:cardCornerRadius="8dp"
+                        android:layout_margin="8dp"
+                        app:cardElevation="8dp"
+                        android:layout_height="68dp">
+                    <LinearLayout android:layout_width="match_parent"
+                                  android:orientation="vertical"
+                                  android:gravity="center"
+                                  android:layout_height="match_parent">
+                        <TextView android:layout_width="wrap_content"
+                                  android:text="0"
+                                  android:layout_gravity="center"
+                                  android:gravity="center"
+                                  android:textSize="20sp"
+                                  android:layout_height="wrap_content"/>
+                        <View
+                                android:id="@+id/divider6"
+                                android:layout_width="40dp"
+                                android:layout_height="2dp"
+                                android:background="@color/grey_div"
+                        />
+                        <TextView android:layout_width="wrap_content"
+                                  android:text="Credit Balance"
+                                  android:layout_gravity="center_horizontal|bottom"
+                                  style="@style/profile_card_small"
+                                  android:layout_height="wrap_content"/>
+                    </LinearLayout>
+
+                </com.google.android.material.card.MaterialCardView>
+            </LinearLayout>
+
+            <com.google.android.material.card.MaterialCardView
+                    android:layout_width="300dp"
+                    app:cardCornerRadius="12dp"
+                    android:id="@+id/function_cards"
+                    android:layout_marginTop="24dp"
+                    android:layout_centerInParent="true"
+                    android:layout_below="@id/small_cards"
+                    android:layout_height="wrap_content">
+                <TableLayout android:layout_width="match_parent"
+                             android:divider="@drawable/divider"
+                             android:showDividers="middle"
+                             android:clickable="true"
+                             android:stretchColumns="0dp"
+                             android:layout_height="match_parent"
+                             android:focusable="true">
+                    <TableRow
+                            android:clickable="true"
+                            android:focusable="true"
+                            android:background="?selectableItemBackground"
+                            android:layout_height="40dp">
+                        <ImageView android:layout_height="12dp"
+                                   android:layout_marginStart="12dp"
+                                   android:layout_gravity="center"
+                                   app:srcCompat="@drawable/ic_support"
+                                   android:layout_width="14dp"
+                                   android:layout_marginLeft="12dp"/>
+
+                        <TextView android:layout_width="match_parent"
+                                  android:text="Support"
+                                  android:paddingStart="4dp"
+                                  android:textSize="14sp"
+                                  android:gravity="center_vertical|start"
+                                  android:height="40dp"
+                                  android:paddingLeft="4dp"/>
+                    </TableRow>
+                    <TableRow
+                            android:clickable="true"
+                            android:focusable="true"
+                            android:background="?selectableItemBackground"
+                            android:layout_height="40dp">
+                        <ImageView android:layout_height="12dp"
+                                   android:layout_marginStart="12dp"
+                                   android:layout_gravity="center"
+                                   app:srcCompat="@drawable/ic_feedback_profile"
+                                   android:layout_width="14dp"
+                                   android:layout_marginLeft="12dp"/>
+
+                        <TextView android:layout_width="match_parent"
+                                  android:text="Feedback"
+                                  android:paddingStart="4dp"
+                                  android:textSize="14sp"
+                                  android:gravity="center_vertical|start"
+                                  android:height="40dp"
+                                  android:paddingLeft="4dp"/>
+                    </TableRow>
+                    <TableRow
+                            android:clickable="true"
+                            android:focusable="true"
+                            android:background="?selectableItemBackground"
+                            android:layout_height="40dp">
+                        <ImageView android:layout_height="12dp"
+                                   android:layout_marginStart="12dp"
+                                   android:layout_gravity="center"
+                                   app:srcCompat="@drawable/ic_web"
+                                   android:layout_width="14dp"
+                                   android:layout_marginLeft="12dp"/>
+
+                        <TextView android:layout_width="match_parent"
+                                  android:text="Website"
+                                  android:paddingStart="4dp"
+                                  android:textSize="14sp"
+                                  android:gravity="center_vertical|start"
+                                  android:height="40dp"
+                                  android:paddingLeft="4dp"/>
+                    </TableRow>
+                    <TableRow
+                            android:clickable="true"
+                            android:focusable="true"
+                            android:background="?selectableItemBackground"
+                            android:layout_height="40dp">
+                        <ImageView android:layout_height="12dp"
+                                   android:layout_marginStart="12dp"
+                                   android:layout_gravity="center"
+                                   app:srcCompat="@drawable/ic_share"
+                                   android:layout_width="14dp"
+                                   android:layout_marginLeft="12dp"/>
+
+                        <TextView android:layout_width="match_parent"
+                                  android:text="Invite Friends"
+                                  android:textSize="14sp"
+                                  android:paddingStart="4dp"
+                                  android:gravity="center_vertical|start"
+                                  android:height="40dp"
+                                  android:paddingLeft="4dp"/>
+                    </TableRow>
+                    <TableRow
+                            android:clickable="true"
+                            android:focusable="true"
+                            android:background="?selectableItemBackground"
+                            android:layout_height="40dp">
+                        <ImageView android:layout_height="12dp"
+                                   android:layout_marginStart="12dp"
+                                   android:layout_gravity="center"
+                                   app:srcCompat="@drawable/ic_logout"
+                                   android:layout_width="14dp"
+                                   android:layout_marginLeft="12dp"/>
+                        <TextView android:layout_width="match_parent"
+                                  android:text="@string/Nav_logout"
+                                  android:textSize="14sp"
+                                  android:paddingStart="4dp"
+                                  android:gravity="center_vertical|start"
+                                  android:height="40dp"
+                                  android:paddingLeft="4dp"/>
+                    </TableRow>
+                </TableLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <LinearLayout android:orientation="horizontal"
+                          android:layout_below="@id/function_cards"
+                          android:layout_centerInParent="true"
+                          android:layout_marginTop="22dp"
+                          android:layout_width="wrap_content"
+                          android:layout_height="wrap_content">
+                <ImageView android:layout_width="34dp"
+                           android:layout_marginStart="12dp"
+                           app:srcCompat="@drawable/ic_facebook_logo_button"
+                           android:layout_marginEnd="12dp"
+                           android:layout_height="34dp"/>
+                <ImageView android:layout_width="34dp"
+                           android:layout_marginStart="12dp"
+                           app:srcCompat="@drawable/ic_instagram"
+                           android:layout_marginEnd="12dp"
+                           android:layout_height="34dp"/>
+                <ImageView android:layout_width="34dp"
+                           android:layout_marginStart="12dp"
+                           app:srcCompat="@drawable/ic_twitter_logo_button"
+                           android:layout_marginEnd="12dp"
+                           android:layout_height="34dp"/>
+                <ImageView android:layout_width="34dp"
+                           android:layout_marginStart="12dp"
+                           app:srcCompat="@drawable/ic_linkedin_logo_button"
+                           android:layout_marginEnd="12dp"
+                           android:layout_height="34dp"/>
+
+            </LinearLayout>
+
+        </RelativeLayout>
+    </FrameLayout>
+</ScrollView>

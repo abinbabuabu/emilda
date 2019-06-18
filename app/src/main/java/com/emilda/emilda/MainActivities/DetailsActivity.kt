@@ -38,7 +38,7 @@ class DetailsActivity : AppCompatActivity() {
         val point = Point()
         val size = windowManager.defaultDisplay.getSize(point)
         card_recycle_view.overScrollMode = View.OVER_SCROLL_NEVER
-        card_recycle_view.layoutManager = GridLayoutManager(this, 2) as RecyclerView.LayoutManager?
+        card_recycle_view.layoutManager = GridLayoutManager(this, 2)
         card_recycle_view.adapter = WorksAdapter(point.y)
 
         black_bg.layoutParams.height = point.y/3
