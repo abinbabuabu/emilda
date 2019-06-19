@@ -12,19 +12,13 @@
             android:theme="@style/AppTheme"
             tools:ignore="GoogleAppIndexingWarning ,InnerclassSeparator">
         <activity android:name=".MainActivities.ProfileActivity">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN"/>
-
-                <category android:name="android.intent.category.LAUNCHER"/>
-            </intent-filter>
         </activity>
         <activity android:name=".LoginActivities.OnBoardingActivity">
-        </activity>
-        <activity android:name=".MainActivities.InvoiceRequests">
         </activity>
         <activity
                 android:name=".LoginActivities.SplashScreen"
                 android:screenOrientation="portrait">
+
         </activity>
         <activity
                 android:name=".LoginActivities.OtpScreen"
@@ -48,6 +42,12 @@
                 android:name=".MainActivities.DetailsActivity"
                 android:launchMode="singleTop"
                 android:theme="@style/AppTheme.NoActionBar">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+
         </activity>
         <activity android:name=".MainActivity">
         </activity>

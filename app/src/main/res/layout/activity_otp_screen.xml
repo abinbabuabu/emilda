@@ -5,6 +5,7 @@
                app:srcCompat="@drawable/ic_sketch"
                android:scaleType="fitXY"
                android:scaleX="-1"
+               android:layout_marginBottom="12dp"
                android:layout_height="wrap_content" android:cropToPadding="false"/>
 <RelativeLayout
         android:layout_width="match_parent"
