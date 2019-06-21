@@ -2,7 +2,7 @@ package com.emilda.emilda.Dataclass
 
 import androidx.recyclerview.widget.DiffUtil
 
-data class portfolio(var imgurl: String, var title: String , var url: String) {
+data class portfolio(var imgurl: String, var title: String, var url: String) {
     constructor() : this("", "", "")
 
     companion object {

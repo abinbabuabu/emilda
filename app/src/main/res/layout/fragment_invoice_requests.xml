@@ -5,10 +5,10 @@
              android:layout_height="match_parent"
              tools:context=".Fragments.InvoiceRequests">
 
-   <androidx.recyclerview.widget.RecyclerView android:layout_width="match_parent"
-                                              tools:listitem="@layout/requests_items"
-                                              android:background="@color/colorAccent"
-                                              android:layout_height="match_parent">
-   </androidx.recyclerview.widget.RecyclerView>
+    <androidx.recyclerview.widget.RecyclerView android:layout_width="match_parent"
+                                               tools:listitem="@layout/requests_items"
+                                               android:background="@color/colorAccent"
+                                               android:layout_height="match_parent">
+    </androidx.recyclerview.widget.RecyclerView>
 
 </FrameLayout>

@@ -1,7 +1,6 @@
 package com.emilda.emilda.MainActivities
 
 import ResolvePosition
-import android.content.DialogInterface
 import android.os.Build
 import android.os.Bundle
 import android.text.TextUtils
@@ -9,17 +8,14 @@ import android.transition.Slide
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.MenuItem
-import android.view.ViewGroup
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
-import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.emilda.emilda.Adapters.PortfolioAdapter
 import com.emilda.emilda.R
 import com.emilda.emilda.Viewmodels.ExpandedCardViewModel
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
-import com.google.android.material.dialog.MaterialDialogs
 import kotlinx.android.synthetic.main.activity_expanded_card.*
 import kotlinx.android.synthetic.main.description_text_field.*
 import kotlinx.android.synthetic.main.extended_card_template.*
@@ -42,8 +38,8 @@ class ExpandedCard : AppCompatActivity() {
 
 
         mViewModel = ViewModelProviders.of(this).get(ExpandedCardViewModel::class.java)
-        val options =mViewModel.getPortfolio(CardPosition)
-        portfolio_rv.layoutManager = LinearLayoutManager(this,LinearLayoutManager.HORIZONTAL,true)
+        val options = mViewModel.getPortfolio(CardPosition)
+        portfolio_rv.layoutManager = LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, true)
         adapter = PortfolioAdapter(options)
         portfolio_rv.adapter = adapter
 
@@ -52,17 +48,17 @@ class ExpandedCard : AppCompatActivity() {
             val dialog = MaterialAlertDialogBuilder(this)
             dialog.setTitle("What is your mind ?")
             dialog.setCancelable(false)
-            val view= LayoutInflater.from(this).inflate(R.layout.description_text_field,null)
+            val view = LayoutInflater.from(this).inflate(R.layout.description_text_field, null)
             dialog.setView(view)
             dialog.setPositiveButton("Submit") { dialogInterface, p1 ->
-                val desc  = project_desc?.text
-                if(TextUtils.isEmpty(desc)){
+                val desc = project_desc?.text
+                if (TextUtils.isEmpty(desc)) {
                     project_desc.error = "Please fill this !"
                 }
 
             }
-            dialog.setNegativeButton("Cancel"){dialogInterface, p1 ->
-               dialog.setCancelable(true)
+            dialog.setNegativeButton("Cancel") { dialogInterface, p1 ->
+                dialog.setCancelable(true)
             }
 
             dialog.show()
@@ -95,13 +91,13 @@ class ExpandedCard : AppCompatActivity() {
         super.onStop()
     }
 
-    fun exitEnterAnim(){
+    fun exitEnterAnim() {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
             val explode = Slide()
             explode.duration = 60000
-            window.allowEnterTransitionOverlap =true
+            window.allowEnterTransitionOverlap = true
             window.exitTransition = explode
-            Log.d("xyz","Animation Called")
+            Log.d("xyz", "Animation Called")
 
         }
     }

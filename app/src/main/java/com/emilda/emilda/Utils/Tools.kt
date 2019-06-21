@@ -5,74 +5,76 @@ import com.google.android.material.floatingactionbutton.FloatingActionButton
 import com.google.android.material.shape.CutCornerTreatment
 import com.google.android.material.shape.MaterialShapeDrawable
 
-fun ResolvePosition(position:Int):String{
-    return when(position){
-        0 ->{
+fun ResolvePosition(position: Int): String {
+    return when (position) {
+        0 -> {
             "Website Development"
         }
-        1 ->{
+        1 -> {
             "Mobile App Development"
         }
-        2 ->{
+        2 -> {
             "Graphic Design"
         }
-        3 ->{
+        3 -> {
             "Printing Service"
         }
-        4 ->{
+        4 -> {
             "Digital Marketing"
         }
-        5 ->{
+        5 -> {
             "Desktop Support"
         }
-        else ->{
+        else -> {
             "Error"
         }
     }
 }
-fun ResolveUrl(position:Int):String{
-    return when(position){
-        0 ->{
+
+fun ResolveUrl(position: Int): String {
+    return when (position) {
+        0 -> {
             "webdevelopment"
         }
-        1 ->{
+        1 -> {
             "appdevelopment"
         }
-        2 ->{
+        2 -> {
             "graphicdesign"
         }
-        3 ->{
+        3 -> {
             "printing"
         }
-        4 ->{
+        4 -> {
             "digitalmarketing"
         }
-        5 ->{
+        5 -> {
             "desktopsupport"
         }
-        else ->{
+        else -> {
             "Error"
         }
     }
 }
-fun ResolveDetails(position:Int):String{
-    return when(position){
-        0 ->{
+
+fun ResolveDetails(position: Int): String {
+    return when (position) {
+        0 -> {
             "Services Available (11)"
         }
-        1 ->{
+        1 -> {
             "Services Available (12)"
         }
-        2 ->{
+        2 -> {
             "Services Available (21)"
         }
-        3 ->{
+        3 -> {
             "Services Available (6)"
         }
-        4 ->{
+        4 -> {
             "Services Available (6)"
         }
-        else ->{
+        else -> {
             "Services Available (9)"
         }
 
@@ -80,15 +82,13 @@ fun ResolveDetails(position:Int):String{
 }
 
 
-
-
-
 fun setUpBottomAppBarShapeAppearance(
     fab: FloatingActionButton,
     bar: BottomAppBar
 ) {
     val fabShapeAppearanceModel = fab.shapeAppearance
-    val cutCornersFab = fabShapeAppearanceModel.bottomLeftCorner is CutCornerTreatment && fabShapeAppearanceModel.bottomRightCorner is CutCornerTreatment
+    val cutCornersFab =
+        fabShapeAppearanceModel.bottomLeftCorner is CutCornerTreatment && fabShapeAppearanceModel.bottomRightCorner is CutCornerTreatment
 
     val topEdge = if (cutCornersFab)
         BottomAppBarCutCornersTopEdge(

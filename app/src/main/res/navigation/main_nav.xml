@@ -5,4 +5,8 @@
 
     <fragment android:id="@+id/fragmentDetails" android:name="com.emilda.emilda.Fragments.FragmentDetails"
               android:label="FragmentDetails"/>
+    <fragment android:id="@+id/fragmentProfile" android:name="com.emilda.emilda.Fragments.FragmentProfile"
+              android:label="FragmentProfile"/>
+    <fragment android:id="@+id/fragmentRecharge" android:name="com.emilda.emilda.Fragments.FragmentRecharge"
+              android:label="FragmentRecharge"/>
 </navigation>

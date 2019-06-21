@@ -169,8 +169,8 @@
                     android:layout_width="300dp"
                     app:cardCornerRadius="12dp"
                     android:id="@+id/function_cards"
-                    android:layout_marginTop="24dp"
-                    android:layout_centerInParent="true"
+                    android:layout_marginTop="8dp"
+                    android:layout_centerHorizontal="true"
                     android:layout_below="@id/small_cards"
                     android:layout_height="wrap_content">
                 <TableLayout android:layout_width="match_parent"
@@ -183,6 +183,7 @@
                     <TableRow
                             android:clickable="true"
                             android:focusable="true"
+                            android:id="@+id/support_row"
                             android:background="?selectableItemBackground"
                             android:layout_height="40dp">
                         <ImageView android:layout_height="12dp"
@@ -203,6 +204,7 @@
                     <TableRow
                             android:clickable="true"
                             android:focusable="true"
+                            android:id="@+id/feedback_row"
                             android:background="?selectableItemBackground"
                             android:layout_height="40dp">
                         <ImageView android:layout_height="12dp"

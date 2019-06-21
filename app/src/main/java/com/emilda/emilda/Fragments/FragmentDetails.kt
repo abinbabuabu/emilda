@@ -3,10 +3,10 @@ package com.emilda.emilda.Fragments
 
 import android.graphics.Point
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.emilda.emilda.Adapters.PortfolioAdapter
@@ -15,9 +15,7 @@ import com.emilda.emilda.Dataclass.portfolio
 import com.emilda.emilda.R
 import com.firebase.ui.database.FirebaseRecyclerOptions
 import com.google.firebase.database.FirebaseDatabase
-import kotlinx.android.synthetic.main.app_bar_details.*
 import kotlinx.android.synthetic.main.content_details.*
-import setUpBottomAppBarShapeAppearance
 
 class FragmentDetails : Fragment() {
 
@@ -29,7 +27,7 @@ class FragmentDetails : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        return inflater.inflate(R.layout.fragment_details,container,false)
+        return inflater.inflate(R.layout.content_details, container, false)
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -42,13 +40,11 @@ class FragmentDetails : Fragment() {
 
         black_bg.layoutParams.height = point.y / 3
 
-        setUpBottomAppBarShapeAppearance(fab_details, bottom_bar)
-
-
         portfolio_recycle.layoutManager = GridLayoutManager(context, 2)
 
         setPortfolioFragment(portfolio_recycle)
     }
+
     fun setPortfolioFragment(recyclerView: RecyclerView) {
         val firebase = FirebaseDatabase.getInstance().reference.child("portfolio")
         val All = firebase.child("all")
@@ -81,7 +77,19 @@ class FragmentDetails : Fragment() {
 
     }
 
+    override fun onStart() {
+        super.onStart()
+        AllAdapter.startListening()
+        DesignAdapter.startListening()
+        DevAdapter.startListening()
+    }
 
+    override fun onStop() {
+        AllAdapter.stopListening()
+        DesignAdapter.stopListening()
+        DevAdapter.stopListening()
+        super.onStop()
+    }
 
 
 }

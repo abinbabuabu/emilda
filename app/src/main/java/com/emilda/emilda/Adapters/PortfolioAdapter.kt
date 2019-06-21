@@ -1,7 +1,6 @@
 package com.emilda.emilda.Adapters
 
 import android.content.Context
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -24,7 +23,8 @@ class PortfolioAdapter(options: FirebaseRecyclerOptions<portfolio>) :
     }
 
     override fun onBindViewHolder(holder: mViewHolder, position: Int, current: portfolio) {
-        Glide.with(context).load(current.imgurl).centerCrop().transition(DrawableTransitionOptions.withCrossFade(2000)).into(holder.Image)
+        Glide.with(context).load(current.imgurl).centerCrop().transition(DrawableTransitionOptions.withCrossFade(2000))
+            .into(holder.Image)
     }
 
 

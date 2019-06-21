@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout android:layout_width="500dp"
-              android:id="@+id/plus_minus_widget"
-              xmlns:app="http://schemas.android.com/apk/res-auto"
-              android:layout_height="40dp" xmlns:android="http://schemas.android.com/apk/res/android">
+<LinearLayout xmlns:app="http://schemas.android.com/apk/res-auto"
+              xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="500dp"
+              android:id="@+id/plus_minus_widget" android:layout_height="40dp">
     <com.google.android.material.button.MaterialButton
             android:layout_width="80dp"
             app:strokeColor="@color/colorAccent"

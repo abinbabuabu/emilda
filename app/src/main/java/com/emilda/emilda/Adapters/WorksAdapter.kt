@@ -4,7 +4,6 @@ import ResolveDetails
 import ResolvePosition
 import android.content.Context
 import android.content.Intent
-import android.os.Build
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -32,14 +31,25 @@ class WorksAdapter(val height: Int) : RecyclerView.Adapter<WorksAdapter.mViewHol
     }
 
     override fun onBindViewHolder(holder: mViewHolder, position: Int) {
-        when(position){
-            0 ->{Glide.with(context).load(R.drawable.ic_web_dev).into(holder.cardImage)
+        when (position) {
+            0 -> {
+                Glide.with(context).load(R.drawable.ic_web_dev).into(holder.cardImage)
             }
-            1 ->{Glide.with(context).load(R.drawable.ic_app_dev).into(holder.cardImage)}
-            2 ->{Glide.with(context).load(R.drawable.ic_graphic_design).into(holder.cardImage)}
-            3 ->{Glide.with(context).load(R.drawable.ic_printing_service).into(holder.cardImage)}
-            4 ->{Glide.with(context).load(R.drawable.ic_digital_marketing).into(holder.cardImage)}
-            else ->{Glide.with(context).load(R.drawable.ic_desktop_support).into(holder.cardImage)}
+            1 -> {
+                Glide.with(context).load(R.drawable.ic_app_dev).into(holder.cardImage)
+            }
+            2 -> {
+                Glide.with(context).load(R.drawable.ic_graphic_design).into(holder.cardImage)
+            }
+            3 -> {
+                Glide.with(context).load(R.drawable.ic_printing_service).into(holder.cardImage)
+            }
+            4 -> {
+                Glide.with(context).load(R.drawable.ic_digital_marketing).into(holder.cardImage)
+            }
+            else -> {
+                Glide.with(context).load(R.drawable.ic_desktop_support).into(holder.cardImage)
+            }
         }
         holder.jobtitle.text = ResolvePosition(position)
         holder.jobdetails.text = ResolveDetails(position)
@@ -54,26 +64,26 @@ class WorksAdapter(val height: Int) : RecyclerView.Adapter<WorksAdapter.mViewHol
         val card: CardView = v.findViewById(R.id.services_card)
         val cardImage: ImageView = v.findViewById(R.id.card_image)
         val jobtitle: TextView = v.findViewById(R.id.job_title)
-        val jobdetails:TextView = v.findViewById(R.id.job_details)
+        val jobdetails: TextView = v.findViewById(R.id.job_details)
 
         fun mOnBind(position: Int) {
-            when(position){
-                3 ->{
+            when (position) {
+                3 -> {
                     card.setOnClickListener {
                         val intent = Intent(context, PrintingActivity::class.java)
                         startActivity(context, intent, null)
                     }
                 }
-                5 ->{
+                5 -> {
                     card.setOnClickListener {
                         val intent = Intent(context, DesktopSupport::class.java)
                         startActivity(context, intent, null)
                     }
                 }
-                else ->{
+                else -> {
                     card.setOnClickListener {
                         val intent = Intent(context, ExpandedCard::class.java)
-                        intent.putExtra("position",position)
+                        intent.putExtra("position", position)
                         startActivity(context, intent, null)
                     }
                 }

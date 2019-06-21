@@ -9,10 +9,10 @@ import com.emilda.emilda.Fragments.onBoardingScreens.screen2
 
 class mPagerAdapter(fragmentManager: FragmentManager) : FragmentPagerAdapter(fragmentManager) {
     override fun getItem(position: Int): Fragment {
-       return when (position) {
+        return when (position) {
             0 -> Screen1()
             1 -> screen2()
-           else -> Screen3()
+            else -> Screen3()
         }
     }
 

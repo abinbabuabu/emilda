@@ -1,10 +1,10 @@
 package com.emilda.emilda.LoginActivities
 
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
 import com.emilda.emilda.MainActivities.DetailsActivity
 import com.emilda.emilda.R
 import com.google.firebase.FirebaseException
@@ -19,8 +19,8 @@ import java.util.concurrent.TimeUnit
 class OtpScreen : AppCompatActivity() {
     lateinit var mAuth: FirebaseAuth
     var number: String? = null
-    var storedVerificationId:String? = null
-    var resendToken: PhoneAuthProvider.ForceResendingToken? =null
+    var storedVerificationId: String? = null
+    var resendToken: PhoneAuthProvider.ForceResendingToken? = null
 
     var callbacks = object : PhoneAuthProvider.OnVerificationStateChangedCallbacks() {
 
@@ -72,7 +72,7 @@ class OtpScreen : AppCompatActivity() {
 
         next_btn_otp.setOnClickListener {
             val code = otp.text.toString()
-            Log.d("Code",code)
+            Log.d("Code", code)
             val credential = PhoneAuthProvider.getCredential(storedVerificationId!!, code)
             signInWithPhoneAuthCredential(credential)
         }
@@ -91,16 +91,16 @@ class OtpScreen : AppCompatActivity() {
 
     private fun signInWithPhoneAuthCredential(credential: PhoneAuthCredential) {
         mAuth.signInWithCredential(credential)
-            .addOnCompleteListener{ task ->
+            .addOnCompleteListener { task ->
                 if (task.isSuccessful) {
                     // Sign in success, update UI with the signed-in user's information
                     //Replace With SnackBar
-                    Toast.makeText(this,"Otp Verified Sucessfully", Toast.LENGTH_LONG).show()
+                    Toast.makeText(this, "Otp Verified Sucessfully", Toast.LENGTH_LONG).show()
                     Log.d("success", "signInWithCredential:success")
                     startActivity(Intent(this, DetailsActivity::class.java))
 
                     val user = task.result?.user
-                    Log.d("User",user?.phoneNumber)
+                    Log.d("User", user?.phoneNumber)
                     // ...
                 } else {
                     // Sign in failed, display a message and update the UI

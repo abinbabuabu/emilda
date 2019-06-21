@@ -8,22 +8,32 @@ import android.transition.Explode
 import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.fragment.findNavController
 import com.emilda.emilda.R
+import kotlinx.android.synthetic.main.app_bar_details.*
 import kotlinx.android.synthetic.main.main.*
+import setUpBottomAppBarShapeAppearance
 import java.net.URLEncoder
 
 
 class DetailsActivity : AppCompatActivity() {
 
 
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.main)
+        setContentView(R.layout.app_bar_details)
         exitEnterAnim()
 
-        val controller = main_nav_fragment.findNavController()
+        setUpBottomAppBarShapeAppearance(fab_details, bottom_bar)
 
-        controller.navigate()
+        val controller = main_nav_fragment.findNavController()
+        ic_profile_bottom.setOnClickListener {
+            controller.navigate(R.id.fragmentProfile)
+        }
+        ic_home_bottom.setOnClickListener {
+            controller.navigate(R.id.fragmentDetails)
+        }
+        ic_recharge_bottom.setOnClickListener {
+            controller.navigate(R.id.fragmentRecharge)
+        }
 
 
     }
@@ -58,31 +68,5 @@ class DetailsActivity : AppCompatActivity() {
 
         }
     }
-
-
-//    fun setPortfolioFragment() {
-//        val navController = Navigation.findNavController(this, R.id.portfolio_nav_frag)
-//        all_button.setOnClickListener {
-//            navController.popBackStack()
-//            navController.navigate(R.id.allPorfolio)
-//
-//
-//        }
-//        design_button.setOnClickListener {
-//            navController.popBackStack()
-//            navController.navigate(R.id.designFragment)
-//
-//        }
-//        dev_button.setOnClickListener {
-//            navController.popBackStack()
-//            navController.navigate(R.id.devFragment)
-//
-//        }
-//    }
-
-
-
-
-
 
 }

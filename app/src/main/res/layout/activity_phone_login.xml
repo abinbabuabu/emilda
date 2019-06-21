@@ -1,104 +1,105 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:app="http://schemas.android.com/apk/res-auto" android:layout_width="match_parent" android:layout_height="match_parent" xmlns:android="http://schemas.android.com/apk/res/android">
+<FrameLayout xmlns:app="http://schemas.android.com/apk/res-auto" xmlns:android="http://schemas.android.com/apk/res/android"
+             android:layout_width="match_parent" android:layout_height="match_parent">
     <ImageView android:layout_width="match_parent"
                android:layout_gravity="bottom"
                app:srcCompat="@drawable/ic_sketch"
                android:scaleType="fitEnd"
                android:layout_marginBottom="12dp"
                android:layout_height="wrap_content" android:cropToPadding="false"/>
-<RelativeLayout xmlns:app="http://schemas.android.com/apk/res-auto"
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:layout_marginTop="32dp"
-                android:layout_marginStart="34dp"
-                android:layout_marginEnd="34dp"
-                android:id="@+id/relative_layout">
-
-    <TextView android:layout_width="wrap_content"
-              android:layout_alignParentStart="true"
-              android:layout_alignParentTop="true"
-              android:layout_height="wrap_content"
-              android:text="@string/welcome"
-              style="@style/login_yellowtext"
-              android:id="@+id/welcome_tv_login"
-              android:layout_alignParentLeft="true"
-             />
-    <TextView android:layout_width="wrap_content"
-              android:layout_toRightOf="@+id/welcome_tv_login"
-              android:layout_height="wrap_content"
-              android:text="@string/emilda"
-              android:layout_alignBaseline="@+id/welcome_tv_login"
-              style="@style/login_blacktext"
-              android:fontFamily="@font/muli"
-              android:layout_marginStart="6dp"
-              android:id="@+id/emilda_tvlogin"
-              android:layout_toEndOf="@+id/welcome_tv_login"
-              android:layout_marginLeft="6dp"/>
-
-    <TextView android:layout_width="wrap_content"
-              android:layout_alignParentStart="true"
-              android:layout_below="@+id/welcome_tv_login"
-              android:layout_height="wrap_content"
-              android:layout_marginTop="8dp"
-              style="@style/moto_text"
-              android:text="@string/emilda_moto"
-              android:id="@+id/login_desc"
-              android:layout_alignParentLeft="true"/>
-    <FrameLayout android:layout_width="match_parent"
-                 android:id="@+id/frame_layout"
-                 android:layout_marginTop="160dp"
-                 android:layout_below="@id/login_desc"
-                 android:layout_height="wrap_content">
+    <RelativeLayout xmlns:app="http://schemas.android.com/apk/res-auto"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="32dp"
+                    android:layout_marginStart="34dp"
+                    android:layout_marginEnd="34dp"
+                    android:id="@+id/relative_layout">
 
         <TextView android:layout_width="wrap_content"
+                  android:layout_alignParentStart="true"
+                  android:layout_alignParentTop="true"
                   android:layout_height="wrap_content"
-                  android:textColor="@color/colorAccent"
-                  android:text="+91 |"
-                  android:textSize="18sp"
-                  android:layout_marginStart="12dp"
-                  android:layout_gravity="start|center"
-                  android:id="@+id/cc"
-                  android:layout_marginLeft="12dp"/>
+                  android:text="@string/welcome"
+                  style="@style/login_yellowtext"
+                  android:id="@+id/welcome_tv_login"
+                  android:layout_alignParentLeft="true"
+        />
+        <TextView android:layout_width="wrap_content"
+                  android:layout_toRightOf="@+id/welcome_tv_login"
+                  android:layout_height="wrap_content"
+                  android:text="@string/emilda"
+                  android:layout_alignBaseline="@+id/welcome_tv_login"
+                  style="@style/login_blacktext"
+                  android:fontFamily="@font/muli"
+                  android:layout_marginStart="6dp"
+                  android:id="@+id/emilda_tvlogin"
+                  android:layout_toEndOf="@+id/welcome_tv_login"
+                  android:layout_marginLeft="6dp"/>
 
-        <com.google.android.material.textfield.TextInputLayout
-                android:layout_width="match_parent"
-                app:hintEnabled="false"
-                app:boxCornerRadiusTopStart="0dp"
-                app:boxCornerRadiusBottomStart="0dp"
-                app:boxCornerRadiusTopEnd="0dp"
-                app:boxCornerRadiusBottomEnd="0dp"
-                app:boxStrokeColor="@color/grey_div"
-                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
-                android:layout_below="@id/login_desc"
-                android:layout_height="wrap_content">
+        <TextView android:layout_width="wrap_content"
+                  android:layout_alignParentStart="true"
+                  android:layout_below="@+id/welcome_tv_login"
+                  android:layout_height="wrap_content"
+                  android:layout_marginTop="8dp"
+                  style="@style/moto_text"
+                  android:text="@string/emilda_moto"
+                  android:id="@+id/login_desc"
+                  android:layout_alignParentLeft="true"/>
+        <FrameLayout android:layout_width="match_parent"
+                     android:id="@+id/frame_layout"
+                     android:layout_marginTop="160dp"
+                     android:layout_below="@id/login_desc"
+                     android:layout_height="wrap_content">
 
-            <com.google.android.material.textfield.TextInputEditText
+            <TextView android:layout_width="wrap_content"
+                      android:layout_height="wrap_content"
+                      android:textColor="@color/colorAccent"
+                      android:text="+91 |"
+                      android:textSize="18sp"
+                      android:layout_marginStart="12dp"
+                      android:layout_gravity="start|center"
+                      android:id="@+id/cc"
+                      android:layout_marginLeft="12dp"/>
+
+            <com.google.android.material.textfield.TextInputLayout
                     android:layout_width="match_parent"
-                    android:layout_below="@+id/login_desc"
-                    android:layout_height="wrap_content"
-                    android:inputType="phone"
-                    android:maxLines="1"
-                    android:hint="@string/hint"
-                    android:maxLength="10"
-                    android:textSize="24sp"
-                    android:paddingStart="60dp"
-                    android:id="@+id/phone_number"
-                    android:paddingLeft="16dp"/>
+                    app:hintEnabled="false"
+                    app:boxCornerRadiusTopStart="0dp"
+                    app:boxCornerRadiusBottomStart="0dp"
+                    app:boxCornerRadiusTopEnd="0dp"
+                    app:boxCornerRadiusBottomEnd="0dp"
+                    app:boxStrokeColor="@color/grey_div"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+                    android:layout_below="@id/login_desc"
+                    android:layout_height="wrap_content">
 
-        </com.google.android.material.textfield.TextInputLayout>
-    </FrameLayout>
-    <com.google.android.material.button.MaterialButton
-            android:layout_width="match_parent"
-            android:text="Next"
-            app:cornerRadius="6dp"
-            android:textSize="18sp"
-            android:layout_below="@+id/frame_layout"
-            android:layout_gravity="end"
-            android:id="@+id/next_btn_login"
-            style="@style/button_text"
-            android:layout_marginTop="48dp"
-            app:backgroundTint="@color/colorAccent"
-            android:layout_height="56dp" />
+                <com.google.android.material.textfield.TextInputEditText
+                        android:layout_width="match_parent"
+                        android:layout_below="@+id/login_desc"
+                        android:layout_height="wrap_content"
+                        android:inputType="phone"
+                        android:maxLines="1"
+                        android:hint="@string/hint"
+                        android:maxLength="10"
+                        android:textSize="24sp"
+                        android:paddingStart="60dp"
+                        android:id="@+id/phone_number"
+                        android:paddingLeft="16dp"/>
 
-</RelativeLayout>
+            </com.google.android.material.textfield.TextInputLayout>
+        </FrameLayout>
+        <com.google.android.material.button.MaterialButton
+                android:layout_width="match_parent"
+                android:text="Next"
+                app:cornerRadius="6dp"
+                android:textSize="18sp"
+                android:layout_below="@+id/frame_layout"
+                android:layout_gravity="end"
+                android:id="@+id/next_btn_login"
+                style="@style/button_text"
+                android:layout_marginTop="48dp"
+                app:backgroundTint="@color/colorAccent"
+                android:layout_height="56dp"/>
+
+    </RelativeLayout>
 </FrameLayout>

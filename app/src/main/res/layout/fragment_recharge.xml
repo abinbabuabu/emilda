@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:app="http://schemas.android.com/apk/res-auto"
+            android:layout_width="match_parent" android:layout_height="match_parent">
+
+    <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+        <View android:layout_width="match_parent"
+              android:layout_gravity="top"
+              android:id="@+id/yellow_bg"
+              android:background="@color/yellow"
+              android:layout_height="200dp"/>
+        <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+            <TextView android:layout_width="wrap_content"
+                      android:layout_centerHorizontal="true"
+                      android:id="@+id/recharge_tv"
+                      android:layout_height="wrap_content"/>
+            <com.google.android.material.card.MaterialCardView
+                    android:layout_width="288dp"
+                    app:cardElevation="8dp"
+                    android:id="@+id/balance_card"
+                    android:layout_below="@+id/recharge_tv"
+                    app:cardCornerRadius="8dp"
+                    app:cardBackgroundColor="@color/colorAccent"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="50dp"
+                    android:layout_height="150dp">
+                <LinearLayout android:layout_width="match_parent"
+                              android:orientation="vertical"
+                              android:layout_height="match_parent">
+                    <TextView android:layout_width="wrap_content"
+                              android:layout_height="wrap_content"/>
+                    <TextView android:layout_width="wrap_content"
+                              android:layout_height="wrap_content"/>
+                    <TextView android:layout_width="wrap_content"
+                              android:layout_height="wrap_content"/>
+                </LinearLayout>
+
+            </com.google.android.material.card.MaterialCardView>
+            <TextView android:layout_width="wrap_content"
+                      android:layout_below="@+id/balance_card"
+                      android:layout_marginTop="34dp"
+                      android:id="@+id/credit_tv"
+                      android:layout_alignStart="@+id/balance_card"
+                      android:layout_height="wrap_content"
+                      android:layout_alignLeft="@+id/balance_card"/>
+
+
+                <TableLayout android:layout_width="wrap_content"
+                             android:layout_centerHorizontal="true"
+                             android:layout_below="@+id/credit_tv"
+                             android:layout_height="wrap_content">
+                    <TableRow>
+                        <TextView android:layout_width="wrap_content"
+                                  android:layout_below="@+id/credit_tv"
+                                  android:text="Rupees"
+                                  android:gravity="start"
+                                  android:layout_gravity="start"
+                                  android:id="@+id/rupees_tv"
+                                  android:layout_height="wrap_content"/>
+                        <TextView android:layout_width="wrap_content"
+                                  android:layout_below="@+id/credit_tv"
+                                  android:text="Credit"
+                                  android:gravity="start"
+                                  android:layout_gravity="start"
+                                  android:layout_height="wrap_content"/>
+
+                    </TableRow>
+                    <TableRow
+                            android:gravity="center"
+                            android:layout_gravity="start"
+                            android:layout_marginTop="16dp">
+                        <ImageView
+                                android:layout_width="24dp"
+                                android:layout_gravity="end|center_horizontal"
+                                android:layout_height="match_parent"
+                                app:srcCompat="@drawable/ic_rupees"/>
+                        <TextView android:layout_marginStart="6dp"
+                                  android:layout_gravity="start|center_vertical"
+                                  android:text="50"
+                                  android:layout_marginLeft="6dp"/>
+                        <ImageView
+                                android:layout_width="24dp"
+                                android:padding="2dp"
+                                android:layout_marginStart="40dp"
+                                android:layout_height="match_parent"
+                                app:srcCompat="@drawable/ic_coin"
+                                android:layout_marginLeft="40dp"/>
+                        <TextView
+                                android:layout_gravity="center_vertical"
+                                android:text="50"
+                                android:layout_marginStart="6dp"
+                                android:layout_marginEnd="30dp"
+                                android:layout_marginLeft="6dp"
+                                android:layout_marginRight="30dp"/>
+                        <com.google.android.material.button.MaterialButton
+                                app:backgroundTint="@color/colorAccent"
+                                android:layout_width="90dp"
+                                android:textSize="10dp"
+                                android:textAllCaps="false"
+                                android:layout_height="34dp"
+                                android:layout_gravity="end|center_vertical"
+                                android:text="Recharge"
+                        />
+
+                    </TableRow>
+
+                </TableLayout>
+        </RelativeLayout>
+    </FrameLayout>
+</ScrollView>

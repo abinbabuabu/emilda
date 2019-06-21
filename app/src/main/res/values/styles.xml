@@ -1,4 +1,4 @@
-<resources xmlns:tools="http://schemas.android.com/tools">
+<resources>
 
     <!-- Base application theme. -->
     <style name="AppTheme" parent="Theme.MaterialComponents.Light.NoActionBar">
@@ -60,14 +60,14 @@
 
 
     <!--Fab & Bottom Bar-->
-    <style name="ShapeAppearanceOverlay.MaterialComponents.FloatingActionButton" parent="" >
+    <style name="ShapeAppearanceOverlay.MaterialComponents.FloatingActionButton" parent="">
         <item name="cornerFamily">cut</item>
         <item name="cornerSize">@null</item>
 
     </style>
     <style name="bottom_app_bar" parent="Widget.MaterialComponents.BottomAppBar">
         <item name="fabCradleVerticalOffset">0dp</item>
-        <item name="fabCradleRoundedCornerRadius">40dp</item>
+        <item name="fabCradleRoundedCornerRadius">16dp</item>
         <item name="fabCradleMargin">12dp</item>
     </style>
 
@@ -93,7 +93,7 @@
         <item name="android:fontFamily">@font/muli_bold</item>
     </style>
     <style name="login_blacktext" parent="on_big_text">
-       <item name="android:textSize">23sp</item>
+        <item name="android:textSize">23sp</item>
         <item name="android:fontFamily">@font/muli</item>
         <item name="android:textStyle">normal</item>
         <item name="android:textAllCaps">true</item>
@@ -101,7 +101,7 @@
     <style name="moto_text" parent="on_big_text">
         <item name="android:textSize">14sp</item>
     </style>
-    
+
     <style name="otp_text" parent="login_yellowtext">
         <item name="android:textSize">20dp</item>
     </style>
@@ -118,7 +118,7 @@
         <item name="android:textSize">8sp</item>
         <item name="android:textColor">@color/textgrey</item>
     </style>
-    
+
     <!--OnBoarding Screen-->
     <style name="on_big_text" parent="small_text.black">
         <item name="android:textSize">20sp</item>

@@ -11,8 +11,7 @@
             android:supportsRtl="true"
             android:theme="@style/AppTheme"
             tools:ignore="GoogleAppIndexingWarning ,InnerclassSeparator">
-        <activity android:name=".MainActivities.ProfileActivity">
-        </activity>
+
         <activity android:name=".LoginActivities.OnBoardingActivity">
         </activity>
         <activity
