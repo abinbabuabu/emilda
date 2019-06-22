@@ -60,7 +60,7 @@
 
 
     <!--Fab & Bottom Bar-->
-    <style name="ShapeAppearanceOverlay.MaterialComponents.FloatingActionButton" parent="">
+    <style name="ShapeAppearanceOverlay.MaterialComponents.FloatingActionButton.new" parent="">
         <item name="cornerFamily">cut</item>
         <item name="cornerSize">@null</item>
 

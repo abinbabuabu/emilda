@@ -12,19 +12,8 @@ class PhoneLogin : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_phone_login)
+        setContentView(R.layout.login_nav)
 
-        next_btn_login.setOnClickListener {
-            val phone = phone_number.text.toString()
-            Log.d("phone", phone)
-            if (phone.length != 10) {
-                Toast.makeText(this, "Invalid Mobile Number", Toast.LENGTH_LONG).show()
-            } else {
-                val intent = Intent(this, OtpScreen::class.java)
-                intent.putExtra("phone", phone)
-                startActivity(intent)
-            }
-        }
     }
 }
 

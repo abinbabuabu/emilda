@@ -70,10 +70,13 @@
     <com.google.android.material.floatingactionbutton.FloatingActionButton
             android:layout_width="wrap_content"
             app:elevation="15dp"
+            app:srcCompat="@drawable/ic_fab_add"
+            android:tint="@color/white"
+            app:rippleColor="@color/yellow"
             android:id="@+id/fab_details"
             app:layout_anchor="@id/bottom_bar"
             app:backgroundTint="@color/colorAccent"
-            app:shapeAppearance="@style/ShapeAppearanceOverlay.MaterialComponents.FloatingActionButton"
+            app:shapeAppearance="@style/ShapeAppearanceOverlay.MaterialComponents.FloatingActionButton.new"
             android:layout_height="wrap_content"/>
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

@@ -1,3 +1,4 @@
+import android.graphics.Color
 import com.emilda.emilda.Utils.BottomAppBarCutCornersTopEdge
 import com.google.android.material.bottomappbar.BottomAppBar
 import com.google.android.material.bottomappbar.BottomAppBarTopEdgeTreatment
@@ -102,6 +103,7 @@ fun setUpBottomAppBarShapeAppearance(
             bar.fabCradleRoundedCornerRadius,
             bar.cradleVerticalOffset
         )
+
 
     val babBackground = bar.background as MaterialShapeDrawable
     babBackground.shapeAppearanceModel.topEdge = topEdge

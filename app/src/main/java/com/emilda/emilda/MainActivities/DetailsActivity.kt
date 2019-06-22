@@ -1,12 +1,14 @@
 package com.emilda.emilda.MainActivities
 
 import android.content.Intent
+import android.graphics.Color
 import android.net.Uri
 import android.os.Build
 import android.os.Bundle
 import android.transition.Explode
 import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.fragment.findNavController
+import com.bumptech.glide.annotation.GlideModule
 import com.emilda.emilda.R
 import kotlinx.android.synthetic.main.app_bar_details.*
 import kotlinx.android.synthetic.main.main.*
@@ -16,7 +18,6 @@ import java.net.URLEncoder
 
 class DetailsActivity : AppCompatActivity() {
 
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.app_bar_details)
@@ -24,14 +25,20 @@ class DetailsActivity : AppCompatActivity() {
 
         setUpBottomAppBarShapeAppearance(fab_details, bottom_bar)
 
+        fab_details.setColorFilter(Color.WHITE)
+
+
         val controller = main_nav_fragment.findNavController()
         ic_profile_bottom.setOnClickListener {
+            controller.popBackStack()
             controller.navigate(R.id.fragmentProfile)
         }
         ic_home_bottom.setOnClickListener {
+            controller.popBackStack()
             controller.navigate(R.id.fragmentDetails)
         }
         ic_recharge_bottom.setOnClickListener {
+            controller.popBackStack()
             controller.navigate(R.id.fragmentRecharge)
         }
 

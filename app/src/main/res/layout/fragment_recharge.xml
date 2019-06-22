@@ -13,8 +13,14 @@
               android:layout_height="200dp"/>
         <RelativeLayout
                 android:layout_width="match_parent"
+                android:layout_marginBottom="100dp"
                 android:layout_height="match_parent">
             <TextView android:layout_width="wrap_content"
+                      android:text="Recharge"
+                      android:textSize="24sp"
+                      android:layout_marginTop="16dp"
+                      android:layout_alignParentTop="true"
+                      android:textColor="@color/colorAccent"
                       android:layout_centerHorizontal="true"
                       android:id="@+id/recharge_tv"
                       android:layout_height="wrap_content"/>
@@ -30,12 +36,40 @@
                     android:layout_height="150dp">
                 <LinearLayout android:layout_width="match_parent"
                               android:orientation="vertical"
+                             android:gravity="center"
                               android:layout_height="match_parent">
                     <TextView android:layout_width="wrap_content"
+                              android:layout_gravity="center"
+                              android:textSize="12sp"
+                              android:textColor="@color/white"
+                              android:layout_marginBottom="16dp"
+                              android:text="Your Credit Balance"
                               android:layout_height="wrap_content"/>
+                    <LinearLayout android:layout_width="match_parent"
+                                  android:orientation="horizontal"
+                                  android:gravity="center"
+                                  android:layout_height="wrap_content">
+                        <TextView android:layout_width="wrap_content"
+                                  android:text="30"
+                                  android:textColor="@color/white"
+                                  android:textSize="40sp"
+                                  android:layout_gravity="center"
+                                  android:layout_height="wrap_content"/>
+                        <ImageView android:layout_width="wrap_content"
+                                   app:srcCompat="@drawable/ic_coin"
+                                   android:layout_marginStart="8dp"
+                                   android:layout_gravity="bottom"
+                                   android:layout_marginBottom="12dp"
+                                   android:layout_height="wrap_content"
+                                   android:layout_marginLeft="8dp"/>
+                    </LinearLayout>
+
                     <TextView android:layout_width="wrap_content"
-                              android:layout_height="wrap_content"/>
-                    <TextView android:layout_width="wrap_content"
+                              android:layout_gravity="center"
+                              android:textColor="@color/textgrey"
+                              android:layout_marginTop="16dp"
+                              android:textSize="10dp"
+                              android:text="Recharge your wallet now"
                               android:layout_height="wrap_content"/>
                 </LinearLayout>
 
@@ -44,71 +78,208 @@
                       android:layout_below="@+id/balance_card"
                       android:layout_marginTop="34dp"
                       android:id="@+id/credit_tv"
+                      android:text="Buy Credit"
+                      android:textSize="13dp"
                       android:layout_alignStart="@+id/balance_card"
                       android:layout_height="wrap_content"
                       android:layout_alignLeft="@+id/balance_card"/>
 
+            <TableLayout android:layout_width="500dp"
+                         android:layout_centerHorizontal="true"
+                         android:layout_below="@+id/credit_tv"
+                         android:layout_height="wrap_content">
+                <TableRow
+                        android:gravity="center"
+                        android:layout_gravity="start"
+                        android:layout_marginTop="16dp">
+                    <ImageView
+                            android:layout_width="24dp"
+                            android:layout_gravity="end|center_horizontal"
+                            android:layout_height="match_parent"
+                            app:srcCompat="@drawable/ic_rupees"/>
+                    <TextView android:layout_marginStart="6dp"
+                              android:layout_gravity="start|center_vertical"
+                              android:text="50"
+                              android:layout_marginLeft="6dp"/>
+                    <ImageView
+                            android:layout_width="24dp"
+                            android:padding="2dp"
+                            android:layout_marginStart="40dp"
+                            android:layout_height="match_parent"
+                            app:srcCompat="@drawable/ic_coin"
+                            android:layout_marginLeft="40dp"/>
+                    <TextView
+                            android:layout_gravity="center_vertical"
+                            android:text="50"
+                            android:layout_marginStart="6dp"
+                            android:layout_marginEnd="30dp"
+                            android:layout_marginLeft="6dp"
+                            android:layout_marginRight="30dp"/>
+                    <com.google.android.material.button.MaterialButton
+                            app:backgroundTint="@color/colorAccent"
+                            android:layout_width="90dp"
+                            android:textSize="10dp"
+                            android:textAllCaps="false"
+                            android:layout_height="34dp"
+                            android:layout_gravity="end|center_vertical"
+                            android:text="Recharge"
+                    />
 
-                <TableLayout android:layout_width="wrap_content"
-                             android:layout_centerHorizontal="true"
-                             android:layout_below="@+id/credit_tv"
-                             android:layout_height="wrap_content">
-                    <TableRow>
-                        <TextView android:layout_width="wrap_content"
-                                  android:layout_below="@+id/credit_tv"
-                                  android:text="Rupees"
-                                  android:gravity="start"
-                                  android:layout_gravity="start"
-                                  android:id="@+id/rupees_tv"
-                                  android:layout_height="wrap_content"/>
-                        <TextView android:layout_width="wrap_content"
-                                  android:layout_below="@+id/credit_tv"
-                                  android:text="Credit"
-                                  android:gravity="start"
-                                  android:layout_gravity="start"
-                                  android:layout_height="wrap_content"/>
+                </TableRow>
+                <TableRow
+                        android:gravity="center"
+                        android:layout_gravity="start"
+                        android:layout_marginTop="16dp">
+                    <ImageView
+                            android:layout_width="24dp"
+                            android:layout_gravity="end|center_horizontal"
+                            android:layout_height="match_parent"
+                            app:srcCompat="@drawable/ic_rupees"/>
+                    <TextView android:layout_marginStart="6dp"
+                              android:layout_gravity="start|center_vertical"
+                              android:text="50"
+                              android:layout_marginLeft="6dp"/>
+                    <ImageView
+                            android:layout_width="24dp"
+                            android:padding="2dp"
+                            android:layout_marginStart="40dp"
+                            android:layout_height="match_parent"
+                            app:srcCompat="@drawable/ic_coin"
+                            android:layout_marginLeft="40dp"/>
+                    <TextView
+                            android:layout_gravity="center_vertical"
+                            android:text="50"
+                            android:layout_marginStart="6dp"
+                            android:layout_marginEnd="30dp"
+                            android:layout_marginLeft="6dp"
+                            android:layout_marginRight="30dp"/>
+                    <com.google.android.material.button.MaterialButton
+                            app:backgroundTint="@color/colorAccent"
+                            android:layout_width="90dp"
+                            android:textSize="10dp"
+                            android:textAllCaps="false"
+                            android:layout_height="34dp"
+                            android:layout_gravity="end|center_vertical"
+                            android:text="Recharge"
+                    />
 
-                    </TableRow>
-                    <TableRow
-                            android:gravity="center"
-                            android:layout_gravity="start"
-                            android:layout_marginTop="16dp">
-                        <ImageView
-                                android:layout_width="24dp"
-                                android:layout_gravity="end|center_horizontal"
-                                android:layout_height="match_parent"
-                                app:srcCompat="@drawable/ic_rupees"/>
-                        <TextView android:layout_marginStart="6dp"
-                                  android:layout_gravity="start|center_vertical"
-                                  android:text="50"
-                                  android:layout_marginLeft="6dp"/>
-                        <ImageView
-                                android:layout_width="24dp"
-                                android:padding="2dp"
-                                android:layout_marginStart="40dp"
-                                android:layout_height="match_parent"
-                                app:srcCompat="@drawable/ic_coin"
-                                android:layout_marginLeft="40dp"/>
-                        <TextView
-                                android:layout_gravity="center_vertical"
-                                android:text="50"
-                                android:layout_marginStart="6dp"
-                                android:layout_marginEnd="30dp"
-                                android:layout_marginLeft="6dp"
-                                android:layout_marginRight="30dp"/>
-                        <com.google.android.material.button.MaterialButton
-                                app:backgroundTint="@color/colorAccent"
-                                android:layout_width="90dp"
-                                android:textSize="10dp"
-                                android:textAllCaps="false"
-                                android:layout_height="34dp"
-                                android:layout_gravity="end|center_vertical"
-                                android:text="Recharge"
-                        />
+                </TableRow>
+                <TableRow
+                        android:gravity="center"
+                        android:layout_gravity="start"
+                        android:layout_marginTop="16dp">
+                    <ImageView
+                            android:layout_width="24dp"
+                            android:layout_gravity="end|center_horizontal"
+                            android:layout_height="match_parent"
+                            app:srcCompat="@drawable/ic_rupees"/>
+                    <TextView android:layout_marginStart="6dp"
+                              android:layout_gravity="start|center_vertical"
+                              android:text="50"
+                              android:layout_marginLeft="6dp"/>
+                    <ImageView
+                            android:layout_width="24dp"
+                            android:padding="2dp"
+                            android:layout_marginStart="40dp"
+                            android:layout_height="match_parent"
+                            app:srcCompat="@drawable/ic_coin"
+                            android:layout_marginLeft="40dp"/>
+                    <TextView
+                            android:layout_gravity="center_vertical"
+                            android:text="50"
+                            android:layout_marginStart="6dp"
+                            android:layout_marginEnd="30dp"
+                            android:layout_marginLeft="6dp"
+                            android:layout_marginRight="30dp"/>
+                    <com.google.android.material.button.MaterialButton
+                            app:backgroundTint="@color/colorAccent"
+                            android:layout_width="90dp"
+                            android:textSize="10dp"
+                            android:textAllCaps="false"
+                            android:layout_height="34dp"
+                            android:layout_gravity="end|center_vertical"
+                            android:text="Recharge"
+                    />
 
-                    </TableRow>
+                </TableRow>
+                <TableRow
+                        android:gravity="center"
+                        android:layout_gravity="start"
+                        android:layout_marginTop="16dp">
+                    <ImageView
+                            android:layout_width="24dp"
+                            android:layout_gravity="end|center_horizontal"
+                            android:layout_height="match_parent"
+                            app:srcCompat="@drawable/ic_rupees"/>
+                    <TextView android:layout_marginStart="6dp"
+                              android:layout_gravity="start|center_vertical"
+                              android:text="50"
+                              android:layout_marginLeft="6dp"/>
+                    <ImageView
+                            android:layout_width="24dp"
+                            android:padding="2dp"
+                            android:layout_marginStart="40dp"
+                            android:layout_height="match_parent"
+                            app:srcCompat="@drawable/ic_coin"
+                            android:layout_marginLeft="40dp"/>
+                    <TextView
+                            android:layout_gravity="center_vertical"
+                            android:text="50"
+                            android:layout_marginStart="6dp"
+                            android:layout_marginEnd="30dp"
+                            android:layout_marginLeft="6dp"
+                            android:layout_marginRight="30dp"/>
+                    <com.google.android.material.button.MaterialButton
+                            app:backgroundTint="@color/colorAccent"
+                            android:layout_width="90dp"
+                            android:textSize="10dp"
+                            android:textAllCaps="false"
+                            android:layout_height="34dp"
+                            android:layout_gravity="end|center_vertical"
+                            android:text="Recharge"
+                    />
 
-                </TableLayout>
+                </TableRow>
+                <TableRow
+                        android:gravity="center"
+                        android:layout_gravity="start"
+                        android:layout_marginTop="16dp">
+                    <ImageView
+                            android:layout_width="24dp"
+                            android:layout_gravity="end|center_horizontal"
+                            android:layout_height="match_parent"
+                            app:srcCompat="@drawable/ic_rupees"/>
+                    <TextView android:layout_marginStart="6dp"
+                              android:layout_gravity="start|center_vertical"
+                              android:text="50"
+                              android:layout_marginLeft="6dp"/>
+                    <ImageView
+                            android:layout_width="24dp"
+                            android:padding="2dp"
+                            android:layout_marginStart="40dp"
+                            android:layout_height="match_parent"
+                            app:srcCompat="@drawable/ic_coin"
+                            android:layout_marginLeft="40dp"/>
+                    <TextView
+                            android:layout_gravity="center_vertical"
+                            android:text="50"
+                            android:layout_marginStart="6dp"
+                            android:layout_marginEnd="30dp"
+                            android:layout_marginLeft="6dp"
+                            android:layout_marginRight="30dp"/>
+                    <com.google.android.material.button.MaterialButton
+                            app:backgroundTint="@color/colorAccent"
+                            android:layout_width="90dp"
+                            android:textSize="10dp"
+                            android:textAllCaps="false"
+                            android:layout_height="34dp"
+                            android:layout_gravity="end|center_vertical"
+                            android:text="Recharge"
+                    />
+
+                </TableRow>
+
+            </TableLayout>
         </RelativeLayout>
     </FrameLayout>
 </ScrollView>
