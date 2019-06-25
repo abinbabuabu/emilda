@@ -10,6 +10,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
 import android.widget.Toast
+import androidx.navigation.fragment.findNavController
 import com.emilda.emilda.LoginActivities.PhoneLogin
 import com.emilda.emilda.MainActivities.DetailsActivity
 import com.emilda.emilda.R
@@ -20,6 +21,7 @@ import com.google.firebase.auth.FirebaseAuthInvalidCredentialsException
 import com.google.firebase.auth.PhoneAuthCredential
 import com.google.firebase.auth.PhoneAuthProvider
 import kotlinx.android.synthetic.main.activity_otp_screen.*
+import kotlinx.android.synthetic.main.login_nav.*
 import java.util.concurrent.TimeUnit
 
 class OtpFragment : Fragment() {
@@ -31,21 +33,22 @@ class OtpFragment : Fragment() {
     private var callbacks = object : PhoneAuthProvider.OnVerificationStateChangedCallbacks() {
 
         override fun onVerificationCompleted(credential: PhoneAuthCredential) {
-            Log.d("Success", "onVerificationCompleted:$credential")
+            Log.d("Az", "onVerificationCompleted:$credential")
             signInWithPhoneAuthCredential(credential)
         }
 
         override fun onVerificationFailed(e: FirebaseException) {
             // This callback is invoked in an invalid request for verification is made,
             // for instance if the the phone number format is not valid.
-            Log.w("Error", "onVerificationFailed", e)
+            Log.d("Az", "onVerificationFailed", e)
 
             if (e is FirebaseAuthInvalidCredentialsException) {
-                Toast.makeText(context,"Error",Toast.LENGTH_LONG).show()
+                Toast.makeText(context, "Error", Toast.LENGTH_LONG).show()
                 // ...
             } else if (e is FirebaseTooManyRequestsException) {
                 // The SMS quota for the project has been exceeded
                 // ...
+                Log.d("Az", "onVerification", e)
             }
 
             // Show a message and update the UI
@@ -55,7 +58,7 @@ class OtpFragment : Fragment() {
             verificationId: String?,
             token: PhoneAuthProvider.ForceResendingToken
         ) {
-            Log.d("Message sent", "onCodeSent:" + verificationId!!)
+            Log.d("Az", "onCodeSent:" + verificationId!!)
             // Save verification ID and resending token so we can use them later
             storedVerificationId = verificationId
             resendToken = token
@@ -75,7 +78,7 @@ class OtpFragment : Fragment() {
         number = "+91$number"
         if (number != null)
             Log.d("Number", number)
-            PhoneAuthProvider.getInstance().verifyPhoneNumber(
+        PhoneAuthProvider.getInstance().verifyPhoneNumber(
             number!!,      // Phone number to verify
             60,               // Timeout duration
             TimeUnit.SECONDS, // Unit of timeout
@@ -93,11 +96,23 @@ class OtpFragment : Fragment() {
         Log.d("Number", number)
         val phoneWithCC = "+91-$number"
 
+        phone_number_otp.text = phoneWithCC
+
         next_btn_otp.setOnClickListener {
             val code = otp.text.toString()
-            Log.d("Code", code)
-            val credential = PhoneAuthProvider.getCredential(storedVerificationId!!, code)
-            signInWithPhoneAuthCredential(credential)
+
+            if (code.length == 6) {
+                next_btn_otp.visibility = View.INVISIBLE
+                loading_otp.visibility = View.VISIBLE
+
+                val credential = PhoneAuthProvider.getCredential(storedVerificationId!!, code)
+                signInWithPhoneAuthCredential(credential)
+            }
+            else{
+                Toast.makeText(context,"Invalid OTP",Toast.LENGTH_SHORT).show()
+            }
+
+
         }
     }
 
@@ -107,16 +122,23 @@ class OtpFragment : Fragment() {
                 if (task.isSuccessful) {
                     // Sign in success, update UI with the signed-in user's information
                     //Replace With SnackBar
-                    Toast.makeText(context, "Otp Verified Sucessfully", Toast.LENGTH_LONG).show()
-                    Log.d("success", "signInWithCredential:success")
-                    startActivity(Intent(context, DetailsActivity::class.java))
+                    val Newuser = task.result?.additionalUserInfo?.isNewUser
 
-                    val user = task.result?.user
-                    Log.d("User", user?.phoneNumber)
+                    if (Newuser !== null) {
+                        if (!Newuser) {
+                            startActivity(Intent(context, DetailsActivity::class.java))
+                            activity?.finish()
+                        } else {
+                            Log.d("User", "Its a new user Bingo")
+                            login_main_nav.findNavController().navigate(R.id.action_otpFragment_to_userDetails)
+                        }
+                    }
+
+
                     // ...
                 } else {
                     // Sign in failed, display a message and update the UI
-                    Log.w("Error", "signInWithCredential:failure", task.exception)
+                    Log.d("Az", "signInWithCredential:failure", task.exception)
                     if (task.exception is FirebaseAuthInvalidCredentialsException) {
                         // The verification code entered was invalid
                     }

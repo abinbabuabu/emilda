@@ -118,6 +118,7 @@
                     <com.google.android.material.button.MaterialButton
                             app:backgroundTint="@color/colorAccent"
                             android:layout_width="90dp"
+                            android:id="@+id/pay"
                             android:textSize="10dp"
                             android:textAllCaps="false"
                             android:layout_height="34dp"

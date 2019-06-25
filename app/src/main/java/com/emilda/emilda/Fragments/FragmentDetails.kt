@@ -3,6 +3,7 @@ package com.emilda.emilda.Fragments
 
 import android.graphics.Point
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -14,6 +15,9 @@ import com.emilda.emilda.Adapters.WorksAdapter
 import com.emilda.emilda.Dataclass.portfolio
 import com.emilda.emilda.R
 import com.firebase.ui.database.FirebaseRecyclerOptions
+import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.auth.FirebaseUser
+import com.google.firebase.auth.UserProfileChangeRequest
 import com.google.firebase.database.FirebaseDatabase
 import kotlinx.android.synthetic.main.content_details.*
 
@@ -37,6 +41,10 @@ class FragmentDetails : Fragment() {
         card_recycle_view.overScrollMode = View.OVER_SCROLL_NEVER
         card_recycle_view.layoutManager = GridLayoutManager(context, 2)
         card_recycle_view.adapter = WorksAdapter(point.y)
+
+        name_tv.text = FirebaseAuth.getInstance().currentUser?.displayName
+
+
 
         black_bg.layoutParams.height = point.y / 3
 

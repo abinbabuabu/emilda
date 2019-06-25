@@ -9,12 +9,11 @@
                android:layout_marginBottom="12dp"
                android:layout_height="wrap_content" android:cropToPadding="false"/>
     <RelativeLayout
-            xmlns:app="http://schemas.android.com/apk/res-auto"
             android:layout_width="match_parent" android:layout_height="match_parent"
-            android:layout_weight="0.9"
             android:layout_marginTop="32dp"
+            android:layout_marginEnd="34dp"
             android:id="@+id/relative_layout"
-            android:layout_marginStart="34dp" android:layout_marginLeft="34dp">
+            android:layout_marginStart="34dp">
         <TextView android:layout_width="wrap_content"
                   android:layout_alignParentStart="true"
                   android:layout_alignParentTop="true"
@@ -42,7 +41,7 @@
                   android:letterSpacing="0.2"
                   android:layout_marginTop="20dp"
                   android:layout_below="@id/verifying_otp"
-                  android:text="+919656795221"
+                  android:text=""
                   android:layout_height="wrap_content"/>
 
         <me.philio.pinentry.PinEntryView
@@ -77,5 +76,17 @@
                 android:id="@+id/next_btn_otp"
                 android:layout_height="56dp"
                 android:layout_marginRight="36dp"/>
+        <com.eyalbira.loadingdots.LoadingDots android:layout_width="wrap_content"
+                                              android:id="@+id/loading_otp"
+                                              app:LoadingDots_dots_color="@color/colorAccent"
+                                              app:LoadingDots_dots_count="6"
+                                              android:layout_below="@id/otp"
+                                              android:layout_marginTop="46dp"
+                                              app:LoadingDots_auto_play="true"
+                                              android:visibility="invisible"
+                                              android:layout_centerInParent="true"
+                                              android:layout_height="wrap_content">
+
+        </com.eyalbira.loadingdots.LoadingDots>
     </RelativeLayout>
 </FrameLayout>

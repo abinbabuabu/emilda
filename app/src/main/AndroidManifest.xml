@@ -11,7 +11,8 @@
             android:supportsRtl="true"
             android:theme="@style/AppTheme"
             tools:ignore="GoogleAppIndexingWarning ,InnerclassSeparator">
-
+        <activity android:name=".MainActivities.AfterPayment">
+        </activity>
         <activity android:name=".LoginActivities.OnBoardingActivity">
         </activity>
         <activity
@@ -31,6 +32,7 @@
 
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
+
         </activity>
         <activity android:name=".MainActivities.DesktopSupport">
         </activity>
@@ -50,6 +52,10 @@
         </activity>
         <activity android:name=".MainActivity">
         </activity>
+
+        <meta-data
+                android:name="com.razorpay.ApiKey"
+                android:value="rzp_test_8LrOvUxuVhSXat"/>
     </application>
 
 </manifest>

@@ -265,6 +265,7 @@
                     <TableRow
                             android:clickable="true"
                             android:focusable="true"
+                            android:id="@+id/logout_row"
                             android:background="?selectableItemBackground"
                             android:layout_height="40dp">
                         <ImageView android:layout_height="12dp"

@@ -10,13 +10,14 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.fragment.findNavController
 import com.bumptech.glide.annotation.GlideModule
 import com.emilda.emilda.R
+import com.razorpay.PaymentResultListener
 import kotlinx.android.synthetic.main.app_bar_details.*
 import kotlinx.android.synthetic.main.main.*
 import setUpBottomAppBarShapeAppearance
 import java.net.URLEncoder
 
 
-class DetailsActivity : AppCompatActivity() {
+class DetailsActivity : AppCompatActivity(),PaymentResultListener{
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -75,5 +76,26 @@ class DetailsActivity : AppCompatActivity() {
 
         }
     }
+
+    override fun onPaymentError(p0: Int, p1: String?) {
+        try {
+            val intent = Intent(this,AfterPayment::class.java).apply {
+                putExtra("status",0)
+            }
+            startActivity(intent)
+        }
+        catch (e:Exception){
+
+        }
+
+    }
+
+    override fun onPaymentSuccess(p0: String?) {
+        val intent = Intent(this,AfterPayment::class.java).apply {
+            putExtra("status",1)
+        }
+        startActivity(intent)
+    }
+
 
 }
