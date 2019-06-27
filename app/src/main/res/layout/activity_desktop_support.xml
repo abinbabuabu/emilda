@@ -1,81 +1,51 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
-                                                     xmlns:app="http://schemas.android.com/apk/res-auto"
-                                                     android:layout_width="match_parent"
-                                                     android:layout_height="match_parent">
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" xmlns:app="http://schemas.android.com/apk/res-auto">
+
 
 
     <com.google.android.material.appbar.AppBarLayout android:layout_width="match_parent"
-                                                     android:id="@+id/app_bar_print"
-                                                     android:layout_height="wrap_content">
-        <com.google.android.material.appbar.CollapsingToolbarLayout
-                android:layout_width="match_parent"
-                app:contentScrim="@color/white"
-                app:expandedTitleTextAppearance="@style/bigHeading"
-                app:collapsedTitleTextAppearance="@style/AppBarTitle"
-                app:layout_scrollFlags="scroll|exitUntilCollapsed|snap"
-                android:layout_height="170dp">
-            <FrameLayout android:layout_width="match_parent"
-                         android:layout_height="wrap_content">
-                <ImageView android:layout_width="match_parent"
-                           android:background="@mipmap/sample"
-                           android:scaleType="centerCrop"
-                           app:layout_collapseMode="pin"
-                           android:layout_height="match_parent"/>
-                <View android:layout_width="match_parent"
-                      android:background="@drawable/white_gradient"
-                      android:layout_height="wrap_content"/>
-
-            </FrameLayout>
-
-
-            <androidx.appcompat.widget.Toolbar
-                    android:id="@+id/deskSupport_toolbar"
-                    app:title="Desktop Support"
-                    app:navigationIcon="@drawable/ic_arrow_back"
-                    android:layout_width="match_parent"
-                    android:layout_height="50dp"
-                    app:layout_collapseMode="pin"/>
-        </com.google.android.material.appbar.CollapsingToolbarLayout>
-
+                                                     android:gravity="top"
+                                                     android:id="@+id/app_bar_layout"
+                                                     android:layout_height="?actionBarSize">
+        <androidx.appcompat.widget.Toolbar android:layout_width="match_parent"
+                                           android:background="@color/white"
+                                           android:layout_height="wrap_content">
+            <LinearLayout android:layout_width="match_parent"
+                          android:gravity="center"
+                          android:layout_height="match_parent">
+                <TextView android:layout_width="wrap_content"
+                          android:id="@+id/toolbar_title"
+                          android:textColor="@color/colorAccent"
+                          android:textSize="17sp"
+                          android:layout_gravity="center"
+                          android:text="Hardware/Software"
+                          android:layout_height="wrap_content"/>
+            </LinearLayout>
+        </androidx.appcompat.widget.Toolbar>
     </com.google.android.material.appbar.AppBarLayout>
 
-    <androidx.core.widget.NestedScrollView
-            app:layout_behavior="com.google.android.material.appbar.AppBarLayout$ScrollingViewBehavior"
+    <com.badoualy.stepperindicator.StepperIndicator android:layout_width="match_parent"
+                                                    app:stpi_stepCount="2"
+                                                    android:layout_marginTop="16dp"
+                                                    android:layout_marginEnd="16dp"
+                                                    android:layout_marginStart="16dp"
+                                                    android:layout_below="@id/app_bar_layout"
+                                                    android:id="@+id/pod_Slider"
+                                                    app:stpi_lineDoneColor="@color/yellow"
+                                                    app:stpi_circleColor="@color/yellow"
+                                                    app:stpi_lineColor="@color/colorAccent"
+                                                    android:layout_height="wrap_content"/>
+    <fragment
+            android:name="androidx.navigation.fragment.NavHostFragment"
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
-        <LinearLayout android:layout_width="match_parent"
-                      android:orientation="vertical"
-                      android:layout_margin="26dp"
-                      android:layout_height="match_parent">
-            <TextView android:layout_width="match_parent"
-                      android:text="@string/lorem_ipsum"
-                      style="@style/small_text"
-                      android:layout_height="wrap_content"/>
-            <TextView android:layout_width="match_parent"
-                      android:text="Medium"
-                      android:id="@+id/paper_type_tv"
-                      android:layout_marginTop="16dp"
-                      style="@style/small_text.black"
-                      android:layout_height="wrap_content"/>
-            <com.google.android.material.textfield.TextInputLayout
-                    android:layout_marginEnd="50dp"
-                    android:layout_marginTop="8dp"
-                    style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox.ExposedDropdownMenu"
-                    android:layout_width="match_parent"
-                    android:layout_height="36dp"
-                    android:id="@+id/desk_support_drop"
-                    android:hint="Select"
-                    android:layout_marginRight="50dp">
-                <AutoCompleteTextView
-                        android:editable="false"
-                        android:id="@+id/dropdown_type_size"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"/>
-            </com.google.android.material.textfield.TextInputLayout>
-        </LinearLayout>
-
-    </androidx.core.widget.NestedScrollView>
+            android:layout_marginTop="8dp"
+            android:layout_below="@id/pod_Slider"
+            android:layout_height="match_parent"
+            app:navGraph="@navigation/desktop_support" app:defaultNavHost="true"
+            android:id="@+id/support_fragment"/>
 
 
-</androidx.coordinatorlayout.widget.CoordinatorLayout>
+
+</RelativeLayout>

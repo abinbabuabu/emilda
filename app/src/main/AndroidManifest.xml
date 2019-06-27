@@ -27,11 +27,6 @@
         <activity
                 android:name=".LoginActivities.PhoneLogin"
                 android:screenOrientation="portrait">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN"/>
-
-                <category android:name="android.intent.category.LAUNCHER"/>
-            </intent-filter>
 
         </activity>
         <activity android:name=".MainActivities.DesktopSupport">
@@ -48,6 +43,11 @@
                 android:name=".MainActivities.DetailsActivity"
                 android:launchMode="singleTop"
                 android:theme="@style/AppTheme.NoActionBar">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
 
         </activity>
         <activity android:name=".MainActivity">

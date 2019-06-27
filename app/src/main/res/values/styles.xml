@@ -155,5 +155,10 @@
         <item name="android:textSize">8dp</item>
     </style>
 
+    <style name="calender" parent="ShapeAppearance.MaterialComponents.LargeComponent">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">16dp</item>
+    </style>
+
 
 </resources>
