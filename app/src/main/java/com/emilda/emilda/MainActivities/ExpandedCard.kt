@@ -1,6 +1,7 @@
 package com.emilda.emilda.MainActivities
 
 import ResolvePosition
+import ResolveWorksList
 import android.os.Build
 import android.os.Bundle
 import android.text.TextUtils
@@ -12,11 +13,16 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
 import androidx.lifecycle.ViewModelProviders
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.emilda.emilda.Adapters.HowsAdapter
+import com.emilda.emilda.Adapters.ListWorksAdapter
 import com.emilda.emilda.Adapters.PortfolioAdapter
 import com.emilda.emilda.R
 import com.emilda.emilda.Viewmodels.ExpandedCardViewModel
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
-import kotlinx.android.synthetic.main.activity_expanded_card.*
+import getSmallIcons
+import getText1
+import getText2
+import kotlinx.android.synthetic.main.activity_expanded_card.start_project
 import kotlinx.android.synthetic.main.description_text_field.*
 import kotlinx.android.synthetic.main.extended_card_template.*
 
@@ -32,6 +38,9 @@ class ExpandedCard : AppCompatActivity() {
         val CardPosition = intent?.extras?.get("position") as Int
 
         ActivityTag = ResolvePosition(CardPosition)
+        //text1.text = ActivityTag
+
+
         val toolbar: Toolbar = this.findViewById(R.id.printing_toolbar)
         toolbar.title = ActivityTag
         setSupportActionBar(toolbar)
@@ -42,6 +51,12 @@ class ExpandedCard : AppCompatActivity() {
         portfolio_rv.layoutManager = LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, true)
         adapter = PortfolioAdapter(options)
         portfolio_rv.adapter = adapter
+
+        type_recycler.layoutManager = LinearLayoutManager(this)
+        type_recycler.adapter = ListWorksAdapter(ResolveWorksList(CardPosition))
+
+        how_recycle.layoutManager = LinearLayoutManager(this)
+        how_recycle.adapter = HowsAdapter(getText1(CardPosition), getText2(CardPosition), getSmallIcons(CardPosition))
 
 
         start_project.setOnClickListener {

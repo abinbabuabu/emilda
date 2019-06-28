@@ -7,7 +7,7 @@ import com.firebase.ui.database.FirebaseRecyclerOptions
 import com.google.firebase.database.FirebaseDatabase
 
 class ExpandedCardViewModel : ViewModel() {
-    private val Firebase = FirebaseDatabase.getInstance().reference
+    private val Firebase = FirebaseDatabase.getInstance().reference.child("portfolio")
 
     fun getPortfolio(position: Int): FirebaseRecyclerOptions<portfolio> {
         val urlExtension = ResolveUrl(position)
