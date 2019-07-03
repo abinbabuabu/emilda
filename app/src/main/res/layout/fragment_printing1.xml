@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+            android:layout_width="match_parent"
+            android:overScrollMode="never"
+            android:layout_height="match_parent">
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                  xmlns:app="http://schemas.android.com/apk/res-auto" android:layout_width="match_parent"
+                  android:orientation="vertical"
+                  android:layout_marginStart="20dp"
+                  android:layout_marginEnd="20dp"
+                  android:layout_marginTop="20dp"
+                  android:layout_marginBottom="80dp"
+                  android:layout_height="wrap_content">
+
+        <com.google.android.material.button.MaterialButton
+                android:layout_width="match_parent"
+                app:backgroundTint="@color/white"
+                app:strokeWidth="2dp"
+                app:strokeColor="@color/colorAccent"
+                android:layout_height="wrap_content"/>
+        <include layout="@layout/plus_minus_button"/>
+
+        <com.google.android.material.textfield.TextInputLayout
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+                android:layout_width="match_parent"
+                android:layout_marginBottom="20dp"
+                app:hintEnabled="false"
+                app:boxStrokeColor="@color/colorAccent"
+                app:boxStrokeWidth="2dp"
+                android:layout_height="@dimen/dropDownHeight"
+        >
+            <AutoCompleteTextView
+                    android:editable="false"
+                    android:hint="Color Mode"
+                    android:id="@+id/color_mode"
+                    android:gravity="start|center_vertical"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"/>
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+                android:layout_width="match_parent"
+                android:layout_marginBottom="20dp"
+                app:hintEnabled="false"
+                app:boxStrokeColor="@color/colorAccent"
+                app:boxStrokeWidth="2dp"
+                android:layout_height="@dimen/dropDownHeight"
+        >
+            <AutoCompleteTextView
+                    android:editable="false"
+                    android:hint="Paper Size"
+                    android:id="@+id/paper_size"
+                    android:gravity="start|center_vertical"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"/>
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+                android:layout_width="match_parent"
+                android:layout_marginBottom="20dp"
+                app:hintEnabled="false"
+                app:boxStrokeColor="@color/colorAccent"
+                app:boxStrokeWidth="2dp"
+                android:layout_height="@dimen/dropDownHeight"
+        >
+            <AutoCompleteTextView
+                    android:editable="false"
+                    android:hint="Paper Type"
+                    android:id="@+id/paper_type"
+                    android:gravity="start|center_vertical"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"/>
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+                android:layout_width="match_parent"
+                android:layout_marginBottom="20dp"
+                app:hintEnabled="false"
+                app:boxStrokeColor="@color/colorAccent"
+                app:boxStrokeWidth="2dp"
+                android:layout_height="@dimen/dropDownHeight"
+        >
+            <AutoCompleteTextView
+                    android:editable="false"
+                    android:hint="Duplex Printing"
+                    android:id="@+id/duplex"
+                    android:gravity="start|center_vertical"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"/>
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+                android:layout_width="match_parent"
+                android:layout_marginBottom="20dp"
+                app:hintEnabled="false"
+                app:boxStrokeColor="@color/colorAccent"
+                app:boxStrokeWidth="2dp"
+                android:layout_height="@dimen/dropDownHeight"
+        >
+            <AutoCompleteTextView
+                    android:editable="false"
+                    android:id="@+id/document_binding"
+                    android:hint="Document Binding Type"
+                    android:gravity="start|center_vertical"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"/>
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.button.MaterialButton
+                android:layout_width="match_parent"
+                android:text="Next"
+                android:id="@+id/next_print1"
+                android:layout_marginBottom="60dp"
+                android:layout_height="@dimen/dropDownHeight"/>
+
+    </LinearLayout>
+</ScrollView>

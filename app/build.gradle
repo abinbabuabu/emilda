@@ -60,4 +60,5 @@ dependencies {
     implementation 'com.eyalbira.loadingdots:loading-dots:1.0.2'
     implementation 'com.github.badoualy:stepper-indicator:1.0.7'
 
+
 }

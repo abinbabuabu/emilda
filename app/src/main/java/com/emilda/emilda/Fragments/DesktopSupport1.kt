@@ -28,8 +28,30 @@ class DesktopSupport1 : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         next_btn_support1.setOnClickListener {
-            findNavController().navigate(R.id.desktopSupport2)
+            var flag = 0
+            if(support_device_type.text.isEmpty()){
+                support_device_type.error = "This field is required"
+                flag = 1
+            }
+            if (brand_name.text!!.isEmpty()){
+                brand_name.error =  "This field is required"
+                flag = 1
+            }
+            if(model_name.text!!.isEmpty()){
+                model_name.error =  "This field is required"
+                flag = 1
+            }
+            if(problem_desc.text!!.isEmpty()){
+                problem_desc.error =  "This field is required"
+                flag = 1
+            }
+
+            if(flag == 0) {
+                findNavController().navigate(R.id.desktopSupport2)
+            }
         }
+
+
 
     }
 

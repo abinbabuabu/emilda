@@ -6,7 +6,9 @@ import android.net.Uri
 import android.os.Build
 import android.os.Bundle
 import android.transition.Explode
+import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
+import androidx.navigation.findNavController
 import androidx.navigation.fragment.findNavController
 import com.bumptech.glide.annotation.GlideModule
 import com.emilda.emilda.R
@@ -27,20 +29,33 @@ class DetailsActivity : AppCompatActivity(),PaymentResultListener{
         setUpBottomAppBarShapeAppearance(fab_details, bottom_bar)
 
         fab_details.setColorFilter(Color.WHITE)
+        fab_details.setOnClickListener {
+            whatsApp()
+        }
+
+        var current:Int = R.id.fragmentDetails
 
 
-        val controller = main_nav_fragment.findNavController()
+        val controllerNav = findNavController(R.id.main_nav_fragment)
+        controllerNav.addOnDestinationChangedListener { _, destination, _ ->
+            current = destination.id
+            Log.d("xy",current.toString())
+        }
         ic_profile_bottom.setOnClickListener {
-            controller.popBackStack()
-            controller.navigate(R.id.fragmentProfile)
+            controllerNav.popBackStack()
+            controllerNav.navigate(R.id.fragmentProfile)
+
+
+
         }
         ic_home_bottom.setOnClickListener {
-            controller.popBackStack()
-            controller.navigate(R.id.fragmentDetails)
+            controllerNav.popBackStack()
+            controllerNav.navigate(R.id.fragmentDetails)
         }
         ic_recharge_bottom.setOnClickListener {
-            controller.popBackStack()
-            controller.navigate(R.id.fragmentRecharge)
+            controllerNav.popBackStack()
+            controllerNav.navigate(R.id.fragmentRecharge)
+
         }
 
 

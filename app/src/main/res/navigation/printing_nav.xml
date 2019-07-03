@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:app="http://schemas.android.com/apk/res-auto"
+            xmlns:tools="http://schemas.android.com/tools" android:id="@+id/printing_nav" app:startDestination="@id/printing1">
+
+    <fragment android:id="@+id/printing1" android:name="com.emilda.emilda.Fragments.Printing1"
+              android:label="Printing1"/>
+    <fragment android:id="@+id/printing2" android:name="com.emilda.emilda.Fragments.Printing2"
+              android:label="fragment_printing2" tools:layout="@layout/fragment_printing2"/>
+</navigation>

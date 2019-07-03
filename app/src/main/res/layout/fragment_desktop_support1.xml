@@ -9,11 +9,11 @@
               tools:context=".Fragments.DesktopSupport1">
 
     <com.google.android.material.textfield.TextInputLayout
-            style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox.ExposedDropdownMenu"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
             android:layout_width="match_parent"
             app:boxStrokeColor="@color/colorAccent"
             app:boxStrokeWidth="2dp"
-            android:layout_height="40dp"
+            android:layout_height="@dimen/dropDownHeight"
             android:hint="Select">
         <AutoCompleteTextView
                 android:editable="false"
@@ -34,6 +34,7 @@
         <com.google.android.material.textfield.TextInputEditText
                 android:layout_width="match_parent"
                 android:inputType="text"
+                android:id="@+id/brand_name"
                 android:layout_height="match_parent"/>
     </com.google.android.material.textfield.TextInputLayout>
 
@@ -48,6 +49,7 @@
         <com.google.android.material.textfield.TextInputEditText
                 android:layout_width="match_parent"
                 android:inputType="text"
+                android:id="@+id/model_name"
                 android:layout_height="match_parent"/>
     </com.google.android.material.textfield.TextInputLayout>
 
@@ -64,6 +66,7 @@
                 android:layout_width="match_parent"
                 android:inputType="textMultiLine"
                 android:gravity="top"
+                android:id="@+id/problem_desc"
                 android:layout_height="match_parent"/>
     </com.google.android.material.textfield.TextInputLayout>
 

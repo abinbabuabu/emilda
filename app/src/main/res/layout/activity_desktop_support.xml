@@ -43,7 +43,8 @@
             android:layout_marginTop="8dp"
             android:layout_below="@id/pod_Slider"
             android:layout_height="match_parent"
-            app:navGraph="@navigation/desktop_support" app:defaultNavHost="true"
+            app:navGraph="@navigation/desktop_support"
+            app:defaultNavHost="true"
             android:id="@+id/support_fragment"/>
 
 
