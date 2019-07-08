@@ -185,12 +185,13 @@ fun getText2(position: Int): List<String> {
                 "The final phase consists of testing for any errors and deployment of the app."
             )
         }
-        2 ->{
-            listOf("Your company's website is the cornerstone of your digital marketing strategy.",
+        2 -> {
+            listOf(
+                "Your company's website is the cornerstone of your digital marketing strategy.",
                 "The goal of digital marketing is to attract, engage and convert your leads.",
                 "We will now design and develop the website while keeping you updated at every step.",
                 "The final phase consists of testing for any errors and deployment of the app."
-                )
+            )
         }
         4 -> {
             listOf(
@@ -206,13 +207,21 @@ fun getText2(position: Int): List<String> {
     }
 }
 
-fun getSmallIcons(position: Int):List<Int>{
-    return when(position){
-        0 ->{ listOf(R.drawable.ic_mob1,R.drawable.ic_mob2,R.drawable.ic_mob3,R.drawable.ic_mob4)}
-        1 ->{ listOf(R.drawable.ic_mob1,R.drawable.ic_mob2,R.drawable.ic_mob3,R.drawable.ic_mob4)}
-        2 ->{ listOf(R.drawable.ic_mob1,R.drawable.ic_mob2,R.drawable.ic_mob3,R.drawable.ic_mob4)}
-        4 ->{ listOf(R.drawable.ic_mob1,R.drawable.ic_mob2,R.drawable.ic_mob3,R.drawable.ic_mob4)}
-        else ->{
+fun getSmallIcons(position: Int): List<Int> {
+    return when (position) {
+        0 -> {
+            listOf(R.drawable.ic_mob1, R.drawable.ic_mob2, R.drawable.ic_mob3, R.drawable.ic_mob4)
+        }
+        1 -> {
+            listOf(R.drawable.ic_mob1, R.drawable.ic_mob2, R.drawable.ic_mob3, R.drawable.ic_mob4)
+        }
+        2 -> {
+            listOf(R.drawable.ic_mob1, R.drawable.ic_mob2, R.drawable.ic_mob3, R.drawable.ic_mob4)
+        }
+        4 -> {
+            listOf(R.drawable.ic_mob1, R.drawable.ic_mob2, R.drawable.ic_mob3, R.drawable.ic_mob4)
+        }
+        else -> {
             listOf(-1)
         }
     }

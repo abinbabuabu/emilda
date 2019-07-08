@@ -24,16 +24,16 @@ class PhoneFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-            next_btn_login.setOnClickListener {
-                val phone = phone_number.text.toString()
-                Log.d("phone", phone)
-                if (phone.length != 10) {
-                    Toast.makeText(context, "Invalid Mobile Number", Toast.LENGTH_LONG).show()
-                } else {
-                    val directions = PhoneFragmentDirections.actionPhoneFragmentToOtpFragment(phone)
-                    findNavController().navigate(directions)
-                }
+        next_btn_login.setOnClickListener {
+            val phone = phone_number.text.toString()
+            Log.d("phone", phone)
+            if (phone.length != 10) {
+                Toast.makeText(context, "Invalid Mobile Number", Toast.LENGTH_LONG).show()
+            } else {
+                val directions = PhoneFragmentDirections.actionPhoneFragmentToOtpFragment(phone)
+                findNavController().navigate(directions)
             }
+        }
 
 
     }

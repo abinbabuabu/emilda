@@ -54,7 +54,7 @@ class FragmentProfile : Fragment() {
         logout_row.setOnClickListener {
             FirebaseAuth.getInstance().signOut()
             val phone = FirebaseAuth.getInstance().currentUser?.phoneNumber
-            val intent = Intent(context,PhoneLogin::class.java)
+            val intent = Intent(context, PhoneLogin::class.java)
             startActivity(intent)
             activity?.finish()
         }

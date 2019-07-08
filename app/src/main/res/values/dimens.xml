@@ -35,5 +35,6 @@
 
     <!--Printing Fragment-->
     <dimen name="dropDownHeight">48dp</dimen>
+    <dimen name="main_button_height">52dp</dimen>
 
 </resources>

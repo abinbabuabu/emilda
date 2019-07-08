@@ -27,7 +27,7 @@ class Screen3 : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         Login_btn.setOnClickListener {
-            val intent = Intent(context,PhoneLogin::class.java)
+            val intent = Intent(context, PhoneLogin::class.java)
             startActivity(intent)
         }
     }

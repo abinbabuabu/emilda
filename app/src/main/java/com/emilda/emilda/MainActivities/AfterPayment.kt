@@ -12,7 +12,7 @@ class AfterPayment : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_after_payment)
         val completion = intent?.extras?.getInt("status")
-        if(completion == 0)
+        if (completion == 0)
             Glide.with(this).load(R.drawable.ic_payment_error).into(completionImage)
         else
             Glide.with(this).load(R.drawable.ic_payment_success).into(completionImage)

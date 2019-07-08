@@ -25,7 +25,7 @@ class SplashScreen : AppCompatActivity() {
             .into(splash_gif)
 
         Handler().postDelayed({
-            authen()
+            authentication()
         }, 3400)
 
 
@@ -44,10 +44,10 @@ class SplashScreen : AppCompatActivity() {
 
     }
 
+    private fun authentication() {
 
-    private fun authen() {
         mAuthStateListener = FirebaseAuth.AuthStateListener {
-            var user = it.currentUser
+            val user = it.currentUser
             if (user != null) {
                 startActivity(Intent(this, DetailsActivity::class.java))
                 finish()

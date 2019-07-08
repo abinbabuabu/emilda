@@ -107,9 +107,8 @@ class OtpFragment : Fragment() {
 
                 val credential = PhoneAuthProvider.getCredential(storedVerificationId!!, code)
                 signInWithPhoneAuthCredential(credential)
-            }
-            else{
-                Toast.makeText(context,"Invalid OTP",Toast.LENGTH_SHORT).show()
+            } else {
+                Toast.makeText(context, "Invalid OTP", Toast.LENGTH_SHORT).show()
             }
 
 

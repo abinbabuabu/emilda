@@ -15,7 +15,7 @@ import com.razorpay.PaymentResultListener
 import kotlinx.android.synthetic.main.fragment_recharge.*
 import org.json.JSONObject
 
-class FragmentRecharge : Fragment(){
+class FragmentRecharge : Fragment() {
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,

@@ -1,25 +1,29 @@
 package com.emilda.emilda.MainActivities
 
+import android.content.Context
 import android.content.Intent
 import android.graphics.Color
 import android.net.Uri
 import android.os.Build
 import android.os.Bundle
+import android.provider.MediaStore
 import android.transition.Explode
-import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.findNavController
-import androidx.navigation.fragment.findNavController
-import com.bumptech.glide.annotation.GlideModule
+import androidx.navigation.ui.setupWithNavController
 import com.emilda.emilda.R
 import com.razorpay.PaymentResultListener
 import kotlinx.android.synthetic.main.app_bar_details.*
-import kotlinx.android.synthetic.main.main.*
 import setUpBottomAppBarShapeAppearance
+import java.io.File
+import java.net.URI
+import java.net.URISyntaxException
 import java.net.URLEncoder
 
 
-class DetailsActivity : AppCompatActivity(),PaymentResultListener{
+class DetailsActivity : AppCompatActivity(), PaymentResultListener {
+
+    private val REQUEST_CODE_DOC: Int = 34
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -33,30 +37,14 @@ class DetailsActivity : AppCompatActivity(),PaymentResultListener{
             whatsApp()
         }
 
-        var current:Int = R.id.fragmentDetails
-
 
         val controllerNav = findNavController(R.id.main_nav_fragment)
-        controllerNav.addOnDestinationChangedListener { _, destination, _ ->
-            current = destination.id
-            Log.d("xy",current.toString())
-        }
-        ic_profile_bottom.setOnClickListener {
-            controllerNav.popBackStack()
-            controllerNav.navigate(R.id.fragmentProfile)
 
-
-
+        controllerNav.addOnDestinationChangedListener { controller, destination, arguments ->
+            controller.popBackStack()
         }
-        ic_home_bottom.setOnClickListener {
-            controllerNav.popBackStack()
-            controllerNav.navigate(R.id.fragmentDetails)
-        }
-        ic_recharge_bottom.setOnClickListener {
-            controllerNav.popBackStack()
-            controllerNav.navigate(R.id.fragmentRecharge)
 
-        }
+        bottom_navigation.setupWithNavController(controllerNav)
 
 
     }
@@ -94,20 +82,19 @@ class DetailsActivity : AppCompatActivity(),PaymentResultListener{
 
     override fun onPaymentError(p0: Int, p1: String?) {
         try {
-            val intent = Intent(this,AfterPayment::class.java).apply {
-                putExtra("status",0)
+            val intent = Intent(this, AfterPayment::class.java).apply {
+                putExtra("status", 0)
             }
             startActivity(intent)
-        }
-        catch (e:Exception){
+        } catch (e: Exception) {
 
         }
 
     }
 
     override fun onPaymentSuccess(p0: String?) {
-        val intent = Intent(this,AfterPayment::class.java).apply {
-            putExtra("status",1)
+        val intent = Intent(this, AfterPayment::class.java).apply {
+            putExtra("status", 1)
         }
         startActivity(intent)
     }

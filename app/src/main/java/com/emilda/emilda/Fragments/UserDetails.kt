@@ -30,7 +30,7 @@ class UserDetails : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         submit_user_details.setOnClickListener {
-             submit_user_details.visibility = View.GONE
+            submit_user_details.visibility = View.GONE
             loading_dots.visibility = View.VISIBLE
             val firstName = firstname_login.text.toString()
             val lastName = lastName_login.text.toString()
@@ -41,22 +41,20 @@ class UserDetails : Fragment() {
 
             val FirebaseUser = FirebaseAuth.getInstance().currentUser
 
-            val  ProfileUpdates = UserProfileChangeRequest.Builder()
+            val ProfileUpdates = UserProfileChangeRequest.Builder()
                 .setDisplayName(firstName)
                 .build()
 
             FirebaseUser?.updateProfile(ProfileUpdates)?.addOnCompleteListener {
-                if(it.isSuccessful){
-                    FirebaseDatabase.getInstance().reference.child("UsersData").child(FirebaseUser?.uid!!).setValue(User).addOnCompleteListener{
-                        val intent = Intent(context,DetailsActivity::class.java)
-                        startActivity(intent)
-                        activity?.finish()
-                    }
+                if (it.isSuccessful) {
+                    FirebaseDatabase.getInstance().reference.child("UsersData").child(FirebaseUser.uid).setValue(User)
+                        .addOnCompleteListener {
+                            val intent = Intent(context, DetailsActivity::class.java)
+                            startActivity(intent)
+                            activity?.finish()
+                        }
                 }
             }
-
-
-
 
 
         }

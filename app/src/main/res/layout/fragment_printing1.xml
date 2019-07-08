@@ -4,21 +4,31 @@
             android:overScrollMode="never"
             android:layout_height="match_parent">
 
-    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-                  xmlns:app="http://schemas.android.com/apk/res-auto" android:layout_width="match_parent"
-                  android:orientation="vertical"
-                  android:layout_marginStart="20dp"
-                  android:layout_marginEnd="20dp"
-                  android:layout_marginTop="20dp"
-                  android:layout_marginBottom="80dp"
-                  android:layout_height="wrap_content">
+    <LinearLayout
+            xmlns:app="http://schemas.android.com/apk/res-auto" android:layout_width="match_parent"
+            android:orientation="vertical"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="20dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginBottom="80dp"
+            android:layout_height="wrap_content">
 
         <com.google.android.material.button.MaterialButton
                 android:layout_width="match_parent"
                 app:backgroundTint="@color/white"
                 app:strokeWidth="2dp"
+                app:iconSize="16dp"
+                android:id="@+id/browse_pdf"
+                app:iconTint="@color/colorAccent"
+                android:text="Browse"
+                android:gravity="start|center_vertical"
+                android:textAlignment="textStart"
+                android:textAllCaps="false"
+                android:textColor="@color/colorAccent"
+                app:icon="@drawable/ic_profile_bottom"
+                app:iconGravity="end"
                 app:strokeColor="@color/colorAccent"
-                android:layout_height="wrap_content"/>
+                android:layout_height="@dimen/dropDownHeight"/>
         <include layout="@layout/plus_minus_button"/>
 
         <com.google.android.material.textfield.TextInputLayout
@@ -118,9 +128,10 @@
         <com.google.android.material.button.MaterialButton
                 android:layout_width="match_parent"
                 android:text="Next"
+                android:textAllCaps="false"
                 android:id="@+id/next_print1"
                 android:layout_marginBottom="60dp"
-                android:layout_height="@dimen/dropDownHeight"/>
+                android:layout_height="@dimen/main_button_height"/>
 
     </LinearLayout>
 </ScrollView>

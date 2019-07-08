@@ -8,12 +8,12 @@ import com.emilda.emilda.Fragments.onBoardingScreens.Screen1
 import com.emilda.emilda.Fragments.onBoardingScreens.Screen3
 import com.emilda.emilda.Fragments.onBoardingScreens.screen2
 
-class SupportViewPagerAdapter(fm:FragmentManager) : FragmentPagerAdapter(fm) {
+class SupportViewPagerAdapter(fm: FragmentManager) : FragmentPagerAdapter(fm) {
 
     override fun getItem(position: Int): Fragment {
         return when (position) {
             0 -> DesktopSupport1()
-            else ->DesktopSupport1()
+            else -> DesktopSupport1()
         }
     }
 

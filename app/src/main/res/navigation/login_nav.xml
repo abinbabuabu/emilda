@@ -15,7 +15,7 @@
               android:name="com.emilda.emilda.Fragments.PhoneFragment"
               android:label="PhoneFragment">
         <action android:id="@+id/action_phoneFragment_to_otpFragment"
-                app:destination="@id/otpFragment" 
+                app:destination="@id/otpFragment"
                 app:enterAnim="@anim/nav_default_enter_anim"
                 app:exitAnim="@anim/nav_default_pop_exit_anim"/>
     </fragment>

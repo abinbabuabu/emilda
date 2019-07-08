@@ -10,13 +10,14 @@ import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.emilda.emilda.R
 
-class HowsAdapter(list1: List<String>,list2:List<String>,iconList:List<Int>) : RecyclerView.Adapter<HowsAdapter.howViewholder>() {
+class HowsAdapter(list1: List<String>, list2: List<String>, iconList: List<Int>) :
+    RecyclerView.Adapter<HowsAdapter.howViewholder>() {
     val list1: List<String> = list1
-    val list2:List<String> = list2
-    val iconList:List<Int> =iconList
+    val list2: List<String> = list2
+    val iconList: List<Int> = iconList
     lateinit var context: Context
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int):howViewholder {
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): howViewholder {
         context = parent.context
         val v = LayoutInflater.from(parent.context).inflate(R.layout.how_row, parent, false)
         return howViewholder(v)
@@ -33,9 +34,9 @@ class HowsAdapter(list1: List<String>,list2:List<String>,iconList:List<Int>) : R
     }
 
     inner class howViewholder(v: View) : RecyclerView.ViewHolder(v) {
-        val text1:TextView = v.findViewById(R.id.text1_how)
-        val text2:TextView = v.findViewById(R.id.text2_how)
-        val icon:ImageView = v.findViewById(R.id.icon_how)
+        val text1: TextView = v.findViewById(R.id.text1_how)
+        val text2: TextView = v.findViewById(R.id.text2_how)
+        val icon: ImageView = v.findViewById(R.id.icon_how)
 
     }
 }

@@ -32,7 +32,6 @@ class DesktopSupport : AppCompatActivity() {
         }
 
 
-
     }
 
 
