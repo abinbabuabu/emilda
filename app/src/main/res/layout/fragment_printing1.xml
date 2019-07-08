@@ -35,7 +35,7 @@
                 style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
                 android:layout_width="match_parent"
                 android:layout_marginBottom="20dp"
-                app:hintEnabled="false"
+                app:hintEnabled="true"
                 app:boxStrokeColor="@color/colorAccent"
                 app:boxStrokeWidth="2dp"
                 android:layout_height="@dimen/dropDownHeight"
@@ -43,6 +43,7 @@
             <AutoCompleteTextView
                     android:editable="false"
                     android:hint="Color Mode"
+                    android:padding="6dp"
                     android:id="@+id/color_mode"
                     android:gravity="start|center_vertical"
                     android:layout_width="match_parent"
@@ -54,7 +55,7 @@
                 style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
                 android:layout_width="match_parent"
                 android:layout_marginBottom="20dp"
-                app:hintEnabled="false"
+                app:hintEnabled="true"
                 app:boxStrokeColor="@color/colorAccent"
                 app:boxStrokeWidth="2dp"
                 android:layout_height="@dimen/dropDownHeight"
@@ -62,6 +63,7 @@
             <AutoCompleteTextView
                     android:editable="false"
                     android:hint="Paper Size"
+                    android:padding="6dp"
                     android:id="@+id/paper_size"
                     android:gravity="start|center_vertical"
                     android:layout_width="match_parent"
@@ -73,7 +75,7 @@
                 style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
                 android:layout_width="match_parent"
                 android:layout_marginBottom="20dp"
-                app:hintEnabled="false"
+                app:hintEnabled="true"
                 app:boxStrokeColor="@color/colorAccent"
                 app:boxStrokeWidth="2dp"
                 android:layout_height="@dimen/dropDownHeight"
@@ -81,6 +83,7 @@
             <AutoCompleteTextView
                     android:editable="false"
                     android:hint="Paper Type"
+                    android:padding="6dp"
                     android:id="@+id/paper_type"
                     android:gravity="start|center_vertical"
                     android:layout_width="match_parent"
@@ -92,7 +95,7 @@
                 style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
                 android:layout_width="match_parent"
                 android:layout_marginBottom="20dp"
-                app:hintEnabled="false"
+                app:hintEnabled="true"
                 app:boxStrokeColor="@color/colorAccent"
                 app:boxStrokeWidth="2dp"
                 android:layout_height="@dimen/dropDownHeight"
@@ -101,9 +104,10 @@
                     android:editable="false"
                     android:hint="Duplex Printing"
                     android:id="@+id/duplex"
+                    android:padding="6dp"
                     android:gravity="start|center_vertical"
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent"/>
+                    android:layout_height="wrap_content"/>
 
         </com.google.android.material.textfield.TextInputLayout>
 
@@ -111,13 +115,14 @@
                 style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
                 android:layout_width="match_parent"
                 android:layout_marginBottom="20dp"
-                app:hintEnabled="false"
+                app:hintEnabled="true"
                 app:boxStrokeColor="@color/colorAccent"
                 app:boxStrokeWidth="2dp"
                 android:layout_height="@dimen/dropDownHeight"
         >
             <AutoCompleteTextView
                     android:editable="false"
+                    android:padding="6dp"
                     android:id="@+id/document_binding"
                     android:hint="Document Binding Type"
                     android:gravity="start|center_vertical"

@@ -34,7 +34,7 @@
     <dimen name="feedback_button_height">48dp</dimen>
 
     <!--Printing Fragment-->
-    <dimen name="dropDownHeight">48dp</dimen>
+    <dimen name="dropDownHeight">54dp</dimen>
     <dimen name="main_button_height">52dp</dimen>
 
 </resources>
