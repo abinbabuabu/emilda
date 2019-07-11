@@ -8,14 +8,20 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ArrayAdapter
+import android.widget.Toast
+import androidx.core.content.ContextCompat
+import androidx.lifecycle.ViewModelProviders
 import androidx.navigation.fragment.findNavController
 
 import com.emilda.emilda.R
+import com.emilda.emilda.Viewmodels.PrintingViewModel
 import kotlinx.android.synthetic.main.fragment_printing1.*
+import kotlinx.android.synthetic.main.plus_minus_button.*
 
 class Printing1 : Fragment() {
 
     private val REQUEST_CODE_DOC: Int = 343
+    lateinit var model: PrintingViewModel
 
 
     override fun onCreateView(
@@ -24,6 +30,13 @@ class Printing1 : Fragment() {
     ): View? {
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_printing1, container, false)
+    }
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        model = activity?.run {
+            ViewModelProviders.of(this).get(PrintingViewModel::class.java)
+        } ?: throw Exception("Invalid Activity")
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -35,16 +48,26 @@ class Printing1 : Fragment() {
 
         nullCheckBeforeNext()
         setUpDropDowns()
+        counter()
 
+    }
 
+    override fun onStart() {
+        super.onStart()
+
+        if (!model.FileName.isNullOrEmpty()) {
+            browse_pdf.text = model.FileName
+            browse_pdf.setBackgroundColor(ContextCompat.getColor(activity!!.applicationContext, R.color.yellow))
+        }
     }
 
 
     private fun getDocument() {
+        //TODO("Check For Storage Permission" )
+
         val intent = Intent(Intent.ACTION_GET_CONTENT)
         intent.type = "application/pdf"
         intent.action = Intent.ACTION_GET_CONTENT
-        // Only the system receives the ACTION_OPEN_DOCUMENT, so no need to test.
         activity?.startActivityForResult(Intent.createChooser(intent, "Pick "), REQUEST_CODE_DOC)
     }
 
@@ -71,9 +94,15 @@ class Printing1 : Fragment() {
                 flag = false
                 document_binding.error = "Required Field"
             }
+            if (model.FileName.isNullOrEmpty()) {
+                flag = false
+                Toast.makeText(context, "Select a File", Toast.LENGTH_LONG).show()
+            }
 
-            if (flag)
+            if (flag) {
+                findNavController().popBackStack()
                 findNavController().navigate(R.id.printing2)
+            }
         }
     }
 
@@ -123,14 +152,34 @@ class Printing1 : Fragment() {
 
         }
 
-        var binding:String
-        val Bindings =arrayOf("One Side", "Two Side")
-        val bindingAdapter = ArrayAdapter(context!!,R.layout.drop_down_menu_item,Bindings)
-        document_binding.setAdapter(duplexAdapter)
+        var binding: String
+        val Bindings = arrayOf("One Side", "Two Side")
+        val bindingAdapter = ArrayAdapter(context!!, R.layout.drop_down_menu_item, Bindings)
+        document_binding.setAdapter(bindingAdapter)
         document_binding.setOnItemClickListener { adapterView, view, pos, l ->
             binding = adapterView.getItemAtPosition(pos).toString()
-            document_binding.hint =binding
+            document_binding.hint = binding
             document_binding.error = null
+
+        }
+
+    }
+
+    fun counter() {
+        plus_btn.setOnClickListener {
+            count_plusMinus.clearFocus()
+            val count = count_plusMinus.text.toString()
+            var countInt = count.toInt()
+            countInt++
+            count_plusMinus.setText(countInt.toString())
+        }
+        minus_btn.setOnClickListener {
+            count_plusMinus.clearFocus()
+            val count = count_plusMinus.text.toString()
+            var countInt = count.toInt()
+            if (countInt > 1)
+                countInt--
+            count_plusMinus.setText(countInt.toString())
 
         }
     }

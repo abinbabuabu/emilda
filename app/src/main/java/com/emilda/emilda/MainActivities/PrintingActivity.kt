@@ -2,60 +2,46 @@ package com.emilda.emilda.MainActivities
 
 
 import android.app.Activity
-import android.content.Context
 import android.content.Intent
-import android.net.Uri
 import android.os.Bundle
-import android.provider.MediaStore
-import android.util.Log
+import android.provider.OpenableColumns
 import android.view.MenuItem
-import android.widget.ArrayAdapter
-import android.widget.AutoCompleteTextView
+import android.view.View
 import androidx.appcompat.app.AppCompatActivity
-import androidx.appcompat.widget.Toolbar
+import androidx.lifecycle.ViewModelProviders
 import androidx.navigation.findNavController
 import com.emilda.emilda.R
+import com.emilda.emilda.Viewmodels.PrintingViewModel
 import kotlinx.android.synthetic.main.printing_layout.*
-import java.io.File
-import java.net.URI
-import java.net.URISyntaxException
 
 
 class PrintingActivity : AppCompatActivity() {
     private val REQUEST_CODE_DOC: Int = 343
+    lateinit var printViewModel: PrintingViewModel
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.printing_layout)
-        setDropDownMenus()
+
+        printViewModel = ViewModelProviders.of(this).get(PrintingViewModel::class.java)
 
         findNavController(R.id.printing_fragment).addOnDestinationChangedListener { controller, destination, arguments ->
             when (destination.id) {
                 R.id.printing1 -> pod_Slider.currentStep = 0
                 R.id.printing2 -> pod_Slider.currentStep = 1
+                R.id.uploadingStatus -> {
+                    pod_Slider.visibility = View.GONE
+                    app_bar_layout.visibility = View.GONE
+                }
             }
         }
 
     }
 
-    private fun setDropDownMenus() {
-        // Paper Size
-//        val paperSize = arrayOf("Item 1", "Item 2", "Item 3", "Item 4")
-//        val adapter = ArrayAdapter(
-//            this,
-//            R.layout.drop_down_menu_item,
-//            paperSize
-//        )
-//        val paperSizeDropDown = findViewById<AutoCompleteTextView>(R.id.dropdown_paper_size)
-//        paperSizeDropDown.setAdapter(adapter)
-
-    }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
+
         return when (item.itemId) {
             android.R.id.home -> {
                 onBackPressed()
@@ -67,55 +53,30 @@ class PrintingActivity : AppCompatActivity() {
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         super.onActivityResult(requestCode, resultCode, data)
-        if (requestCode == REQUEST_CODE_DOC)
-            if (resultCode == Activity.RESULT_OK) {
-                val uri = data?.data
-                val fileP = getFileNameByUri(this, uri!!)
-                Log.d("xy", fileP.length.toString())
+        if (requestCode == REQUEST_CODE_DOC && resultCode == Activity.RESULT_OK) {
+            data?.data?.let { returnUri ->
+                printViewModel.Uri = returnUri
+                contentResolver.query(returnUri, null, null, null, null)
+            }?.use { cursor ->
+                val nameIndex = cursor.getColumnIndex(OpenableColumns.DISPLAY_NAME)
+                val sizeIndex = cursor.getColumnIndex(OpenableColumns.SIZE)
+                cursor.moveToFirst()
+                val FileName = cursor.getString(nameIndex)
+                val FileSize = cursor.getLong(sizeIndex).toString()
+
+                printViewModel.FileName = FileName
+                printViewModel.FileSize = FileSize
+                cursor.close()
 
             }
+        }
     }
 
-
-    private fun getFileNameByUri(context: Context, uri: Uri): String {
-        var filepath = ""//default fileName
-        //Uri filePathUri = uri;
-        val file: File
-        if (uri.scheme.toString().compareTo("content") === 0) {
-            val cursor = context.contentResolver.query(
-                uri,
-                arrayOf<String>(
-                    android.provider.MediaStore.Images.ImageColumns.DATA,
-                    MediaStore.Images.Media.ORIENTATION
-                ),
-                null,
-                null,
-                null
-            )
-            val column_index = cursor.getColumnIndexOrThrow(MediaStore.Images.Media.DATA)
-
-            cursor.moveToFirst()
-
-            val mImagePath = cursor.getString(column_index)
-            cursor.close()
-            filepath = mImagePath
-
-        } else if (uri.scheme.compareTo("file") === 0) {
-            try {
-                file = File(URI(uri.toString()))
-                if (file.exists())
-                    filepath = file.absolutePath
-
-            } catch (e: URISyntaxException) {
-                // TODO Auto-generated catch block
-                e.printStackTrace()
-            }
-
-        } else {
-            filepath = uri.path
-        }
-        return filepath
+    override fun onBackPressed() {
+        finish()
+        super.onBackPressed()
     }
 }
+
 
 

@@ -2,13 +2,15 @@ package com.emilda.emilda.MainActivities
 
 import ResolvePosition
 import ResolveWorksList
+import android.content.DialogInterface
 import android.os.Build
 import android.os.Bundle
-import android.text.TextUtils
 import android.transition.Slide
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.MenuItem
+import android.widget.Toast
+import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
 import androidx.lifecycle.ViewModelProviders
@@ -18,18 +20,21 @@ import com.emilda.emilda.Adapters.ListWorksAdapter
 import com.emilda.emilda.Adapters.PortfolioAdapter
 import com.emilda.emilda.R
 import com.emilda.emilda.Viewmodels.ExpandedCardViewModel
-import com.google.android.material.dialog.MaterialAlertDialogBuilder
+import com.google.android.material.textfield.TextInputEditText
+import com.google.android.material.textfield.TextInputLayout
 import getSmallIcons
 import getText1
 import getText2
-import kotlinx.android.synthetic.main.activity_expanded_card.start_project
-import kotlinx.android.synthetic.main.description_text_field.*
+import kotlinx.android.synthetic.main.activity_expanded_card.*
+import kotlinx.android.synthetic.main.description_text_field.view.*
 import kotlinx.android.synthetic.main.extended_card_template.*
+import org.jetbrains.anko.AlertDialogBuilder
 
 class ExpandedCard : AppCompatActivity() {
     lateinit var ActivityTag: String
     lateinit var mViewModel: ExpandedCardViewModel
     lateinit var adapter: PortfolioAdapter
+    lateinit var dialogBuilder: AlertDialog.Builder
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -60,24 +65,35 @@ class ExpandedCard : AppCompatActivity() {
 
 
         start_project.setOnClickListener {
-            val dialog = MaterialAlertDialogBuilder(this)
-            dialog.setTitle("What is your mind ?")
-            dialog.setCancelable(false)
+            dialogBuilder = AlertDialog.Builder(this)
+            dialogBuilder.setTitle("What is your mind ?")
+
             val view = LayoutInflater.from(this).inflate(R.layout.description_text_field, null)
-            dialog.setView(view)
-            dialog.setPositiveButton("Submit") { dialogInterface, p1 ->
-                val desc = project_desc?.text
-                if (TextUtils.isEmpty(desc)) {
-                    project_desc.error = "Please fill this !"
-                }
+            dialogBuilder.setView(view)
 
-            }
-            dialog.setNegativeButton("Cancel") { dialogInterface, p1 ->
-                dialog.setCancelable(true)
-            }
+            dialogBuilder.setPositiveButton("Submit") { _, _ -> }
+            dialogBuilder.setNegativeButton("Cancel"){_,_ ->}
 
+
+            val dialog = dialogBuilder.create()
             dialog.show()
 
+            dialog.getButton(AlertDialog.BUTTON_POSITIVE).setOnClickListener {
+                if (view.project_desc.text.isNullOrEmpty()) {
+                    view.project_desc.error = "This is Required"
+                } else {
+                    dialog.cancel()
+                }
+            }
+
+            // dialog.getButton()
+
+//            dialog.setNegativeButton("Cancel") { dialogInterface, p1 ->
+//                //dialog.setCancelable(true)
+//            }
+
+
+//
         }
 
 

@@ -35,6 +35,7 @@ dependencies {
     implementation 'androidx.legacy:legacy-support-v4:1.0.0'
     implementation 'com.google.android.material:material:1.0.0'
     implementation 'com.google.firebase:firebase-database:18.0.0'
+    implementation 'com.google.firebase:firebase-storage:18.0.0'
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'androidx.test:runner:1.2.0'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
@@ -59,6 +60,9 @@ dependencies {
     implementation 'com.razorpay:checkout:1.5.1'
     implementation 'com.eyalbira.loadingdots:loading-dots:1.0.2'
     implementation 'com.github.badoualy:stepper-indicator:1.0.7'
+    implementation 'com.github.ybq:Android-SpinKit:1.2.0'
+
+    implementation 'org.jetbrains.anko:anko-common:0.9'
 
 
 }

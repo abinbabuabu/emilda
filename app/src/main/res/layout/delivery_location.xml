@@ -22,23 +22,26 @@
                     android:layout_below="@+id/tv1"
                     android:layout_marginStart="20dp"
                     android:layout_marginEnd="16dp"
-                    android:id="@+id/delivery_timings"
+                    android:id="@+id/location"
                     android:layout_height="wrap_content">
             <com.google.android.material.radiobutton.MaterialRadioButton
                     android:layout_width="wrap_content"
-                    android:text="Hello"
+                    android:text="Mba Canteen"
+                    android:id="@+id/mba_canteen_radio"
                     android:layout_height="wrap_content"/>
             <com.google.android.material.radiobutton.MaterialRadioButton
                     android:layout_width="wrap_content"
-                    android:text="Hello"
+                    android:text="Open Audi"
+                    android:id="@+id/open_audi_radio"
                     android:layout_height="wrap_content"/>
             <com.google.android.material.radiobutton.MaterialRadioButton
                     android:layout_width="wrap_content"
-                    android:text="Hello"
+                    android:text="Others"
+                    android:id="@+id/others_radio"
                     android:layout_height="wrap_content"/>
         </RadioGroup>
         <com.google.android.material.textfield.TextInputEditText
-                android:layout_below="@+id/delivery_timings"
+                android:layout_below="@+id/location"
                 android:layout_width="match_parent"
                 android:id="@+id/others_et"
                 android:enabled="false"
@@ -76,15 +79,20 @@
                     android:layout_height="wrap_content">
             <com.google.android.material.radiobutton.MaterialRadioButton
                     android:layout_width="wrap_content"
-                    android:text="Hello"
+                    android:id="@+id/morning_radio"
+                   android:layout_marginEnd="4dp"
+                    android:text="Morning"
                     android:layout_height="wrap_content"/>
             <com.google.android.material.radiobutton.MaterialRadioButton
                     android:layout_width="wrap_content"
-                    android:text="Hello"
+                    android:text="Afternoon"
+                    android:id="@+id/after_noon_radio"
+                    android:layout_marginEnd="4dp"
                     android:layout_height="wrap_content"/>
             <com.google.android.material.radiobutton.MaterialRadioButton
                     android:layout_width="wrap_content"
-                    android:text="Hello"
+                    android:text="Evening"
+                    android:id="@+id/evening_radio"
                     android:layout_height="wrap_content"/>
         </RadioGroup>
 
