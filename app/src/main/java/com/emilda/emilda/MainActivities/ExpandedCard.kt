@@ -47,8 +47,10 @@ class ExpandedCard : AppCompatActivity() {
 
 
         val toolbar: Toolbar = this.findViewById(R.id.printing_toolbar)
-        toolbar.title = ActivityTag
+
+       // toolbar.title = ActivityTag
         setSupportActionBar(toolbar)
+        supportActionBar?.setDisplayShowTitleEnabled(false)
 
 
         mViewModel = ViewModelProviders.of(this).get(ExpandedCardViewModel::class.java)
