@@ -3,10 +3,10 @@
             xmlns:app="http://schemas.android.com/apk/res-auto"
             android:id="@+id/main_nav" app:startDestination="@id/fragmentDetails">
 
-    <fragment android:id="@+id/fragmentDetails" android:name="com.emilda.emilda.Fragments.FragmentDetails"
+    <fragment android:id="@+id/fragmentDetails" android:name="com.emilda1.emilda.Fragments.FragmentDetails"
               android:label="FragmentDetails"/>
-    <fragment android:id="@+id/fragmentProfile" android:name="com.emilda.emilda.Fragments.FragmentProfile"
+    <fragment android:id="@+id/fragmentProfile" android:name="com.emilda1.emilda.Fragments.FragmentProfile"
               android:label="FragmentProfile"/>
-    <fragment android:id="@+id/fragmentRecharge" android:name="com.emilda.emilda.Fragments.FragmentRecharge"
+    <fragment android:id="@+id/fragmentRecharge" android:name="com.emilda1.emilda.Fragments.FragmentRecharge"
               android:label="FragmentRecharge"/>
 </navigation>

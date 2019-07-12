@@ -4,8 +4,8 @@
             xmlns:tools="http://schemas.android.com/tools" android:id="@+id/desktop_support"
             app:startDestination="@id/desktopSupport1">
 
-    <fragment android:id="@+id/desktopSupport1" android:name="com.emilda.emilda.Fragments.DesktopSupport1"
+    <fragment android:id="@+id/desktopSupport1" android:name="com.emilda1.emilda.Fragments.DesktopSupport1"
               android:label="fragment_desktop_support1" tools:layout="@layout/fragment_desktop_support1"/>
-    <fragment android:id="@+id/desktopSupport2" android:name="com.emilda.emilda.Fragments.DesktopSupport2"
+    <fragment android:id="@+id/desktopSupport2" android:name="com.emilda1.emilda.Fragments.DesktopSupport2"
               android:label="DesktopSupport2"/>
 </navigation>

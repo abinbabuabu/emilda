@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
           xmlns:tools="http://schemas.android.com/tools"
-          package="com.emilda.emilda">
+          package="com.emilda1.emilda">
 
     <application
             android:allowBackup="true"
@@ -11,37 +11,37 @@
             android:supportsRtl="true"
             android:theme="@style/AppTheme"
             tools:ignore="GoogleAppIndexingWarning ,InnerclassSeparator">
-        <activity android:name=".MainActivities.AfterPayment">
+        <activity android:name="com.emilda1.emilda.MainActivities.AfterPayment">
         </activity>
-        <activity android:name=".LoginActivities.OnBoardingActivity">
+        <activity android:name="com.emilda1.emilda.LoginActivities.OnBoardingActivity">
         </activity>
         <activity
-                android:name=".LoginActivities.SplashScreen"
+                android:name="com.emilda1.emilda.LoginActivities.SplashScreen"
                 android:screenOrientation="portrait">
 
         </activity>
         <activity
-                android:name=".LoginActivities.OtpScreen"
+                android:name="com.emilda1.emilda.LoginActivities.OtpScreen"
                 android:screenOrientation="portrait">
         </activity>
         <activity
-                android:name=".LoginActivities.PhoneLogin"
+                android:name="com.emilda1.emilda.LoginActivities.PhoneLogin"
                 android:screenOrientation="portrait">
 
         </activity>
-        <activity android:name=".MainActivities.DesktopSupport">
+        <activity android:name="com.emilda1.emilda.MainActivities.DesktopSupport">
         </activity>
-        <activity android:name=".MainActivities.PrintingActivity">
+        <activity android:name="com.emilda1.emilda.MainActivities.PrintingActivity">
 
         </activity>
-        <activity android:name=".MainActivities.SupportActivity">
+        <activity android:name="com.emilda1.emilda.MainActivities.SupportActivity">
         </activity>
-        <activity android:name=".MainActivities.FeedbackActivity">
+        <activity android:name="com.emilda1.emilda.MainActivities.FeedbackActivity">
         </activity>
-        <activity android:name=".MainActivities.ExpandedCard">
+        <activity android:name="com.emilda1.emilda.MainActivities.ExpandedCard">
         </activity>
         <activity
-                android:name=".MainActivities.DetailsActivity"
+                android:name="com.emilda1.emilda.MainActivities.DetailsActivity"
                 android:launchMode="singleTop"
                 android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
@@ -50,7 +50,7 @@
             </intent-filter>
 
         </activity>
-        <activity android:name=".MainActivity">
+        <activity android:name="com.emilda1.emilda.MainActivity">
         </activity>
 
         <meta-data

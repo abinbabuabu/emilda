@@ -4,10 +4,10 @@
             xmlns:tools="http://schemas.android.com/tools" android:id="@+id/printing_nav"
             app:startDestination="@id/printing1">
 
-    <fragment android:id="@+id/printing1" android:name="com.emilda.emilda.Fragments.Printing1"
+    <fragment android:id="@+id/printing1" android:name="com.emilda1.emilda.Fragments.Printing1"
               android:label="Printing1"/>
-    <fragment android:id="@+id/printing2" android:name="com.emilda.emilda.Fragments.Printing2"
+    <fragment android:id="@+id/printing2" android:name="com.emilda1.emilda.Fragments.Printing2"
               android:label="fragment_printing2" tools:layout="@layout/fragment_printing2"/>
-    <fragment android:id="@+id/uploadingStatus" android:name="com.emilda.emilda.Fragments.UploadingStatus"
+    <fragment android:id="@+id/uploadingStatus" android:name="com.emilda1.emilda.Fragments.UploadingStatus"
               android:label="fragment_uploading_status" tools:layout="@layout/fragment_uploading_status"/>
 </navigation>
