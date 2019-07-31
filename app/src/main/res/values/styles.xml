@@ -144,15 +144,15 @@
 
     <!--Profile Activity-->
     <style name="profile_main">
-        <item name="android:textSize">23sp</item>
+        <item name="android:textSize">28sp</item>
         <item name="android:textColor">@color/colorAccent</item>
     </style>
     <style name="profile_small">
-        <item name="android:textSize">10sp</item>
+        <item name="android:textSize">14sp</item>
         <item name="android:textColor">@color/textgrey</item>
     </style>
     <style name="profile_card_small" parent="profile_small">
-        <item name="android:textSize">8dp</item>
+        <item name="android:textSize">8sp</item>
     </style>
 
 

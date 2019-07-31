@@ -1,12 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
             xmlns:app="http://schemas.android.com/apk/res-auto"
-            android:id="@+id/main_nav" app:startDestination="@id/fragmentDetails">
+            xmlns:tools="http://schemas.android.com/tools" android:id="@+id/main_nav" app:startDestination="@id/fragmentDetails">
 
-    <fragment android:id="@+id/fragmentDetails" android:name="com.emilda1.emilda.Fragments.FragmentDetails"
+    <fragment android:id="@+id/fragmentDetails" android:name="com.emilda.emildaapp.Fragments.FragmentDetails"
               android:label="FragmentDetails"/>
-    <fragment android:id="@+id/fragmentProfile" android:name="com.emilda1.emilda.Fragments.FragmentProfile"
+    <fragment android:id="@+id/fragmentProfile" android:name="com.emilda.emildaapp.Fragments.FragmentProfile"
               android:label="FragmentProfile"/>
-    <fragment android:id="@+id/fragmentRecharge" android:name="com.emilda1.emilda.Fragments.FragmentRecharge"
+    <fragment android:id="@+id/fragmentRecharge" android:name="com.emilda.emildaapp.Fragments.FragmentRecharge"
               android:label="FragmentRecharge"/>
+    <fragment android:id="@+id/loadingFragment" android:name="com.emilda.emildaapp.Fragments.LoadingFragment"
+              android:label="fragment_loading" tools:layout="@layout/fragment_loading"/>
 </navigation>

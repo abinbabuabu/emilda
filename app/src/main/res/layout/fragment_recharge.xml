@@ -50,7 +50,8 @@
                                   android:gravity="center"
                                   android:layout_height="wrap_content">
                         <TextView android:layout_width="wrap_content"
-                                  android:text="30"
+                                  android:text="0"
+                                  android:id="@+id/available_credit"
                                   android:textColor="@color/white"
                                   android:textSize="40sp"
                                   android:layout_gravity="center"
@@ -99,7 +100,7 @@
                             app:srcCompat="@drawable/ic_rupees"/>
                     <TextView android:layout_marginStart="6dp"
                               android:layout_gravity="start|center_vertical"
-                              android:text="50"
+                              android:id="@+id/rupees_1"
                               android:layout_marginLeft="6dp"/>
                     <ImageView
                             android:layout_width="24dp"
@@ -110,7 +111,7 @@
                             android:layout_marginLeft="40dp"/>
                     <TextView
                             android:layout_gravity="center_vertical"
-                            android:text="50"
+                            android:id="@+id/coin_1"
                             android:layout_marginStart="6dp"
                             android:layout_marginEnd="30dp"
                             android:layout_marginLeft="6dp"
@@ -118,12 +119,12 @@
                     <com.google.android.material.button.MaterialButton
                             app:backgroundTint="@color/colorAccent"
                             android:layout_width="90dp"
-                            android:id="@+id/pay"
-                            android:textSize="10dp"
+                            android:id="@+id/pay_1"
+                            android:textSize="12sp"
+                            android:padding="2dp"
                             android:textAllCaps="false"
                             android:layout_height="34dp"
                             android:layout_gravity="end|center_vertical"
-                            android:text="Recharge"
                     />
 
                 </TableRow>
@@ -138,7 +139,7 @@
                             app:srcCompat="@drawable/ic_rupees"/>
                     <TextView android:layout_marginStart="6dp"
                               android:layout_gravity="start|center_vertical"
-                              android:text="50"
+                              android:id="@+id/rupees_2"
                               android:layout_marginLeft="6dp"/>
                     <ImageView
                             android:layout_width="24dp"
@@ -149,7 +150,7 @@
                             android:layout_marginLeft="40dp"/>
                     <TextView
                             android:layout_gravity="center_vertical"
-                            android:text="50"
+                            android:id="@+id/coin_2"
                             android:layout_marginStart="6dp"
                             android:layout_marginEnd="30dp"
                             android:layout_marginLeft="6dp"
@@ -157,11 +158,14 @@
                     <com.google.android.material.button.MaterialButton
                             app:backgroundTint="@color/colorAccent"
                             android:layout_width="90dp"
-                            android:textSize="10dp"
+                            android:padding="2dp"
+                            android:textSize="12sp"
+                            android:textColor="@color/white"
+                            android:id="@+id/pay_2"
                             android:textAllCaps="false"
                             android:layout_height="34dp"
                             android:layout_gravity="end|center_vertical"
-                            android:text="Recharge"
+
                     />
 
                 </TableRow>
@@ -176,7 +180,7 @@
                             app:srcCompat="@drawable/ic_rupees"/>
                     <TextView android:layout_marginStart="6dp"
                               android:layout_gravity="start|center_vertical"
-                              android:text="50"
+                              android:id="@+id/rupees_3"
                               android:layout_marginLeft="6dp"/>
                     <ImageView
                             android:layout_width="24dp"
@@ -187,7 +191,7 @@
                             android:layout_marginLeft="40dp"/>
                     <TextView
                             android:layout_gravity="center_vertical"
-                            android:text="50"
+                            android:id="@+id/coin_3"
                             android:layout_marginStart="6dp"
                             android:layout_marginEnd="30dp"
                             android:layout_marginLeft="6dp"
@@ -195,11 +199,12 @@
                     <com.google.android.material.button.MaterialButton
                             app:backgroundTint="@color/colorAccent"
                             android:layout_width="90dp"
-                            android:textSize="10dp"
+                            android:textSize="12sp"
+                            android:padding="2dp"
+                            android:id="@+id/pay_3"
                             android:textAllCaps="false"
                             android:layout_height="34dp"
                             android:layout_gravity="end|center_vertical"
-                            android:text="Recharge"
                     />
 
                 </TableRow>
@@ -214,7 +219,7 @@
                             app:srcCompat="@drawable/ic_rupees"/>
                     <TextView android:layout_marginStart="6dp"
                               android:layout_gravity="start|center_vertical"
-                              android:text="50"
+                              android:id="@+id/rupees_4"
                               android:layout_marginLeft="6dp"/>
                     <ImageView
                             android:layout_width="24dp"
@@ -225,7 +230,7 @@
                             android:layout_marginLeft="40dp"/>
                     <TextView
                             android:layout_gravity="center_vertical"
-                            android:text="50"
+                            android:id="@+id/coin_4"
                             android:layout_marginStart="6dp"
                             android:layout_marginEnd="30dp"
                             android:layout_marginLeft="6dp"
@@ -233,11 +238,13 @@
                     <com.google.android.material.button.MaterialButton
                             app:backgroundTint="@color/colorAccent"
                             android:layout_width="90dp"
-                            android:textSize="10dp"
+                            android:textSize="12sp"
+                            android:padding="2dp"
+                            android:textColor="@color/white"
+                            android:id="@+id/pay_4"
                             android:textAllCaps="false"
                             android:layout_height="34dp"
                             android:layout_gravity="end|center_vertical"
-                            android:text="Recharge"
                     />
 
                 </TableRow>
@@ -252,7 +259,7 @@
                             app:srcCompat="@drawable/ic_rupees"/>
                     <TextView android:layout_marginStart="6dp"
                               android:layout_gravity="start|center_vertical"
-                              android:text="50"
+                              android:id="@+id/rupees_5"
                               android:layout_marginLeft="6dp"/>
                     <ImageView
                             android:layout_width="24dp"
@@ -263,19 +270,20 @@
                             android:layout_marginLeft="40dp"/>
                     <TextView
                             android:layout_gravity="center_vertical"
-                            android:text="50"
+                            android:id="@+id/coin_5"
                             android:layout_marginStart="6dp"
                             android:layout_marginEnd="30dp"
                             android:layout_marginLeft="6dp"
                             android:layout_marginRight="30dp"/>
                     <com.google.android.material.button.MaterialButton
-                            app:backgroundTint="@color/colorAccent"
                             android:layout_width="90dp"
-                            android:textSize="10dp"
+                            android:textSize="12sp"
+                            android:padding="2dp"
+                            android:id="@+id/pay_5"
                             android:textAllCaps="false"
                             android:layout_height="34dp"
                             android:layout_gravity="end|center_vertical"
-                            android:text="Recharge"
+
                     />
 
                 </TableRow>

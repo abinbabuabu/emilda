@@ -24,5 +24,17 @@
             app:selectedDotColor="@color/yellow"
             app:progressMode="true"
     />
+    <com.google.android.material.button.MaterialButton android:layout_width="wrap_content"
+                                                       android:text="Get Started"
+                                                       android:textAllCaps="false"
+                                                       android:visibility="gone"
+                                                       android:layout_below="@+id/dots_indicator"
+                                                       android:layout_marginTop="32dp"
+                                                       android:layout_centerHorizontal="true"
+                                                       android:id="@+id/get_started"
+                                                       app:backgroundTint="@color/yellow"
+                                                       android:textColor="@color/colorAccent"
+                                                       android:textSize="18sp"
+                                                       android:layout_height="wrap_content"/>
 
 </RelativeLayout>

@@ -67,12 +67,7 @@
               android:layout_centerInParent="true"
               android:text="@string/screen3_desc"
               android:layout_height="wrap_content"/>
-    <com.google.android.material.button.MaterialButton
-            android:text="Next"
-            android:layout_below="@+id/desc_text_screen3"
-            android:id="@+id/Login_btn"
-            android:layout_width="200dp"
-            android:layout_height="wrap_content"/>
+
 
 
 </RelativeLayout>

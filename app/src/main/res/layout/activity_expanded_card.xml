@@ -5,20 +5,16 @@
                                                      android:layout_height="match_parent">
 
 
-    <androidx.appcompat.widget.Toolbar
-            android:id="@+id/printing_toolbar"
-            app:navigationIcon="@drawable/ic_arrow_back"
-            android:layout_width="match_parent"
-            android:background="@drawable/toolbar_transparent"
-            android:layout_height="50dp"
-            app:layout_collapseMode="pin"/>
+
 
 
     <androidx.core.widget.NestedScrollView
             app:layout_behavior="com.google.android.material.appbar.AppBarLayout$ScrollingViewBehavior"
             android:layout_width="match_parent"
             android:layout_height="match_parent">
-        <include layout="@layout/extended_card_template"/>
+
+            <include layout="@layout/extended_card_template"/>
+
     </androidx.core.widget.NestedScrollView>
 
     <com.google.android.material.button.MaterialButton
