@@ -2,12 +2,16 @@ package com.emilda.emildaapp.Viewmodels
 
 import android.content.Context
 import android.net.Uri
+import android.os.CountDownTimer
 import android.util.Log
 import android.widget.MultiAutoCompleteTextView
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.google.firebase.storage.FirebaseStorage
+import java.math.BigInteger
+import java.util.*
+import java.util.logging.Handler
 
 class PrintingViewModel : ViewModel() {
 
@@ -23,10 +27,10 @@ class PrintingViewModel : ViewModel() {
         if (Uri != null) {
             FireStorage.getReference("$FileName").putFile(Uri!!)
                 .addOnCompleteListener {
+                    UploadProgress.postValue(99)
                 }
                 .addOnProgressListener {
-                    val value = (it.bytesTransferred.div(it.totalByteCount) * 100)
-                    UploadProgress.postValue(value.toInt())
+
                 }
                 .addOnCanceledListener {
 
@@ -45,3 +49,4 @@ class PrintingViewModel : ViewModel() {
 
 
 }
+

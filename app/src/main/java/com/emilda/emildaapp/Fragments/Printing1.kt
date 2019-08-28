@@ -22,6 +22,11 @@ class Printing1 : Fragment() {
 
     private val REQUEST_CODE_DOC: Int = 343
     lateinit var model: PrintingViewModel
+    private var colorValue: String = "Black & White"
+    private var paperSize: String = "A4"
+    private var paperType: String = "Normal"
+    private var duplexVal: String = "One Side"
+    private var countInt: Int = 1
 
 
     override fun onCreateView(
@@ -49,6 +54,7 @@ class Printing1 : Fragment() {
         nullCheckBeforeNext()
         setUpDropDowns()
         counter()
+
 
     }
 
@@ -90,10 +96,7 @@ class Printing1 : Fragment() {
                 flag = false
                 duplex.error = "Required Field"
             }
-            if (document_binding.text.isEmpty()) {
-                flag = false
-                document_binding.error = "Required Field"
-            }
+
             if (model.FileName.isNullOrEmpty()) {
                 flag = false
                 Toast.makeText(context, "Select a File", Toast.LENGTH_LONG).show()
@@ -108,7 +111,7 @@ class Printing1 : Fragment() {
 
 
     private fun setUpDropDowns() {
-        var colorValue: String
+
         val ColorModes = arrayOf("Black & White", "Color")
         val ColorAdapter = ArrayAdapter(context!!, R.layout.drop_down_menu_item, ColorModes)
 
@@ -121,8 +124,8 @@ class Printing1 : Fragment() {
         }
 
 //Paper Size
-        var paperSize: String
-        val paperSizes = arrayOf("A4", "A3")
+
+        val paperSizes = arrayOf("A4")
         val PaperSizeAdapter = ArrayAdapter(context!!, R.layout.drop_down_menu_item, paperSizes)
         paper_size.setAdapter(PaperSizeAdapter)
         paper_size.setOnItemClickListener { adapterView, view, pos, l ->
@@ -131,7 +134,7 @@ class Printing1 : Fragment() {
             paper_size.error = null
         }
 //Paper Type
-        var paperType: String
+
         val paperTypes = arrayOf("Normal", "Thick")
         val PaperTypeAdapter = ArrayAdapter(context!!, R.layout.drop_down_menu_item, paperTypes)
         paper_type.setAdapter(PaperTypeAdapter)
@@ -141,7 +144,7 @@ class Printing1 : Fragment() {
             paper_type.error = null
         }
 // Duplex Printing
-        var duplexVal: String
+
         val duplexes = arrayOf("One Side", "Two Side")
         val duplexAdapter = ArrayAdapter(context!!, R.layout.drop_down_menu_item, duplexes)
         duplex.setAdapter(duplexAdapter)
@@ -152,24 +155,13 @@ class Printing1 : Fragment() {
 
         }
 
-        var binding: String
-        val Bindings = arrayOf("One Side", "Two Side")
-        val bindingAdapter = ArrayAdapter(context!!, R.layout.drop_down_menu_item, Bindings)
-        document_binding.setAdapter(bindingAdapter)
-        document_binding.setOnItemClickListener { adapterView, view, pos, l ->
-            binding = adapterView.getItemAtPosition(pos).toString()
-            document_binding.hint = binding
-            document_binding.error = null
-
-        }
-
     }
 
     fun counter() {
         plus_btn.setOnClickListener {
             count_plusMinus.clearFocus()
             val count = count_plusMinus.text.toString()
-            var countInt = count.toInt()
+            countInt = count.toInt()
             countInt++
             count_plusMinus.setText(countInt.toString())
         }
