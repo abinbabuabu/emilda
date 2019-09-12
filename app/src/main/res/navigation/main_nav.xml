@@ -11,4 +11,9 @@
               android:label="FragmentRecharge"/>
     <fragment android:id="@+id/loadingFragment" android:name="com.emilda.emildaapp.Fragments.LoadingFragment"
               android:label="fragment_loading" tools:layout="@layout/fragment_loading"/>
+    <fragment
+            android:id="@+id/fragmentTeam"
+            android:name="com.emilda.emildaapp.Fragments.FragmentTeam"
+            android:label="fragment_team"
+            tools:layout="@layout/fragment_team" />
 </navigation>
