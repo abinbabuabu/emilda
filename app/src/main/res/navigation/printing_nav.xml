@@ -2,10 +2,15 @@
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
             xmlns:app="http://schemas.android.com/apk/res-auto"
             xmlns:tools="http://schemas.android.com/tools" android:id="@+id/printing_nav"
-            app:startDestination="@id/printing1">
+            app:startDestination="@id/printComing">
 
     <fragment android:id="@+id/printing1" android:name="com.emilda.emildaapp.Fragments.Printing1"
               android:label="Printing1"/>
     <fragment android:id="@+id/uploadingStatus" android:name="com.emilda.emildaapp.Fragments.UploadingStatus"
               android:label="fragment_uploading_status" tools:layout="@layout/fragment_uploading_status"/>
+    <fragment
+            android:id="@+id/printComing"
+            android:name="com.emilda.emildaapp.PrintComing"
+            android:label="fragment_print_coming"
+            tools:layout="@layout/fragment_print_coming" />
 </navigation>

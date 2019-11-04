@@ -13,6 +13,7 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.Observer
 import androidx.navigation.fragment.findNavController
+import com.emilda.emildaapp.InternetCheck
 import com.emilda.emildaapp.MainActivities.DetailsActivity
 import com.emilda.emildaapp.R
 import com.google.firebase.FirebaseException
@@ -109,20 +110,11 @@ class OtpFragment : Fragment() {
         phone_number_otp.text = phoneWithCC
 
         next_btn_otp.setOnClickListener {
-            val code = otp.text.toString()
-
-            if (code.length == 6) {
-                next_btn_otp.visibility = View.INVISIBLE
-                loading_otp.visibility = View.VISIBLE
-
-                val credential = PhoneAuthProvider.getCredential(storedVerificationId!!, code)
-                signInWithPhoneAuthCredential(credential)
-            } else {
-                Toast.makeText(context, "Invalid OTP", Toast.LENGTH_SHORT).show()
-            }
-
+           internet()
 
         }
+
+
     }
 
     private fun signInWithPhoneAuthCredential(credential: PhoneAuthCredential) {
@@ -153,6 +145,30 @@ class OtpFragment : Fragment() {
                     }
                 }
             }
+    }
+
+    private fun internet(){
+        val connectionLiveData = InternetCheck(activity?.application!!)
+        connectionLiveData.observe(this, Observer {
+           if(it){
+              VerifyOtp()
+           }
+            else{
+               Toast.makeText(context,"No Internet",Toast.LENGTH_LONG).show()
+           }
+        })
+
+    }
+
+    private fun VerifyOtp(){
+        val code = otp.text.toString()
+        if (code.length == 6) {
+            next_btn_otp.visibility = View.INVISIBLE
+            loading_otp.visibility = View.VISIBLE
+
+            val credential = PhoneAuthProvider.getCredential(storedVerificationId!!, code)
+            signInWithPhoneAuthCredential(credential)
+        }
     }
 
 

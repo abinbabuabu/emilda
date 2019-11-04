@@ -41,7 +41,7 @@ class Printing2 : Fragment() {
 
     override fun onStart() {
         super.onStart()
-        submit_support2.setOnClickListener {
+        /*submit_support2.setOnClickListener {
             var Flag = true
             if (location.checkedRadioButtonId == others_radio.id) {
                 if (others_et.text!!.isEmpty()) {
@@ -58,7 +58,7 @@ class Printing2 : Fragment() {
             }
 
 
-        }
+        }*/
     }
 
 

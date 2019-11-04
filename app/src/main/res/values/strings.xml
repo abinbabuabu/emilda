@@ -103,7 +103,10 @@
         we\'ll get back to you.
     </string>
 
-<!--    Team Page-->
+    <!--    Team Page-->
     <string name="team_desc">Meet our team below. A workplace with its own small little perks. Would you like to be a part of this family?</string>
+
+
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 
 </resources>

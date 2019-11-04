@@ -40,3 +40,21 @@ data class UserType(
     var credit: Int,
     var fullName: String
 )
+
+
+data class SupportType(
+    var UserId:String,
+    var FixType: String,
+    var BrandName:String,
+    var ModelName:String,
+    var ProblemDesc:String,
+    var DeliveryLocation:String,
+    var Date:String,
+    var Time:String
+)
+
+data class ProjectSupport(
+    var UserId: String,
+    var PhoneNUmber:String,
+    var Desc:String
+)

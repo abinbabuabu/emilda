@@ -7,14 +7,18 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ArrayAdapter
+import androidx.lifecycle.ViewModelProviders
 import androidx.navigation.fragment.findNavController
 
 import com.emilda.emildaapp.R
+import com.emilda.emildaapp.Viewmodels.DesktopSupportViewModel
+import com.emilda.emildaapp.Viewmodels.PrintingViewModel
 import kotlinx.android.synthetic.main.fragment_desktop_support1.*
 import kotlinx.android.synthetic.main.fragment_printing1.*
 
 class DesktopSupport1 : Fragment() {
     var FixType = ""
+    lateinit var model: DesktopSupportViewModel
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -22,6 +26,13 @@ class DesktopSupport1 : Fragment() {
     ): View? {
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_desktop_support1, container, false)
+    }
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        model = activity?.run {
+            ViewModelProviders.of(this).get(DesktopSupportViewModel::class.java)
+        } ?: throw Exception("Invalid Activity")
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -58,6 +69,7 @@ class DesktopSupport1 : Fragment() {
             }
 
             if (flag == 0) {
+                AddDataToViewModel()
                 findNavController().navigate(R.id.desktopSupport2)
             }
         }
@@ -65,5 +77,11 @@ class DesktopSupport1 : Fragment() {
 
     }
 
+ private fun AddDataToViewModel(){
+     model.BrandName = brand_name.text.toString()
+     model.ModelName = model_name.text.toString()
+     model.FixType = FixType
+     model.ProblemDesc = problem_desc.text.toString()
+ }
 
 }

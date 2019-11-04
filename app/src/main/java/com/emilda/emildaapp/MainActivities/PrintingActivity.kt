@@ -23,12 +23,12 @@ class PrintingActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.printing_layout)
-        val toolbar: Toolbar = this.findViewById(R.id.toolbar_print)
+        setContentView(R.layout.activity_printing)
+       // val toolbar: Toolbar = this.findViewById(R.id.toolbar_print)
 
-        setSupportActionBar(toolbar)
-        supportActionBar?.title = "        "
-        supportActionBar?.setDisplayShowTitleEnabled(true)
+       // setSupportActionBar(toolbar)
+        //supportActionBar?.title = "        "
+       // supportActionBar?.setDisplayShowTitleEnabled(true)
 
         printViewModel = ViewModelProviders.of(this).get(PrintingViewModel::class.java)
 

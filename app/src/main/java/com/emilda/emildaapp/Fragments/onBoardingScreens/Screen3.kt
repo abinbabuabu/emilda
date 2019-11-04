@@ -23,11 +23,5 @@ class Screen3 : Fragment() {
         return inflater.inflate(R.layout.fragment_screen3, container, false)
     }
 
-    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        super.onViewCreated(view, savedInstanceState)
-
-
-    }
-
 
 }

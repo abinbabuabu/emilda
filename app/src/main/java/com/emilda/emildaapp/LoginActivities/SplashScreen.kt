@@ -64,4 +64,5 @@ class SplashScreen : AppCompatActivity() {
         mfirebaseAuth?.addAuthStateListener(mAuthStateListener!!)
     }
 
+
 }

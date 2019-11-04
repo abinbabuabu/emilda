@@ -17,6 +17,8 @@ import com.emilda.emildaapp.R
 import com.emilda.emildaapp.Viewmodels.PrintingViewModel
 import kotlinx.android.synthetic.main.fragment_printing1.*
 import kotlinx.android.synthetic.main.plus_minus_button.*
+import java.io.File
+import java.security.Permission
 
 class Printing1 : Fragment() {
 
@@ -105,6 +107,8 @@ class Printing1 : Fragment() {
             if (flag) {
                 findNavController().popBackStack()
                 findNavController().navigate(R.id.uploadingStatus)
+               //model.countPages(File(model.Uri?.path))
+               // Toast.makeText(context,model.totalpages.toString(),Toast.LENGTH_LONG).show()
             }
         }
     }

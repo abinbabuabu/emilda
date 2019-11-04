@@ -99,7 +99,7 @@
 
         <com.google.android.material.button.MaterialButton
                 android:layout_width="match_parent"
-                android:id="@+id/submit_support2"
+                android:id="@+id/submitSupport"
                 android:layout_marginEnd="16dp"
                 android:layout_below="@+id/timing_radio"
                 android:layout_centerHorizontal="true"

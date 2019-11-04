@@ -107,7 +107,7 @@ class UploadingStatus : Fragment() {
 
     private fun print(printData: PrintData) {
         val BASE_URL = "https://api.printnode.com"
-        val USERNAME = "xAckyuoEzl72VkDUvceYylNL_n0A3GR26G6d96aU_n4"
+        val USERNAME = "07s4sjQLiCAcwhIh7UfplbUQ_OVywxrCmMSlzfcCIzs"
         val HEADER_NAME = "Content-Type"
         val HEADER_VALUE = "application/json"
 
@@ -148,7 +148,7 @@ class UploadingStatus : Fragment() {
 
     private fun CreatePrintData(uri: String,fileName:String): PrintData {
         val CONTENT_TYPE = "pdf_uri"
-        val printData = PrintData(69044946, fileName, CONTENT_TYPE, uri, "api documentation")
+        val printData = PrintData(69112104, fileName, CONTENT_TYPE, uri, "api documentation")
         return printData
     }
 
